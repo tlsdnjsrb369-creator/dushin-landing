@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00f2fe;
+  --color-neon-lime: #39ff14;
+  --color-neon-orange: #ff6a00;
+  --color-dark-bg: #07080b;
+  --color-dark-card: #0f111a;
+  --color-dark-border: #1e2230;
+  
+  --font-sans: var(--font-geist-sans), "Pretendard", -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #07080b;
+  --foreground: #f3f4f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* 미래지향적 테크 격자 그리드 배경 */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+}
+
+/* 방사형 그라데이션 광원 효과 */
+.glow-radial {
+  background: radial-gradient(circle at center, rgba(0, 242, 254, 0.15) 0%, rgba(57, 255, 20, 0.02) 50%, transparent 100%);
+}
+
+.glow-orange-radial {
+  background: radial-gradient(circle at center, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
+}
+
+/* 네온 텍스트 및 박스 그림자 효과 */
+.neon-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 20px rgba(0, 242, 254, 0.2);
+}
+
+.neon-text-lime {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3), inset 0 0 10px rgba(0, 242, 254, 0.1);
+  border-color: rgba(0, 242, 254, 0.6);
+}
+
+.neon-border-lime {
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.3), inset 0 0 10px rgba(57, 255, 20, 0.1);
+  border-color: rgba(57, 255, 20, 0.6);
+}
+
+.neon-border-orange {
+  box-shadow: 0 0 15px rgba(255, 106, 0, 0.3), inset 0 0 10px rgba(255, 106, 0, 0.1);
+  border-color: rgba(255, 106, 0, 0.6);
+}
+
+/* 스무스 스크롤 및 스크롤바 */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2230;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+/* 커스텀 마우스 포인터 관련 */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00f2fe;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #39ff14;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+}
+
+/* 유리 효과 글래스모피즘 */
+.glassmorphism {
+  background: rgba(15, 17, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
