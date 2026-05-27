@@ -42,7 +42,7 @@ export default function Home() {
             <p className="text-xs text-gray-500 leading-relaxed max-w-md">
               주소: 인천광역시 서구 검단천로356번길 46 (오류동)<br />
               대표번호: 032-562-5494 | 팩스: 032-562-5495<br />
-              이메일: contact@dushin.co.kr | 사업자등록번호: 137-81-00000
+              이메일: skj1994@naver.com | 사업자등록번호: 137-81-94279
             </p>
           </div>
 
