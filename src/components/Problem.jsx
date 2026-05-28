@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShieldAlert, Clock, AlertTriangle } from "lucide-react";
+import { PenTool, Settings, SearchCheck, Truck, ArrowRight } from "lucide-react";
 
 export default function Problem() {
   const sectionRef = useRef(null);
@@ -58,27 +58,38 @@ export default function Problem() {
     return () => ctx.revert();
   }, []);
 
-  const problems = [
+  const steps = [
     {
-      icon: <ShieldAlert className="w-8 h-8 text-neon-orange" />,
-      title: "프레임 변형 & 품질 불일치",
-      desc: "고하중 기계의 성형 및 압착 과정에서 프레임이 변형되거나 가공 편차가 발생하면 공장 전체의 생산 라인 정밀도가 붕괴되고 수명이 극도로 단축됩니다.",
-      issue: "구조 해석 및 강성 설계 노하우가 부족한 업체의 제작 결함",
-      neonColor: "neon-border-orange"
+      step: "STEP 01",
+      icon: <PenTool className="w-8 h-8 text-neon-orange" />,
+      title: "정밀 설계 및 자재 검수",
+      subtitle: "Design & Material",
+      desc: "요구사항 분석 후 최적의 제작 방향을 위한 1차 검토 및 정밀 설계(CAD)를 완료하고, 소재 입고 시 엄격한 검수를 거칩니다.",
+      flow: ["수주", "설계", "소재입고"]
     },
     {
-      icon: <Clock className="w-8 h-8 text-neon-orange" />,
-      title: "약속 없는 납기 지연",
-      desc: "제철 및 공장 설비는 조립 라인 셋업 시점이 고정되어 있어 단 며칠의 납기 지연도 수천만 원에서 수억 원에 달하는 공장 가동 정지 손실로 직결됩니다.",
-      issue: "불투명한 공정 관리와 외주 가공에 의존한 일정 컨트롤 상실",
-      neonColor: "neon-border-orange"
+      step: "STEP 02",
+      icon: <Settings className="w-8 h-8 text-neon-orange" />,
+      title: "정밀 가공 및 제관",
+      subtitle: "Machining & Welding",
+      desc: "고이께 모형 절단기(CNC)를 사용해 정밀 커팅을 거친 후, 당사 최고의 기술진이 베벨링, 가용접 및 정밀 용접을 완벽하게 수행합니다.",
+      flow: ["CNC Cutting", "베벨링 및 가용접", "용접"]
     },
     {
-      icon: <AlertTriangle className="w-8 h-8 text-neon-orange" />,
-      title: "재무 부실 및 지속 불가능성",
-      desc: "수억 원대 이상의 중공업 및 대형 프레임 제작 프로젝트 중 제작 업체의 갑작스러운 재무 구조 악화 및 부도로 계약 이행이 불가해지는 치명적 리스크입니다.",
-      issue: "불안정한 현금 흐름 및 외부 신용평가 미충족으로 인한 공급 중단",
-      neonColor: "neon-border-orange"
+      step: "STEP 03",
+      icon: <SearchCheck className="w-8 h-8 text-neon-orange" />,
+      title: "비파괴 검사 및 완벽 QC",
+      subtitle: "QC & Inspection",
+      desc: "무결점 품질을 위해 4대 비파괴검사(RT, UT, MT, PT)와 소둔·쇼트·페인팅 처리를 거치며, 정밀 기계가공 및 기상검사로 오차를 제로화합니다.",
+      flow: ["비파괴검사", "소둔, 쇼트, 페인팅", "기계가공", "기상검사"]
+    },
+    {
+      step: "STEP 04",
+      icon: <Truck className="w-8 h-8 text-neon-orange" />,
+      title: "최종 조립 및 시운전 납품",
+      subtitle: "Assembly & Delivery",
+      desc: "가공된 제관품들을 완벽하게 조립하고 자체 시운전 및 발주처 최종 검사를 거쳐 안전한 패킹을 통해 현장 설치 및 납품을 완료합니다.",
+      flow: ["조립작업", "시운전", "최종검사", "포장 및 출하", "설치 및 시운전"]
     }
   ];
 
@@ -86,63 +97,82 @@ export default function Problem() {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative py-24 bg-[#08090d] border-y border-dark-border overflow-hidden"
+      className="relative py-24 bg-white border-y border-slate-200/80 overflow-hidden"
     >
       {/* 장식용 네온 탑 레이저 라인 */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-orange/40 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-orange/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* 헤더 타이틀 */}
         <div className="problem-title text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest text-neon-orange uppercase block mb-3">
-            INDUSTRY PROBLEMS
+            MANUFACTURING PROCESS
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
-            중공업 및 설비 제작 시장의<br />
-            <span className="text-neon-orange">3대 치명적 리스크</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            15단계 원스톱 공정을 압축한<br />
+            <span className="text-neon-orange">4단계 핵심 제조 프로세스</span>
           </h2>
-          <div className="w-16 h-[2px] bg-neon-orange mx-auto mb-6 shadow-[0_0_8px_rgba(255,106,0,0.8)]" />
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            프레임 제작 및 철강 설비 조달 시, 품질과 일정 그리고 업체의 신뢰도는 사업 성공의 핵심 조건입니다. 타협할 수 없는 세 가지 리스크를 직시해야 합니다.
+          <div className="w-16 h-[2px] bg-neon-orange mx-auto mb-6 shadow-[0_2px_8px_rgba(255,85,0,0.4)]" />
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+            설계부터 납품까지 외주 없이 공장 내부에서 완벽하게 제어되는 당사만의 철저한 공정 시스템을 소개합니다.
           </p>
         </div>
 
-        {/* 3대 문제점 카드 리스트 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {problems.map((prob, idx) => (
+        {/* 4단계 공정 카드 리스트 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((item, idx) => (
             <div
               key={idx}
               ref={(el) => (cardsRef.current[idx] = el)}
-              className="group p-8 rounded-xl bg-dark-card border border-dark-border hover:bg-dark-card/80 transition-all duration-300 relative overflow-hidden"
+              className="group p-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
             >
               {/* 마우스 호버 시 활성화되는 네온 글로우 오버레이 */}
-              <div className="absolute inset-0 bg-neon-orange/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-neon-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               
               {/* 탑 보더 네온 라이팅 효과 */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-neon-orange/20 group-hover:via-neon-orange group-hover:to-neon-orange/20 transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-slate-200 to-transparent group-hover:from-neon-orange/50 group-hover:via-neon-orange group-hover:to-neon-orange/50 transition-all duration-500" />
               
-              {/* 아이콘 */}
-              <div className="w-16 h-16 rounded-xl bg-neon-orange/5 border border-neon-orange/20 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
-                {prob.icon}
+              {/* 상단 STEP 및 아이콘 */}
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-2xl font-black text-slate-200 group-hover:text-neon-orange/20 transition-colors duration-300">
+                  {item.step}
+                </span>
+                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shadow-inner group-hover:scale-110 group-hover:bg-neon-orange/10 group-hover:border-neon-orange/30 transition-all duration-300">
+                  {item.icon}
+                </div>
               </div>
 
-              {/* 제목 */}
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-neon-orange transition-colors duration-300">
-                {prob.title}
-              </h3>
+              {/* 제목 및 부제목 */}
+              <div className="mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-neon-orange transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <span className="text-xs font-bold text-slate-400 tracking-wider block uppercase">
+                  {item.subtitle}
+                </span>
+              </div>
 
               {/* 내용 */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                {prob.desc}
+              <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium flex-grow">
+                {item.desc}
               </p>
 
-              {/* 원인 분석 */}
-              <div className="border-t border-dark-border pt-4">
-                <span className="text-xs font-semibold text-gray-500 block mb-1">원인 분석</span>
-                <span className="text-xs text-gray-300 font-medium">
-                  {prob.issue}
-                </span>
+              {/* 세부 공정 흐름 */}
+              <div className="border-t border-slate-100 pt-4 mt-auto">
+                <span className="text-[10px] font-bold text-slate-400 block mb-3">상세 공정 흐름</span>
+                <div className="flex flex-wrap gap-2 items-center">
+                  {item.flow.map((flowItem, fIdx) => (
+                    <div key={fIdx} className="flex items-center gap-2">
+                      <span className="text-xs font-semibold text-slate-700 bg-slate-50 px-2 py-1 rounded border border-slate-100 group-hover:border-neon-orange/30 transition-colors">
+                        {flowItem}
+                      </span>
+                      {fIdx < item.flow.length - 1 && (
+                        <ArrowRight className="w-3 h-3 text-slate-300" />
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

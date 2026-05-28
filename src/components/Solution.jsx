@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShieldCheck, Anchor, HardHat, Award, ArrowRight } from "lucide-react";
+import { ShieldCheck, Anchor, HardHat, Award, ArrowRight, Grid } from "lucide-react";
 
 export default function Solution() {
   const [activeTab, setActiveTab] = useState(0);
@@ -83,13 +83,27 @@ export default function Solution() {
       shortTitle: "품질 & 납기 보장",
       icon: <HardHat className="w-5 h-5" />,
       tagline: "3D 시뮬레이션 설계 및 전수 검사 시스템",
-      desc: "20년 기계 제작 원천 기술로 3D CAD/CAE 구조 해석을 진행하여 정밀 오차를 사전에 검증합니다. 실시간 공정 관리 소프트웨어로 단계별 일정을 체계적으로 보고하며, 조립 완료 후 ISO 기준에 의거한 레이저 얼라인먼트 전수 검사를 실행하여 약속된 일자에 완벽한 장비를 인도합니다.",
+      desc: "자체 엔지니어링 시스템으로 3D CAD/CAE 구조 해석을 진행하여 정밀 오차를 사전에 검증합니다. 실시간 공정 관리 소프트웨어로 단계별 일정을 체계적으로 보고하며, 조립 완료 후 ISO 기준에 의거한 레이저 얼라인먼트 전수 검사를 실행하여 약속된 일자에 완벽한 장비를 인도합니다.",
       highlights: [
         "자체 3D CAD/CAE 시뮬레이션을 통한 구조적 응력 사전 계산",
         "공정 단계별 실시간 모니터링을 통한 납기 지연 제로화",
         "출하 전 정밀 레이저 정밀도 테스트 및 성적서 발행"
       ],
       image: "/dushin_factory.png"
+    },
+    {
+      title: "공장 설비 및 레이아웃",
+      badge: "FACTORY LAYOUT",
+      shortTitle: "공장 레이아웃 & 크레인",
+      icon: <Grid className="w-5 h-5" />,
+      tagline: "450평 규모의 체계화된 제조 공간",
+      desc: "제철설비 및 대형 프레스 프레임 제작에 최적화된 동선과 설비를 구축하고 있습니다. 각 동별 세분화된 작업장과 막강한 호이스트(HOIST) 리프팅 스펙을 통해 초대형 구조물을 안전하고 신속하게 핸들링합니다.",
+      highlights: [
+        "전체 부지 450평 (가로 38m x 세로 39m)",
+        "공정 단계별 전문화된 A, B, C동 완비",
+        "최대 20TON 듀얼 호이스트 시스템 등 압도적 인양 능력"
+      ],
+      isInfographic: true
     }
   ];
 
@@ -97,14 +111,14 @@ export default function Solution() {
     <section
       id="solution"
       ref={sectionRef}
-      className="relative py-28 bg-dark-bg overflow-hidden"
+      className="relative py-28 bg-white overflow-hidden"
     >
       {/* 장식용 배경 광원 */}
-      <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] glow-radial opacity-50 pointer-events-none rounded-full" />
-      <div className="absolute bottom-[20%] left-[-15%] w-[600px] h-[600px] glow-orange-radial opacity-20 pointer-events-none rounded-full" />
+      <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] glow-radial opacity-40 pointer-events-none rounded-full" />
+      <div className="absolute bottom-[20%] left-[-15%] w-[600px] h-[600px] glow-orange-radial opacity-15 pointer-events-none rounded-full" />
       
       {/* 뒷배경 테크니컬 격자무늬 */}
-      <div className="absolute inset-0 tech-grid opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 tech-grid opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -113,14 +127,14 @@ export default function Solution() {
           <span className="text-xs font-bold tracking-widest text-neon-lime uppercase block mb-3">
             DUSHIN SOLUTIONS
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
             품질·납기·신용의 결합,<br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-lime to-neon-cyan neon-text-lime">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#10b981] to-[#00b4d8] neon-text-lime">
               두신이엔지 엔지니어링 솔루션
             </span>
           </h2>
-          <div className="w-16 h-[2px] bg-neon-lime mx-auto mb-6 shadow-[0_0_8px_rgba(57,255,20,0.8)]" />
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+          <div className="w-16 h-[2px] bg-neon-lime mx-auto mb-6 shadow-[0_2px_8px_rgba(46,220,16,0.4)]" />
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
             축적된 20년 역량과 대형 설비 인프라, 든든한 재무 신용도로 고객사가 직면한 제조 및 공급망 리스크에 정답을 제시합니다.
           </p>
         </div>
@@ -136,24 +150,24 @@ export default function Solution() {
                 onClick={() => setActiveTab(idx)}
                 className={`w-full p-5 rounded-xl border flex items-center gap-4 text-left transition-all duration-300 ${
                   activeTab === idx
-                    ? "bg-dark-card border-neon-lime shadow-[0_0_15px_rgba(57,255,20,0.1)] translate-x-2"
-                    : "bg-dark-card/40 border-dark-border text-gray-500 hover:border-gray-700 hover:text-gray-300"
+                    ? "bg-white border-neon-lime shadow-md translate-x-2 text-slate-800"
+                    : "bg-slate-50/80 border-slate-200/80 text-slate-500 hover:border-slate-300 hover:text-slate-700"
                 }`}
               >
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${
                     activeTab === idx
-                      ? "bg-neon-lime text-black"
-                      : "bg-dark-border text-gray-500"
+                      ? "bg-neon-lime text-slate-900 shadow-sm"
+                      : "bg-slate-200 text-slate-500"
                   }`}
                 >
                   {sol.icon}
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest text-gray-500 block mb-1">
+                  <span className="text-[10px] font-bold tracking-widest text-slate-400 block mb-1">
                     {sol.badge}
                   </span>
-                  <span className={`font-bold text-sm md:text-base ${activeTab === idx ? "text-white" : "text-gray-400"}`}>
+                  <span className={`font-bold text-sm md:text-base ${activeTab === idx ? "text-slate-800" : "text-slate-500"}`}>
                     {sol.shortTitle}
                   </span>
                 </div>
@@ -164,32 +178,32 @@ export default function Solution() {
           {/* 탭 내용 상세 영역 (오른쪽 8열 차지) */}
           <div
             ref={tabContentRef}
-            className="lg:col-span-8 p-8 md:p-10 rounded-2xl bg-dark-card border border-dark-border min-h-[500px] flex flex-col justify-between"
+            className="lg:col-span-8 p-8 md:p-10 rounded-2xl bg-slate-50 border border-slate-200/85 min-h-[500px] flex flex-col justify-between shadow-md"
           >
             <div>
               {/* 상단 레이아웃 배지 */}
-              <div className="flex items-center justify-between border-b border-dark-border pb-6 mb-6">
+              <div className="flex items-center justify-between border-b border-slate-200/80 pb-6 mb-6">
                 <div>
                   <span className="text-xs font-mono text-neon-lime tracking-widest uppercase block mb-1">
                     {solutions[activeTab].badge}
                   </span>
-                  <h3 className="text-2xl font-extrabold text-white">
+                  <h3 className="text-2xl font-extrabold text-slate-800">
                     {solutions[activeTab].title}
                   </h3>
                 </div>
-                <span className="text-3xl font-mono font-bold text-gray-700">
+                <span className="text-3xl font-mono font-bold text-slate-300">
                   0{activeTab + 1}
                 </span>
               </div>
 
               {/* 솔루션 태그라인 */}
-              <h4 className="text-lg font-bold text-neon-cyan mb-4 flex items-center gap-2">
+              <h4 className="text-lg font-bold text-[#0077b6] mb-4 flex items-center gap-2">
                 <ArrowRight className="w-5 h-5" />
                 {solutions[activeTab].tagline}
               </h4>
 
               {/* 솔루션 상세 설명 */}
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8 font-medium">
                 {solutions[activeTab].desc}
               </p>
 
@@ -197,8 +211,8 @@ export default function Solution() {
               <div className="flex flex-col gap-3 mb-8">
                 {solutions[activeTab].highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <Award className="w-5 h-5 text-neon-lime shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm md:text-base font-medium">
+                    <Award className="w-5 h-5 text-[#21b009] shrink-0 mt-0.5" />
+                    <span className="text-slate-700 text-sm md:text-base font-semibold">
                       {highlight}
                     </span>
                   </div>
@@ -207,22 +221,68 @@ export default function Solution() {
             </div>
 
             {/* 비주얼 에셋 영역 */}
-            <div className="w-full h-56 relative rounded-xl overflow-hidden border border-dark-border group">
-              {solutions[activeTab].svgGraphic ? (
+            <div className="w-full h-72 md:h-80 relative rounded-xl overflow-hidden border border-slate-200 shadow-inner group">
+              {solutions[activeTab].isInfographic ? (
+                /* 공장 레이아웃 및 크레인 인포그래픽 */
+                <div className="absolute inset-0 bg-slate-900 flex flex-col p-6 overflow-y-auto hide-scrollbar">
+                  <div className="text-center mb-6 shrink-0">
+                    <span className="text-neon-cyan font-bold tracking-widest text-xs mb-1 block">FACTORY SPECIFICATION</span>
+                    <h5 className="text-white font-black text-xl">전체 면적: 450평 (38m x 39m)</h5>
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 pb-4">
+                    {/* A동 */}
+                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-neon-lime" />
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
+                        <span className="text-white font-bold text-lg">A동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">중형 제작 및 조립작업장</span></span>
+                        <span className="text-xs font-mono text-neon-lime bg-neon-lime/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
+                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                        <span className="text-sm text-neon-cyan font-bold">10TON*5TON 2대, 5TON 1대</span>
+                      </div>
+                    </div>
+                    {/* B동 */}
+                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-neon-orange" />
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
+                        <span className="text-white font-bold text-lg">B동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">CNC 모형 절단장</span></span>
+                        <span className="text-xs font-mono text-neon-orange bg-neon-orange/10 px-2 py-1 rounded w-fit">10m x 38m</span>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
+                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                        <span className="text-sm text-neon-cyan font-bold">10TON 1대, 5TON 1대</span>
+                      </div>
+                    </div>
+                    {/* C동 */}
+                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-[#00b4d8]" />
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
+                        <span className="text-white font-bold text-lg">C동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">대형 제작 및 가공작업장</span></span>
+                        <span className="text-xs font-mono text-[#00b4d8] bg-[#00b4d8]/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
+                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                        <span className="text-sm text-neon-cyan font-bold">20TON*20TON 2대, 5TON 1대</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : solutions[activeTab].svgGraphic ? (
                 /* 신용등급 카드 그래픽 (SVG 기반) */
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0c1424] to-[#07080b] flex items-center justify-center p-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200/50 flex items-center justify-center p-6">
                   <div className="text-center flex flex-col items-center">
                     {/* 방패와 등급 */}
                     <div className="relative w-20 h-20 flex items-center justify-center mb-3">
                       <div className="absolute inset-0 border-2 border-dashed border-neon-lime rounded-full animate-spin [animation-duration:15s]" />
-                      <div className="w-16 h-16 rounded-full bg-neon-lime/10 border border-neon-lime/40 flex items-center justify-center">
-                        <span className="text-3xl font-black text-white leading-none">B+</span>
+                      <div className="w-16 h-16 rounded-full bg-white border border-neon-lime/30 flex items-center justify-center shadow-sm">
+                        <span className="text-3xl font-black text-slate-800 leading-none">B+</span>
                       </div>
                     </div>
-                    <span className="text-xs font-semibold text-gray-400 tracking-wider">
+                    <span className="text-xs font-bold text-slate-500 tracking-wider">
                       한국기업데이터 공인 신용평가결과
                     </span>
-                    <span className="text-[10px] text-neon-lime mt-1 font-mono tracking-widest">
+                    <span className="text-[10px] text-neon-lime mt-1 font-mono tracking-widest font-bold">
                       FINANCIAL RATING: SECURE (B+)
                     </span>
                   </div>
@@ -230,7 +290,7 @@ export default function Solution() {
               ) : (
                 /* 80TON 크레인 및 공장 가공 이미지 */
                 <>
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-transparent z-10" />
                   <Image
                     src={solutions[activeTab].image}
                     alt={solutions[activeTab].title}
@@ -239,7 +299,7 @@ export default function Solution() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* 정밀 가이드 스캔 라인 */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-neon-lime shadow-[0_0_8px_rgba(57,255,20,0.8)] animate-pulse" />
+                  <div className="absolute inset-x-0 top-0 h-[1px] bg-neon-lime shadow-[0_0_8px_rgba(46,220,16,0.8)] animate-pulse" />
                 </>
               )}
             </div>

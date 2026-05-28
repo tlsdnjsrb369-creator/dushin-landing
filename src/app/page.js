@@ -1,17 +1,15 @@
 "use client";
 
-import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import AboutUs from "@/components/AboutUs";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-dark-bg text-gray-100 font-sans selection:bg-neon-cyan selection:text-black">
-      {/* 네온 마우스 포인터 트레일러 */}
-      <CustomCursor />
+    <div className="relative min-h-screen bg-white text-slate-800 font-sans selection:bg-neon-cyan selection:text-black">
 
       {/* 헤더 네비게이션 */}
       <Navbar />
@@ -19,6 +17,9 @@ export default function Home() {
       <main className="w-full">
         {/* 히어로 섹션 */}
         <Hero />
+
+        {/* 회사소개 섹션 */}
+        <AboutUs />
 
         {/* 산업적 난제 섹션 */}
         <Problem />
