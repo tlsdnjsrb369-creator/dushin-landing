@@ -1,4 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,7 +41,39 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800 selection:bg-neon-cyan selection:text-black">
-        {children}
+        <Navbar />
+        <main className="flex-1 w-full flex flex-col">
+          {children}
+        </main>
+        {/* 푸터 영역 */}
+        <footer className="bg-dark-bg border-t border-dark-border py-12 relative z-10 mt-auto">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            {/* 기업 정보 */}
+            <div className="flex flex-col gap-2">
+              <span className="font-bold text-lg text-white tracking-wider">
+                (주)두신<span className="text-neon-cyan">이엔지</span>
+              </span>
+              <p className="text-xs text-gray-500 leading-relaxed max-w-md">
+                주소: 인천광역시 서구 검단천로356번길 46 (오류동)<br />
+                대표번호: 032-562-5494 | 팩스: 032-562-5495<br />
+                이메일: skj1994@naver.com | 사업자등록번호: 137-81-94279
+              </p>
+            </div>
+
+            {/* 링크 및 저작권 */}
+            <div className="flex flex-col items-start md:items-end gap-3">
+              <div className="flex gap-4">
+                <Link href="/" className="text-xs text-gray-400 hover:text-neon-cyan transition-colors">홈</Link>
+                <Link href="/about" className="text-xs text-gray-400 hover:text-neon-cyan transition-colors">회사소개</Link>
+                <Link href="/services" className="text-xs text-gray-400 hover:text-neon-cyan transition-colors">제공 서비스</Link>
+                <Link href="/inquiry" className="text-xs text-gray-400 hover:text-neon-cyan transition-colors">문의하기</Link>
+              </div>
+              <p className="text-[10px] text-gray-600">
+                Copyright © {new Date().getFullYear()} Dushin Engineering. All Rights Reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

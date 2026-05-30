@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ShieldCheck, Truck, Cpu } from "lucide-react";
 
@@ -118,18 +119,18 @@ export default function Hero() {
 
           {/* CTA 버튼 */}
           <div ref={buttonsRef} className="flex flex-wrap gap-4 mb-12">
-            <a
-              href="#cta"
+            <Link
+              href="/inquiry"
               className="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-lime text-slate-900 font-extrabold tracking-wider rounded-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_4px_15px_rgba(0,210,222,0.2)]"
             >
               제작 문의하기
-            </a>
-            <a
-              href="#solution"
+            </Link>
+            <Link
+              href="/facilities"
               className="px-8 py-4 border border-slate-300 bg-white text-slate-700 font-bold tracking-wider rounded-md hover:border-neon-cyan hover:text-slate-900 transition-all duration-300 shadow-sm"
             >
               보유 설비 보기
-            </a>
+            </Link>
           </div>
 
           {/* 핵심 스펙 요약 카드 (라이트 톤 수정) */}
