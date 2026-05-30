@@ -5,8 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ShieldCheck, Truck, Cpu } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -94,7 +96,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 w-fit mb-6">
             <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse" />
             <span className="text-xs font-bold tracking-wider text-slate-700 uppercase">
-              Heavy Industry Engineering Leader
+              {t('hero_badge')}
             </span>
           </div>
 
@@ -103,9 +105,9 @@ export default function Hero() {
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 mb-6"
           >
-            철강 설비와 프레임의<br />
+            {t('hero_title_1')}<br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-blue-600 to-[#10b981] neon-text-cyan">
-              미래를 포징(Forging)하다
+              {t('hero_title_2')}
             </span>
           </h1>
 
@@ -114,7 +116,7 @@ export default function Hero() {
             ref={subtitleRef}
             className="text-base md:text-lg text-slate-600 max-w-xl leading-relaxed mb-8 font-medium"
           >
-            (주)두신이엔지는 20년 이상의 축적된 엔지니어링 업력과 독보적인 가공 인프라를 바탕으로 제철 설비 및 성형기 프레임을 정밀 설계·제작합니다. 철저한 품질 경영과 칼날 같은 납기 준수로 파트너사에게 두터운 신뢰를 약속합니다.
+            {t('hero_desc')}
           </p>
 
           {/* CTA 버튼 */}
@@ -123,13 +125,13 @@ export default function Hero() {
               href="/inquiry"
               className="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-lime text-slate-900 font-extrabold tracking-wider rounded-md hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_4px_15px_rgba(0,210,222,0.2)]"
             >
-              제작 문의하기
+              {t('hero_btn_inquiry')}
             </Link>
             <Link
               href="/facilities"
               className="px-8 py-4 border border-slate-300 bg-white text-slate-700 font-bold tracking-wider rounded-md hover:border-neon-cyan hover:text-slate-900 transition-all duration-300 shadow-sm"
             >
-              보유 설비 보기
+              {t('hero_btn_facilities')}
             </Link>
           </div>
 
@@ -140,37 +142,37 @@ export default function Hero() {
           >
             {/* 80톤 크레인 카드 */}
             <div className="p-4 rounded-xl bg-white/80 border border-slate-200/80 shadow-md hover:border-neon-cyan/50 hover:shadow-[0_4px_20px_rgba(0,210,222,0.1)] transition-all duration-300 flex flex-col justify-between">
-              <span className="text-slate-400 text-xs font-bold mb-1">인프라 역량</span>
+              <span className="text-slate-400 text-xs font-bold mb-1">{t('hero_stat_infra')}</span>
               <div>
                 <span className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">
                   <span ref={count1Ref}>0</span>
                 </span>
                 <span className="text-[#00b4d8] font-bold text-sm ml-0.5">TON</span>
               </div>
-              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">대형 크레인 가공 인프라</span>
+              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">{t('hero_stat_infra_desc')}</span>
             </div>
 
             {/* 신용등급 카드 */}
             <div className="p-4 rounded-xl bg-white/80 border border-slate-200/80 shadow-md hover:border-neon-lime/50 hover:shadow-[0_4px_20px_rgba(46,220,16,0.1)] transition-all duration-300 flex flex-col justify-between">
-              <span className="text-slate-400 text-xs font-bold mb-1">재무 안정성</span>
+              <span className="text-slate-400 text-xs font-bold mb-1">{t('hero_stat_finance')}</span>
               <div>
                 <span className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">
                   B<span className="text-neon-lime inline-block origin-center hover:scale-110 transition-transform cursor-default font-extrabold">+</span>
                 </span>
               </div>
-              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">은행 기업신용등급평가</span>
+              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">{t('hero_stat_finance_desc')}</span>
             </div>
 
             {/* 설립년도 카드 */}
             <div className="p-4 rounded-xl bg-white/80 border border-slate-200/80 shadow-md hover:border-neon-orange/50 hover:shadow-[0_4px_20px_rgba(255,85,0,0.1)] transition-all duration-300 flex flex-col justify-between">
-              <span className="text-slate-400 text-xs font-bold mb-1">업력</span>
+              <span className="text-slate-400 text-xs font-bold mb-1">{t('hero_stat_exp')}</span>
               <div>
                 <span className="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">
                   <span ref={count3Ref}>0</span>
                 </span>
-                <span className="text-neon-orange font-bold text-sm ml-0.5">년+</span>
+                <span className="text-neon-orange font-bold text-sm ml-0.5">+</span>
               </div>
-              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">장기 신뢰의 업력</span>
+              <span className="text-slate-500 text-xs mt-2 border-t border-slate-100 pt-1 font-semibold">{t('hero_stat_exp_desc')}</span>
             </div>
           </div>
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Archive, Image as ImageIcon } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const projects = [
   { id: 1, client: "SPCO 일본공사", name: "훼로코크스설비 / MNM GUIDE RAIL" },
@@ -24,6 +25,7 @@ const projects = [
 ];
 
 export default function ArchivesPage() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -66,14 +68,14 @@ export default function ArchivesPage() {
             <Archive className="w-8 h-8 text-neon-cyan" />
           </div>
           <span className="text-xs font-bold tracking-widest text-slate-400 uppercase block mb-3">
-            PORTFOLIO & ARCHIVES
+            {t('archives_badge')}
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            2025/2026 주요 <span className="text-[#0077b6]">납품 실적</span>
+            {t('archives_title_1')}<span className="text-[#0077b6]">{t('archives_title_2')}</span>
           </h1>
           <div className="w-16 h-[2px] bg-neon-cyan mx-auto mb-6 shadow-[0_2px_8px_rgba(0,210,222,0.4)]" />
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            (주)두신이엔지가 성공적으로 수행한 국내외 대형 프로젝트 갤러리입니다. 철저한 품질과 신뢰를 바탕으로 산업의 핵심 설비를 책임지고 있습니다.
+            {t('archives_desc')}
           </p>
         </div>
 

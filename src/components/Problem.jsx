@@ -4,8 +4,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PenTool, Settings, SearchCheck, Truck, ArrowRight } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Problem() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -62,33 +64,33 @@ export default function Problem() {
     {
       step: "STEP 01",
       icon: <PenTool className="w-8 h-8 text-neon-orange" />,
-      title: "정밀 설계 및 자재 검수",
+      title: t('problem_step1'),
       subtitle: "Design & Material",
-      desc: "요구사항 분석 후 최적의 제작 방향을 위한 1차 검토 및 정밀 설계(CAD)를 완료하고, 소재 입고 시 엄격한 검수를 거칩니다.",
+      desc: t('problem_step1_desc'),
       flow: ["수주", "설계", "소재입고"]
     },
     {
       step: "STEP 02",
       icon: <Settings className="w-8 h-8 text-neon-orange" />,
-      title: "정밀 가공 및 제관",
+      title: t('problem_step2'),
       subtitle: "Machining & Welding",
-      desc: "고이께 모형 절단기(CNC)를 사용해 정밀 커팅을 거친 후, 당사 최고의 기술진이 베벨링, 가용접 및 정밀 용접을 완벽하게 수행합니다.",
+      desc: t('problem_step2_desc'),
       flow: ["CNC Cutting", "베벨링 및 가용접", "용접"]
     },
     {
       step: "STEP 03",
       icon: <SearchCheck className="w-8 h-8 text-neon-orange" />,
-      title: "비파괴 검사 및 완벽 QC",
+      title: t('problem_step3'),
       subtitle: "QC & Inspection",
-      desc: "무결점 품질을 위해 4대 비파괴검사(RT, UT, MT, PT)와 소둔·쇼트·페인팅 처리를 거치며, 정밀 기계가공 및 기상검사로 오차를 제로화합니다.",
+      desc: t('problem_step3_desc'),
       flow: ["비파괴검사", "소둔, 쇼트, 페인팅", "기계가공", "기상검사"]
     },
     {
       step: "STEP 04",
       icon: <Truck className="w-8 h-8 text-neon-orange" />,
-      title: "최종 조립 및 시운전 납품",
+      title: t('problem_step4'),
       subtitle: "Assembly & Delivery",
-      desc: "가공된 제관품들을 완벽하게 조립하고 자체 시운전 및 발주처 최종 검사를 거쳐 안전한 패킹을 통해 현장 설치 및 납품을 완료합니다.",
+      desc: t('problem_step4_desc'),
       flow: ["조립작업", "시운전", "최종검사", "포장 및 출하", "설치 및 시운전"]
     }
   ];
@@ -104,18 +106,17 @@ export default function Problem() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* 헤더 타이틀 */}
         <div className="problem-title text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest text-neon-orange uppercase block mb-3">
-            MANUFACTURING PROCESS
+            {t('problem_badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            15단계 원스톱 공정을 압축한<br />
-            <span className="text-neon-orange">4단계 핵심 제조 프로세스</span>
+            {t('problem_title_1')}<br />
+            <span className="text-neon-orange">{t('problem_title_2')}</span>
           </h2>
           <div className="w-16 h-[2px] bg-neon-orange mx-auto mb-6 shadow-[0_2px_8px_rgba(255,85,0,0.4)]" />
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            설계부터 납품까지 외주 없이 공장 내부에서 완벽하게 제어되는 당사만의 철저한 공정 시스템을 소개합니다.
+            {t('problem_desc')}
           </p>
         </div>
 

@@ -4,9 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShieldCheck, Anchor, HardHat, Award, ArrowRight } from "lucide-react";
+import { ShieldCheck, TrendingUp, Gem, ArrowRight, Award } from "lucide-react";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Solution() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
   const sectionRef = useRef(null);
   const tabContentRef = useRef(null);
@@ -50,44 +52,44 @@ export default function Solution() {
 
   const solutions = [
     {
-      title: "80TON 크레인 메가 인프라",
-      badge: "INFRASTRUCTURE",
-      shortTitle: "80TON 인프라",
-      icon: <Anchor className="w-5 h-5" />,
-      tagline: "초대형 제철 설비 및 프레임 자체 핸들링",
-      desc: "외주 처리가 불가능한 수십 톤 단위의 대형 성형기 프레임과 철강 가공품을 공장 내부에서 80TON 크레인 설비로 직접 핸들링합니다. 공장 내부에서 조립, 가공, 검사까지 원스톱으로 이루어져 외주 이동에 따른 단차 손실이나 불필요한 물류 지연을 원천 차단합니다.",
+      title: t('sol1_title'),
+      badge: t('sol1_tag'),
+      shortTitle: t('sol1_short'),
+      icon: <Gem className="w-5 h-5" />,
+      tagline: t('sol1_tagline'),
+      desc: t('sol1_desc'),
       highlights: [
-        "80TON 중량 리프팅 크레인 시스템 상시 가동",
-        "외주 의존 없는 원스톱 인하우스(In-house) 생산 체계",
-        "초대형 공작기계(MCT) 및 대형 베드 가공 장비 조화"
+        t('sol1_h1'),
+        t('sol1_h2'),
+        t('sol1_h3')
       ],
       image: "/dushin_crane.png"
     },
     {
-      title: "은행 신용평가등급 B+ 재무안정성",
-      badge: "FINANCIAL TRUST",
-      shortTitle: "신용등급 B+",
-      icon: <ShieldCheck className="w-5 h-5" />,
-      tagline: "장기 대형 프로젝트 계약 이행력 100% 보장",
-      desc: "공인 신용평가기관을 통해 획득한 은행 신용평가등급 B+ 보유. 이는 중소 제조 기업군 내에서 최우수 수준의 현금 흐름과 부채 관리력을 의미합니다. 대기업 및 공공 조달 납품 시 요구되는 최상위 자격을 충족하여 장기 기계 제작 중도금이나 선급금 리스크가 전혀 없습니다.",
+      title: t('sol2_title'),
+      badge: t('sol2_tag'),
+      shortTitle: t('sol2_short'),
+      icon: <TrendingUp className="w-5 h-5" />,
+      tagline: t('sol2_tagline'),
+      desc: t('sol2_desc'),
       highlights: [
-        "은행 신용등급평가 B+의 견고한 재무건전성",
-        "기성금 유용 없는 100% 투명한 자금 운용 약속",
-        "대형 조달 프로젝트의 안정적 이행 보증 및 책임감"
+        t('sol2_h1'),
+        t('sol2_h2'),
+        t('sol2_h3')
       ],
       svgGraphic: true
     },
     {
-      title: "무결점 품질 & 칼날 같은 납기 보장",
-      badge: "QUALITY & DELIVERY",
-      shortTitle: "품질 & 납기 보장",
-      icon: <HardHat className="w-5 h-5" />,
-      tagline: "3D 시뮬레이션 설계 및 전수 검사 시스템",
-      desc: "자체 엔지니어링 시스템으로 3D CAD/CAE 구조 해석을 진행하여 정밀 오차를 사전에 검증합니다. 실시간 공정 관리 소프트웨어로 단계별 일정을 체계적으로 보고하며, 조립 완료 후 ISO 기준에 의거한 레이저 얼라인먼트 전수 검사를 실행하여 약속된 일자에 완벽한 장비를 인도합니다.",
+      title: t('sol3_title'),
+      badge: t('sol3_tag'),
+      shortTitle: t('sol3_short'),
+      icon: <ShieldCheck className="w-5 h-5" />,
+      tagline: t('sol3_tagline'),
+      desc: t('sol3_desc'),
       highlights: [
-        "자체 3D CAD/CAE 시뮬레이션을 통한 구조적 응력 사전 계산",
-        "공정 단계별 실시간 모니터링을 통한 납기 지연 제로화",
-        "출하 전 정밀 레이저 정밀도 테스트 및 성적서 발행"
+        t('sol3_h1'),
+        t('sol3_h2'),
+        t('sol3_h3')
       ],
       image: "/dushin_factory.png"
     }
@@ -109,19 +111,18 @@ export default function Solution() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* 헤더 타이틀 */}
-        <div className="solution-title text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold tracking-widest text-neon-lime uppercase block mb-3">
-            DUSHIN SOLUTIONS
+        <div className="solution-title text-center max-w-3xl mx-auto mb-20 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl" />
+          <span className="relative z-10 text-xs font-bold tracking-widest text-neon-cyan uppercase block mb-3">
+            {t('solution_badge')}
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            품질·납기·신용의 결합,<br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#10b981] to-[#00b4d8] neon-text-lime">
-              두신이엔지 엔지니어링 솔루션
-            </span>
+          <h2 className="relative z-10 text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            {t('solution_title_1')}<br />
+            <span className="text-neon-cyan">{t('solution_title_2')}</span>
           </h2>
-          <div className="w-16 h-[2px] bg-neon-lime mx-auto mb-6 shadow-[0_2px_8px_rgba(46,220,16,0.4)]" />
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            축적된 20년 역량과 대형 설비 인프라, 든든한 재무 신용도로 고객사가 직면한 제조 및 공급망 리스크에 정답을 제시합니다.
+          <div className="w-16 h-[2px] bg-neon-cyan mx-auto mb-6 shadow-[0_2px_8px_rgba(0,210,222,0.4)] relative z-10" />
+          <p className="relative z-10 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+            {t('solution_desc')}
           </p>
         </div>
 
