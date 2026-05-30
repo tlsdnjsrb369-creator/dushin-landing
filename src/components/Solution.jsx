@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ShieldCheck, Anchor, HardHat, Award, ArrowRight, Grid } from "lucide-react";
+import { ShieldCheck, Anchor, HardHat, Award, ArrowRight } from "lucide-react";
 
 export default function Solution() {
   const [activeTab, setActiveTab] = useState(0);
@@ -90,20 +90,6 @@ export default function Solution() {
         "출하 전 정밀 레이저 정밀도 테스트 및 성적서 발행"
       ],
       image: "/dushin_factory.png"
-    },
-    {
-      title: "공장 설비 및 레이아웃",
-      badge: "FACTORY LAYOUT",
-      shortTitle: "공장 레이아웃 & 크레인",
-      icon: <Grid className="w-5 h-5" />,
-      tagline: "450평 규모의 체계화된 제조 공간",
-      desc: "제철설비 및 대형 프레스 프레임 제작에 최적화된 동선과 설비를 구축하고 있습니다. 각 동별 세분화된 작업장과 막강한 호이스트(HOIST) 리프팅 스펙을 통해 초대형 구조물을 안전하고 신속하게 핸들링합니다.",
-      highlights: [
-        "전체 부지 450평 (가로 38m x 세로 39m)",
-        "공정 단계별 전문화된 A, B, C동 완비",
-        "최대 20TON 듀얼 호이스트 시스템 등 압도적 인양 능력"
-      ],
-      isInfographic: true
     }
   ];
 
@@ -222,53 +208,7 @@ export default function Solution() {
 
             {/* 비주얼 에셋 영역 */}
             <div className="w-full h-72 md:h-80 relative rounded-xl overflow-hidden border border-slate-200 shadow-inner group">
-              {solutions[activeTab].isInfographic ? (
-                /* 공장 레이아웃 및 크레인 인포그래픽 */
-                <div className="absolute inset-0 bg-slate-900 flex flex-col p-6 overflow-y-auto hide-scrollbar">
-                  <div className="text-center mb-6 shrink-0">
-                    <span className="text-neon-cyan font-bold tracking-widest text-xs mb-1 block">FACTORY SPECIFICATION</span>
-                    <h5 className="text-white font-black text-xl">전체 면적: 450평 (38m x 39m)</h5>
-                  </div>
-                  <div className="grid grid-cols-1 gap-4 pb-4">
-                    {/* A동 */}
-                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-neon-lime" />
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
-                        <span className="text-white font-bold text-lg">A동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">중형 제작 및 조립작업장</span></span>
-                        <span className="text-xs font-mono text-neon-lime bg-neon-lime/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
-                      </div>
-                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
-                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
-                        <span className="text-sm text-neon-cyan font-bold">10TON*5TON 2대, 5TON 1대</span>
-                      </div>
-                    </div>
-                    {/* B동 */}
-                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-neon-orange" />
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
-                        <span className="text-white font-bold text-lg">B동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">CNC 모형 절단장</span></span>
-                        <span className="text-xs font-mono text-neon-orange bg-neon-orange/10 px-2 py-1 rounded w-fit">10m x 38m</span>
-                      </div>
-                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
-                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
-                        <span className="text-sm text-neon-cyan font-bold">10TON 1대, 5TON 1대</span>
-                      </div>
-                    </div>
-                    {/* C동 */}
-                    <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-[#00b4d8]" />
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
-                        <span className="text-white font-bold text-lg">C동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-2 block sm:inline mt-1 sm:mt-0">대형 제작 및 가공작업장</span></span>
-                        <span className="text-xs font-mono text-[#00b4d8] bg-[#00b4d8]/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
-                      </div>
-                      <div className="bg-slate-900/50 rounded p-3 border border-slate-800">
-                        <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
-                        <span className="text-sm text-neon-cyan font-bold">20TON*20TON 2대, 5TON 1대</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : solutions[activeTab].svgGraphic ? (
+              {solutions[activeTab].svgGraphic ? (
                 /* 신용등급 카드 그래픽 (SVG 기반) */
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200/50 flex items-center justify-center p-6">
                   <div className="text-center flex flex-col items-center">

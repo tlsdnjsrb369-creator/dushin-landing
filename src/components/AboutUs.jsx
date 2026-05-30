@@ -97,7 +97,7 @@ export default function AboutUs() {
               <span className="text-base font-semibold text-slate-800">2002년 4월 1일</span>
             </div>
             <div className="flex flex-col border-b border-slate-100 pb-4 md:col-span-2">
-              <span className="text-xs font-bold text-slate-400 mb-1">대표자</span>
+              <span className="text-xs font-bold text-slate-400 mb-1">대표이사</span>
               <span className="text-base font-semibold text-slate-800">신건주</span>
             </div>
             <div className="flex flex-col border-b border-slate-100 pb-4 md:col-span-2">
@@ -232,7 +232,7 @@ export default function AboutUs() {
         );
 
       case 5:
-        // 회사전경 및 설비 (갤러리)
+        // 회사전경 및 설비 (갤러리 + 레이아웃 통합)
         const gallery = [
           { src: "/view-1.jpg", title: "㈜두신이엔지 회사 전경 1" },
           { src: "/view-2.jpg", title: "㈜두신이엔지 회사 전경 2" },
@@ -240,28 +240,77 @@ export default function AboutUs() {
           { src: "/factory-c.jpg", title: "C동 대형 제작 및 공장 전경" }
         ];
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
-            {gallery.map((img, idx) => (
-              <div key={idx} className="relative aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden group border border-slate-200">
-                <div className="absolute inset-0 bg-slate-200 animate-pulse" /> {/* 이미지 없을 시 로딩 스켈레톤 효과 */}
-                <img 
-                  src={img.src} 
-                  alt={img.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-10"
-                  onError={(e) => {
-                    // 이미지가 없을 경우 빈 공간 유지
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                {/* 그라데이션 오버레이 및 텍스트 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-20" />
-                <div className="absolute bottom-0 left-0 w-full p-4 z-30 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h4 className="text-white font-bold text-sm md:text-base drop-shadow-md">
-                    {img.title}
-                  </h4>
+          <div className="flex flex-col gap-8 h-full">
+            {/* 상단: 전경 갤러리 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {gallery.map((img, idx) => (
+                <div key={idx} className="relative aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden group border border-slate-200">
+                  <div className="absolute inset-0 bg-slate-200 animate-pulse" /> {/* 이미지 없을 시 로딩 스켈레톤 효과 */}
+                  <img 
+                    src={img.src} 
+                    alt={img.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-10"
+                    onError={(e) => {
+                      // 이미지가 없을 경우 빈 공간 유지
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  {/* 그라데이션 오버레이 및 텍스트 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-20" />
+                  <div className="absolute bottom-0 left-0 w-full p-4 z-30 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-white font-bold text-sm md:text-base drop-shadow-md">
+                      {img.title}
+                    </h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* 하단: 공장 레이아웃 및 크레인 스펙 */}
+            <div className="bg-slate-900 rounded-xl p-6 flex flex-col gap-5 border border-slate-800">
+              <div className="text-center mb-1">
+                <span className="text-neon-cyan font-bold tracking-widest text-xs mb-1 block">FACTORY SPECIFICATION</span>
+                <h5 className="text-white font-black text-lg">전체 면적: 450평 (38m x 39m)</h5>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                {/* A동 */}
+                <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-neon-lime" />
+                  <div className="flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:items-start gap-2 mb-1">
+                    <span className="text-white font-bold text-base md:text-lg">A동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1 sm:ml-2 block sm:inline lg:block mt-1 sm:mt-0 lg:mt-1">중형 제작 및 조립작업장</span></span>
+                    <span className="text-xs font-mono text-neon-lime bg-neon-lime/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
+                  </div>
+                  <div className="bg-slate-900/50 rounded p-3 border border-slate-800 mt-auto">
+                    <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                    <span className="text-sm text-neon-cyan font-bold">10TON*5TON 2대, 5TON 1대</span>
+                  </div>
+                </div>
+                {/* B동 */}
+                <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-neon-orange" />
+                  <div className="flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:items-start gap-2 mb-1">
+                    <span className="text-white font-bold text-base md:text-lg">B동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1 sm:ml-2 block sm:inline lg:block mt-1 sm:mt-0 lg:mt-1">CNC 모형 절단장</span></span>
+                    <span className="text-xs font-mono text-neon-orange bg-neon-orange/10 px-2 py-1 rounded w-fit">10m x 38m</span>
+                  </div>
+                  <div className="bg-slate-900/50 rounded p-3 border border-slate-800 mt-auto">
+                    <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                    <span className="text-sm text-neon-cyan font-bold">10TON 1대, 5TON 1대</span>
+                  </div>
+                </div>
+                {/* C동 */}
+                <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700/50 flex flex-col gap-2 relative overflow-hidden group/card hover:bg-slate-800 transition-colors">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-[#00b4d8]" />
+                  <div className="flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:items-start gap-2 mb-1">
+                    <span className="text-white font-bold text-base md:text-lg">C동 <span className="text-xs sm:text-sm font-medium text-slate-400 ml-1 sm:ml-2 block sm:inline lg:block mt-1 sm:mt-0 lg:mt-1">대형 제작 및 가공작업장</span></span>
+                    <span className="text-xs font-mono text-[#00b4d8] bg-[#00b4d8]/10 px-2 py-1 rounded w-fit">14.5m x 38m</span>
+                  </div>
+                  <div className="bg-slate-900/50 rounded p-3 border border-slate-800 mt-auto">
+                    <span className="text-[10px] font-bold text-slate-500 block mb-1">HOIST SPEC</span>
+                    <span className="text-sm text-neon-cyan font-bold">20TON*20TON 2대, 10TON 1대</span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         );
 
