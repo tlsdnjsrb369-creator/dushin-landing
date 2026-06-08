@@ -45,11 +45,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* 로고 영역 */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0">
-            <Image src="/logo.png" alt="두신이엔지 로고" fill sizes="40px" className="object-contain" priority />
+          <div className="relative h-10 w-10 md:h-12 md:w-12 shrink-0">
+            <Image src="/logo.png" alt="(주)두신이엔지 로고" fill sizes="(max-width: 768px) 40px, 48px" className="object-contain object-left" priority />
           </div>
-          <span className="font-sans font-extrabold text-xl tracking-wider text-slate-900 transition-colors duration-300">
-            두신이엔지
+          <span className="text-xl md:text-2xl font-black tracking-tight text-slate-900 group-hover:text-brand-blue transition-colors">
+            (주)두신이엔지
           </span>
         </Link>
 

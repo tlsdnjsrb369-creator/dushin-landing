@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-800 selection:bg-neon-cyan selection:text-black">
+      <body className="min-h-full flex flex-col bg-white text-slate-800 selection:bg-brand-blue selection:text-white">
         <Providers>
           <Navbar />
           <main className="flex-1 w-full flex flex-col">

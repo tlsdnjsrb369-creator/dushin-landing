@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-cyan: #00d2de; /* 가독성을 위해 밝기를 살짝 낮춘 네온 싸이언 */
-  --color-neon-lime: #2edc10; /* 가독성을 높인 네온 라임 */
-  --color-neon-orange: #ff5500; /* 네온 오렌지 */
+  --color-brand-blue: #0055A4; /* 두신이엔지 로고 파란색 */
+  --color-brand-red: #E50914;  /* 두신이엔지 로고 빨간색 */
+  --color-brand-navy: #0B1B3D; /* 두신이엔지 로고 검은색/네이비 */
   --color-dark-bg: #ffffff;
   --color-dark-card: #f8fafc; /* slate-50 */
   --color-dark-border: #e2e8f0; /* slate-200 */
@@ -26,43 +26,43 @@ body {
 /* 라이트 모드 테크 격자 그리드 배경 */
 .tech-grid {
   background-image: 
-    linear-gradient(rgba(0, 210, 222, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 210, 222, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(0, 85, 164, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 85, 164, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   background-position: center center;
 }
 
 /* 라이트 모드용 방사형 광원 효과 */
 .glow-radial {
-  background: radial-gradient(circle at center, rgba(0, 210, 222, 0.1) 0%, rgba(46, 220, 16, 0.02) 60%, transparent 100%);
+  background: radial-gradient(circle at center, rgba(0, 85, 164, 0.05) 0%, rgba(229, 9, 20, 0.02) 60%, transparent 100%);
 }
 
 .glow-orange-radial {
-  background: radial-gradient(circle at center, rgba(255, 85, 0, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(229, 9, 20, 0.04) 0%, transparent 70%);
 }
 
-/* 네온 텍스트 및 박스 그림자 효과 (라이트 모드 최적화) */
-.neon-text-cyan {
-  text-shadow: 0 0 8px rgba(0, 210, 222, 0.3);
+/* 텍스트 및 박스 그림자 효과 */
+.brand-text-blue {
+  text-shadow: 0 0 8px rgba(0, 85, 164, 0.2);
 }
 
-.neon-text-lime {
-  text-shadow: 0 0 8px rgba(46, 220, 16, 0.3);
+.brand-text-red {
+  text-shadow: 0 0 8px rgba(229, 9, 20, 0.2);
 }
 
-.neon-border-cyan {
-  box-shadow: 0 4px 20px rgba(0, 210, 222, 0.08), 0 0 10px rgba(0, 210, 222, 0.03);
-  border-color: rgba(0, 210, 222, 0.4);
+.brand-border-blue {
+  box-shadow: 0 4px 20px rgba(0, 85, 164, 0.08), 0 0 10px rgba(0, 85, 164, 0.03);
+  border-color: rgba(0, 85, 164, 0.4);
 }
 
-.neon-border-lime {
-  box-shadow: 0 4px 20px rgba(46, 220, 16, 0.08), 0 0 10px rgba(46, 220, 16, 0.03);
-  border-color: rgba(46, 220, 16, 0.4);
+.brand-border-red {
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.08), 0 0 10px rgba(229, 9, 20, 0.03);
+  border-color: rgba(229, 9, 20, 0.4);
 }
 
-.neon-border-orange {
-  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.08), 0 0 10px rgba(255, 85, 0, 0.03);
-  border-color: rgba(255, 85, 0, 0.4);
+.brand-border-navy {
+  box-shadow: 0 4px 20px rgba(11, 27, 61, 0.08), 0 0 10px rgba(11, 27, 61, 0.03);
+  border-color: rgba(11, 27, 61, 0.4);
 }
 
 /* 스무스 스크롤 및 스크롤바 */
@@ -84,8 +84,8 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00d2de;
-  box-shadow: 0 0 8px rgba(0, 210, 222, 0.4);
+  background: #0055A4;
+  box-shadow: 0 0 8px rgba(0, 85, 164, 0.4);
 }
 
 /* 화이트 글래스모피즘 */

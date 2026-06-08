@@ -37,19 +37,19 @@ export default function CTA() {
     <section id="cta" className="relative py-28 bg-white border-t border-slate-200/80 overflow-hidden">
       {/* 백그라운드 광원 효과 */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] glow-radial opacity-20 pointer-events-none rounded-full" />
-      <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent" />
+      <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* 왼쪽 안내 텍스트 (12열 중 5열) */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <span className="text-xs font-bold tracking-widest text-neon-cyan uppercase block mb-3">
+            <span className="text-xs font-bold tracking-widest text-brand-blue uppercase block mb-3">
               {t('cta_badge')}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
               {t('cta_title_1')}<br />
-              <span className="text-[#00b4d8]">{t('cta_title_2')}</span>
+              <span className="text-brand-blue">{t('cta_title_2')}</span>
             </h2>
             <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8 font-medium">
               {t('cta_desc')}
@@ -58,8 +58,8 @@ export default function CTA() {
             {/* 신뢰 배지 그룹 */}
             <div className="flex flex-col gap-4 border-t border-slate-200/80 pt-8">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center shadow-sm">
-                  <span className="text-xs font-bold text-[#0096c7]">B+</span>
+                <div className="w-8 h-8 rounded-full bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center shadow-sm">
+                  <span className="text-xs font-bold text-brand-blue">B+</span>
                 </div>
                 <div>
                   <span className="text-sm font-bold text-slate-800 block">은행 신용평가등급 B+</span>
@@ -68,8 +68,8 @@ export default function CTA() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-neon-lime/10 border border-neon-lime/30 flex items-center justify-center shadow-sm">
-                  <span className="text-xs font-bold text-[#21b009]">80T</span>
+                <div className="w-8 h-8 rounded-full bg-brand-red/10 border border-brand-red/30 flex items-center justify-center shadow-sm">
+                  <span className="text-xs font-bold text-brand-red">80T</span>
                 </div>
                 <div>
                   <span className="text-sm font-bold text-slate-800 block">80TON 크레인 자체 인프라</span>
@@ -84,8 +84,8 @@ export default function CTA() {
             <div className="p-8 md:p-10 rounded-2xl bg-white border border-slate-200/80 shadow-xl relative overflow-hidden">
               {submitted ? (
                 <div className="text-center py-16">
-                  <div className="w-16 h-16 rounded-full bg-neon-cyan/10 border border-neon-cyan flex items-center justify-center mx-auto mb-6 animate-bounce">
-                    <Send className="w-6 h-6 text-neon-cyan" />
+                  <div className="w-16 h-16 rounded-full bg-brand-blue/10 border border-brand-blue flex items-center justify-center mx-auto mb-6 animate-bounce">
+                    <Send className="w-6 h-6 text-brand-blue" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-3">{t('cta_success')}</h3>
                   <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed font-medium">
@@ -93,7 +93,7 @@ export default function CTA() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-8 px-6 py-2.5 text-xs font-semibold text-slate-500 hover:text-slate-800 border border-slate-200 hover:border-neon-cyan rounded transition-all duration-300"
+                    className="mt-8 px-6 py-2.5 text-xs font-semibold text-slate-500 hover:text-slate-800 border border-slate-200 hover:border-brand-blue rounded transition-all duration-300"
                   >
                     {t('cta_reset')}
                   </button>
@@ -101,7 +101,7 @@ export default function CTA() {
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <h3 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-neon-cyan" />
+                    <FileText className="w-5 h-5 text-brand-blue" />
                     {t('cta_form_title')}
                   </h3>
 
@@ -118,7 +118,7 @@ export default function CTA() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder={t('cta_form_company_ph')}
-                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-neon-cyan focus:shadow-[0_0_10px_rgba(0,210,222,0.1)] transition-all"
+                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all"
                       />
                     </div>
 
@@ -132,7 +132,7 @@ export default function CTA() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder={t('cta_form_name_ph')}
-                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-neon-cyan focus:shadow-[0_0_10px_rgba(0,210,222,0.1)] transition-all"
+                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all"
                       />
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function CTA() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder={t('cta_form_phone_ph')}
-                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-neon-cyan focus:shadow-[0_0_10px_rgba(0,210,222,0.1)] transition-all"
+                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all"
                       />
                     </div>
 
@@ -166,7 +166,7 @@ export default function CTA() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder={t('cta_form_email_ph')}
-                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-neon-cyan focus:shadow-[0_0_10px_rgba(0,210,222,0.1)] transition-all"
+                        className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all"
                       />
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export default function CTA() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder={t('cta_form_msg_ph')}
-                      className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-neon-cyan focus:shadow-[0_0_10px_rgba(0,210,222,0.1)] transition-all resize-none"
+                      className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all resize-none"
                     />
                   </div>
 
@@ -193,7 +193,7 @@ export default function CTA() {
                       name="agree"
                       checked={formData.agree}
                       onChange={handleChange}
-                      className="w-4 h-4 accent-neon-cyan border-slate-200 rounded cursor-pointer"
+                      className="w-4 h-4 accent-brand-blue border-slate-200 rounded cursor-pointer"
                     />
                     <label htmlFor="agree" className="text-xs text-slate-500 select-none cursor-pointer font-semibold">
                       {t('cta_form_agree')}
@@ -203,7 +203,7 @@ export default function CTA() {
                   {/* 전송 버튼 */}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-neon-cyan to-neon-lime text-slate-800 font-extrabold tracking-wider rounded-lg hover:scale-[1.02] active:scale-98 transition-all duration-300 shadow-[0_4px_15px_rgba(0,210,222,0.15)] flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-gradient-to-r from-brand-blue to-blue-600 text-white font-extrabold tracking-wider rounded-lg hover:scale-[1.02] active:scale-98 transition-all duration-300 shadow-[0_4px_15px_rgba(0,85,164,0.15)] flex items-center justify-center gap-2"
                   >
                     {t('cta_form_submit')}
                     <Send className="w-4 h-4 stroke-[2.5]" />

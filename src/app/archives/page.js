@@ -64,16 +64,16 @@ export default function ArchivesPage() {
         
         {/* 헤더 섹션 */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
-            <Archive className="w-8 h-8 text-neon-cyan" />
+          <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mx-auto mb-6 shadow-sm">
+            <Archive className="w-8 h-8 text-brand-blue" />
           </div>
           <span className="text-xs font-bold tracking-widest text-slate-400 uppercase block mb-3">
             {t('archives_badge')}
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            {t('archives_title_1')}<span className="text-[#0077b6]">{t('archives_title_2')}</span>
+            {t('archives_title_1')}<span className="text-brand-blue">{t('archives_title_2')}</span>
           </h1>
-          <div className="w-16 h-[2px] bg-neon-cyan mx-auto mb-6 shadow-[0_2px_8px_rgba(0,210,222,0.4)]" />
+          <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)]" />
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
             {t('archives_desc')}
           </p>
@@ -84,12 +84,12 @@ export default function ArchivesPage() {
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="project-card flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+              className="project-card flex flex-col bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* 프로젝트 헤더 정보 */}
-              <div className="p-6 border-b border-slate-100 bg-slate-50/50 group-hover:bg-neon-cyan/5 transition-colors duration-300">
+              <div className="p-6 border-b border-slate-100 bg-slate-50/50 group-hover:bg-brand-blue/5 transition-colors duration-300">
                 <div className="flex justify-between items-start mb-2">
-                  <span className="text-xs font-mono font-bold text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded">
+                  <span className="text-xs font-mono font-bold text-brand-blue bg-brand-blue/10 px-2 py-1 rounded">
                     PROJ-{String(project.id).padStart(2, '0')}
                   </span>
                   <span className="text-xs font-bold text-slate-400 tracking-wider">

@@ -112,15 +112,15 @@ export default function Solution() {
         
         {/* 헤더 타이틀 */}
         <div className="solution-title text-center max-w-3xl mx-auto mb-20 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl" />
-          <span className="relative z-10 text-xs font-bold tracking-widest text-neon-cyan uppercase block mb-3">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-blue/5 rounded-full blur-3xl" />
+          <span className="relative z-10 text-xs font-bold tracking-widest text-brand-blue uppercase block mb-3">
             {t('solution_badge')}
           </span>
           <h2 className="relative z-10 text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
             {t('solution_title_1')}<br />
-            <span className="text-neon-cyan">{t('solution_title_2')}</span>
+            <span className="text-brand-blue">{t('solution_title_2')}</span>
           </h2>
-          <div className="w-16 h-[2px] bg-neon-cyan mx-auto mb-6 shadow-[0_2px_8px_rgba(0,210,222,0.4)] relative z-10" />
+          <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)] relative z-10" />
           <p className="relative z-10 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
             {t('solution_desc')}
           </p>
@@ -137,14 +137,14 @@ export default function Solution() {
                 onClick={() => setActiveTab(idx)}
                 className={`w-full p-5 rounded-xl border flex items-center gap-4 text-left transition-all duration-300 ${
                   activeTab === idx
-                    ? "bg-white border-neon-lime shadow-md translate-x-2 text-slate-800"
+                    ? "bg-white border-brand-red shadow-md translate-x-2 text-slate-800"
                     : "bg-slate-50/80 border-slate-200/80 text-slate-500 hover:border-slate-300 hover:text-slate-700"
                 }`}
               >
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${
                     activeTab === idx
-                      ? "bg-neon-lime text-slate-900 shadow-sm"
+                      ? "bg-brand-red text-white shadow-sm"
                       : "bg-slate-200 text-slate-500"
                   }`}
                 >
@@ -171,7 +171,7 @@ export default function Solution() {
               {/* 상단 레이아웃 배지 */}
               <div className="flex items-center justify-between border-b border-slate-200/80 pb-6 mb-6">
                 <div>
-                  <span className="text-xs font-mono text-neon-lime tracking-widest uppercase block mb-1">
+                  <span className="text-xs font-mono text-brand-red tracking-widest uppercase block mb-1">
                     {solutions[activeTab].badge}
                   </span>
                   <h3 className="text-2xl font-extrabold text-slate-800">
@@ -184,7 +184,7 @@ export default function Solution() {
               </div>
 
               {/* 솔루션 태그라인 */}
-              <h4 className="text-lg font-bold text-[#0077b6] mb-4 flex items-center gap-2">
+              <h4 className="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
                 <ArrowRight className="w-5 h-5" />
                 {solutions[activeTab].tagline}
               </h4>
@@ -198,7 +198,7 @@ export default function Solution() {
               <div className="flex flex-col gap-3 mb-8">
                 {solutions[activeTab].highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <Award className="w-5 h-5 text-[#21b009] shrink-0 mt-0.5" />
+                    <Award className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                     <span className="text-slate-700 text-sm md:text-base font-semibold">
                       {highlight}
                     </span>
@@ -215,15 +215,15 @@ export default function Solution() {
                   <div className="text-center flex flex-col items-center">
                     {/* 방패와 등급 */}
                     <div className="relative w-20 h-20 flex items-center justify-center mb-3">
-                      <div className="absolute inset-0 border-2 border-dashed border-neon-lime rounded-full animate-spin [animation-duration:15s]" />
-                      <div className="w-16 h-16 rounded-full bg-white border border-neon-lime/30 flex items-center justify-center shadow-sm">
+                      <div className="absolute inset-0 border-2 border-dashed border-brand-red rounded-full animate-spin [animation-duration:15s]" />
+                      <div className="w-16 h-16 rounded-full bg-white border border-brand-red/30 flex items-center justify-center shadow-sm">
                         <span className="text-3xl font-black text-slate-800 leading-none">B+</span>
                       </div>
                     </div>
                     <span className="text-xs font-bold text-slate-500 tracking-wider">
                       한국기업데이터 공인 신용평가결과
                     </span>
-                    <span className="text-[10px] text-neon-lime mt-1 font-mono tracking-widest font-bold">
+                    <span className="text-[10px] text-brand-red mt-1 font-mono tracking-widest font-bold">
                       FINANCIAL RATING: SECURE (B+)
                     </span>
                   </div>
@@ -240,7 +240,7 @@ export default function Solution() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* 정밀 가이드 스캔 라인 */}
-                  <div className="absolute inset-x-0 top-0 h-[1px] bg-neon-lime shadow-[0_0_8px_rgba(46,220,16,0.8)] animate-pulse" />
+                  <div className="absolute inset-x-0 top-0 h-[1px] bg-brand-red shadow-[0_0_8px_rgba(229,9,20,0.8)] animate-pulse" />
                 </>
               )}
             </div>
