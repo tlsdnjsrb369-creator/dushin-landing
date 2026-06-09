@@ -198,8 +198,8 @@ export default function AboutUs() {
             {/* 상단: 대형 외부 전경 갤러리 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { src: "/factory_exterior_1.jpg", title: "압도적 스케일의 대형 제철 설비 제작 전경" },
-                { src: "/factory_exterior_2.jpg", title: "최첨단 인프라를 갖춘 (주)두신이엔지 외관" }
+                { src: "/factory_exterior.jpg", title: "압도적 스케일의 대형 제철 설비 제작 전경" },
+                { src: "/factory_exterior2.jpg", title: "최첨단 인프라를 갖춘 (주)두신이엔지 외관" }
               ].map((img, idx) => (
                 <div key={idx} className="relative aspect-video lg:aspect-[21/9] bg-slate-100 rounded-2xl overflow-hidden group border border-slate-200 shadow-md">
                   <div className="absolute inset-0 bg-slate-200 animate-pulse" /> {/* 로딩 스켈레톤 */}
