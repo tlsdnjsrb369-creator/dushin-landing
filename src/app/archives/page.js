@@ -55,89 +55,87 @@ export default function ArchivesPage() {
   }, []);
 
   return (
-    <section className="relative min-h-screen py-24 bg-slate-50 overflow-hidden" ref={containerRef}>
-      {/* 장식용 배경 요소 */}
-      <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] glow-radial opacity-30 pointer-events-none rounded-full" />
-      <div className="absolute bottom-[20%] right-[-15%] w-[600px] h-[600px] glow-orange-radial opacity-20 pointer-events-none rounded-full" />
+    <section className="relative min-h-screen py-24 bg-white overflow-hidden" ref={containerRef}>
+      {/* 장식용 배경 요소 제거하여 극도의 미니멀리즘 유지 */}
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* 헤더 섹션 */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mx-auto mb-6 shadow-sm">
-            <Archive className="w-8 h-8 text-brand-blue" />
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="w-16 h-16 rounded-none bg-white border border-black flex items-center justify-center mx-auto mb-8 transition-transform hover:scale-105 duration-300">
+            <Archive className="w-8 h-8 text-black" strokeWidth={1.5} />
           </div>
-          <span className="text-xs font-bold tracking-widest text-slate-400 uppercase block mb-3">
+          <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-black uppercase block mb-4">
             {t('archives_badge')}
           </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            {t('archives_title_1')}<span className="text-brand-blue">{t('archives_title_2')}</span>
+          <h1 className="text-4xl md:text-6xl font-black text-black mb-8 tracking-tighter uppercase leading-none">
+            {t('archives_title_1')}<br/><span className="font-light">{t('archives_title_2')}</span>
           </h1>
-          <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)]" />
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+          <div className="w-24 h-[1px] bg-black mx-auto mb-8" />
+          <p className="text-black/70 text-sm md:text-base leading-relaxed font-light tracking-wide max-w-xl mx-auto">
             {t('archives_desc')}
           </p>
         </div>
 
         {/* 갤러리 그리드 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="project-card flex flex-col bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="project-card flex flex-col bg-white border border-black overflow-hidden group hover:-translate-y-1 transition-transform duration-500"
             >
               {/* 프로젝트 헤더 정보 */}
-              <div className="p-6 border-b border-slate-100 bg-slate-50/50 group-hover:bg-brand-blue/5 transition-colors duration-300">
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-xs font-mono font-bold text-brand-blue bg-brand-blue/10 px-2 py-1 rounded">
+              <div className="p-6 border-b border-black bg-white group-hover:bg-black group-hover:text-white transition-colors duration-500">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-xs font-mono font-bold px-2 py-1 border border-current">
                     PROJ-{String(project.id).padStart(2, '0')}
                   </span>
-                  <span className="text-xs font-bold text-slate-400 tracking-wider">
+                  <span className="text-[10px] font-bold tracking-widest uppercase opacity-70">
                     {project.client}
                   </span>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-tight">
+                <h3 className="text-xl md:text-2xl font-black leading-tight tracking-tight">
                   {project.name}
                 </h3>
               </div>
 
               {/* 이미지 슬롯 2장 구획 */}
-              <div className="grid grid-cols-2 gap-1 p-4 bg-white">
+              <div className="grid grid-cols-2 gap-px bg-black p-px">
                 {/* 첫 번째 이미지 슬롯 */}
-                <div className="relative aspect-[4/3] bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center group/img">
-                  <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+                <div className="relative aspect-[4/3] bg-white overflow-hidden flex items-center justify-center group/img">
+                  <div className="absolute inset-0 bg-gray-100 animate-pulse" />
                   <Image 
                     src={`/project${project.id}_1.jpg`} 
                     alt={`${project.name} 사진 1`}
                     fill
-                    sizes="(max-w-768px) 50vw, 25vw"
-                    className="object-cover z-10 transition-transform duration-500 group-hover/img:scale-110"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover z-10 transition-transform duration-700 group-hover/img:scale-105 grayscale group-hover/img:grayscale-0"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
-                  <div className="z-0 flex flex-col items-center gap-2 text-slate-400 opacity-50">
-                    <ImageIcon className="w-6 h-6" />
-                    <span className="text-[10px] font-bold">Image 1</span>
+                  <div className="z-0 flex flex-col items-center gap-2 text-black/20">
+                    <ImageIcon className="w-6 h-6" strokeWidth={1} />
+                    <span className="text-[10px] font-bold tracking-widest uppercase">Image 01</span>
                   </div>
                 </div>
 
                 {/* 두 번째 이미지 슬롯 */}
-                <div className="relative aspect-[4/3] bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center group/img">
-                  <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+                <div className="relative aspect-[4/3] bg-white overflow-hidden flex items-center justify-center group/img">
+                  <div className="absolute inset-0 bg-gray-100 animate-pulse" />
                   <Image 
                     src={`/project${project.id}_2.jpg`} 
                     alt={`${project.name} 사진 2`}
                     fill
-                    sizes="(max-w-768px) 50vw, 25vw"
-                    className="object-cover z-10 transition-transform duration-500 group-hover/img:scale-110"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover z-10 transition-transform duration-700 group-hover/img:scale-105 grayscale group-hover/img:grayscale-0"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
-                  <div className="z-0 flex flex-col items-center gap-2 text-slate-400 opacity-50">
-                    <ImageIcon className="w-6 h-6" />
-                    <span className="text-[10px] font-bold">Image 2</span>
+                  <div className="z-0 flex flex-col items-center gap-2 text-black/20">
+                    <ImageIcon className="w-6 h-6" strokeWidth={1} />
+                    <span className="text-[10px] font-bold tracking-widest uppercase">Image 02</span>
                   </div>
                 </div>
               </div>
