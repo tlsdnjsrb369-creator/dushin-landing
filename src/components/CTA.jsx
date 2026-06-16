@@ -62,8 +62,8 @@ export default function CTA() {
                   <span className="text-xs font-bold text-brand-blue">B+</span>
                 </div>
                 <div>
-                  <span className="text-sm font-bold text-slate-800 block">은행 신용평가등급 B+</span>
-                  <span className="text-xs text-slate-500 font-medium">부실 리스크 없는 견고한 재무건전성 보장</span>
+                  <span className="text-sm font-bold text-slate-800 block">{t('cta_badge1_title')}</span>
+                  <span className="text-xs text-slate-500 font-medium">{t('cta_badge1_desc')}</span>
                 </div>
               </div>
 
@@ -72,8 +72,8 @@ export default function CTA() {
                   <span className="text-xs font-bold text-brand-red">80T</span>
                 </div>
                 <div>
-                  <span className="text-sm font-bold text-slate-800 block">80TON 크레인 자체 인프라</span>
-                  <span className="text-xs text-slate-500 font-medium">초대형 구조물 및 성형기 프레임 원스톱 가공</span>
+                  <span className="text-sm font-bold text-slate-800 block">{t('cta_badge2_title')}</span>
+                  <span className="text-xs text-slate-500 font-medium">{t('cta_badge2_desc')}</span>
                 </div>
               </div>
             </div>

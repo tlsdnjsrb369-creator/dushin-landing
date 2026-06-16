@@ -127,7 +127,7 @@ export default function Hero() {
             href="/about"
             className="px-8 py-4 border-2 border-slate-800 bg-white/70 backdrop-blur-sm text-slate-800 font-bold tracking-wider rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-sm"
           >
-            회사 전경 및 설비
+            {t('hero_btn_facilities')}
           </Link>
         </div>
 

@@ -1,6 +1,27 @@
 export const translations = {
   ko: {
 
+    cta_badge1_title: "은행 신용평가등급 B+",
+    cta_badge1_desc: "부실 리스크 없는 견고한 재무건전성 보장",
+    cta_badge2_title: "80TON 크레인 자체 인프라",
+    cta_badge2_desc: "초대형 구조물 및 성형기 프레임 원스톱 가공",
+
+    sol1_short: "80TON 크레인 인프라",
+    sol1_tagline: "초대형 설비, 자체 처리 능력 보유",
+    sol1_h1: "80TON 크레인 자체 인프라",
+    sol1_h2: "수십 톤 단위 대형 제철 설비 핸들링",
+    sol1_h3: "외주 없는 독립적 공장 내 처리",
+    sol2_short: "재무안정성 B+",
+    sol2_tagline: "장기 프로젝트를 완주하는 재무 체력",
+    sol2_h1: "은행 신용평가등급 B+",
+    sol2_h2: "부실 리스크 없는 견고한 재무건전성 보장",
+    sol2_h3: "장기 대형 프로젝트 계약 이행력 100%",
+    sol3_short: "무결점 품질 & 납기",
+    sol3_tagline: "오차 제로, 납기 지연 제로 시스템",
+    sol3_h1: "4대 비파괴검사(RT/UT/MT/PT) 전수 실시",
+    sol3_h2: "3D 시뮬레이션 기반 정밀 설계 오류 차단",
+    sol3_h3: "ISO 9001 기반 품질경영 시스템 인증",
+
     about_fac_a_badge: "A동",
     about_fac_b_badge: "B동",
     about_fac_c_badge: "C동",
@@ -92,7 +113,7 @@ export const translations = {
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "철강 설비와 프레임의", hero_title_2: "미래를 포징(Forging)하다",
     hero_desc: "(주)두신이엔지는 20년 이상의 축적된 엔지니어링 업력과 독보적인 가공 인프라를 바탕으로 제철 설비 및 성형기 프레임을 정밀 설계·제작합니다. 철저한 품질 경영과 칼날 같은 납기 준수로 파트너사에게 두터운 신뢰를 약속합니다.",
-    hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "보유 설비 보기", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "대형 크레인 가공 인프라",
+    hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "회사 전경 및 설비", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "대형 크레인 가공 인프라",
     hero_stat_finance: "재무 안정성", hero_stat_finance_desc: "은행 기업신용등급평가", hero_stat_exp: "업력", hero_stat_exp_desc: "장기 신뢰의 업력",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15단계 원스톱 공정을 압축한", problem_title_2: "4단계 핵심 제조 프로세스", problem_desc: "분야별 전문 파트너십과 당사의 체계적인 품질 관리 시스템을 결합하여, 설계부터 정밀 가공, 도장 및 최종 조립까지 유기적으로 연결된 고품질 제작 솔루션을 제공합니다.",
@@ -128,6 +149,27 @@ export const translations = {
     about_phil3_title: "철저한 납기 준수", about_phil3_desc: "가공부터 용접까지 아우르는 정밀한 원스톱 공정으로 파트너사와의 납기 약속을 철저히 지킵니다."
   },
   en: {
+
+    cta_badge1_title: "Bank Credit Rating B+",
+    cta_badge1_desc: "Guaranteed solid financial stability",
+    cta_badge2_title: "80TON Crane Infrastructure",
+    cta_badge2_desc: "One-stop machining for ultra-large structures",
+
+    sol1_short: "80TON Crane Infrastructure",
+    sol1_tagline: "In-house capability for ultra-large facilities",
+    sol1_h1: "80TON crane in-house infrastructure",
+    sol1_h2: "Handling large steel facilities of tens of tons",
+    sol1_h3: "Independent in-factory processing without outsourcing",
+    sol2_short: "Financial Stability B+",
+    sol2_tagline: "Financial strength to complete long-term projects",
+    sol2_h1: "Bank credit rating B+",
+    sol2_h2: "Solid financial soundness with no default risk",
+    sol2_h3: "100% long-term large project contract fulfillment",
+    sol3_short: "Flawless Quality & Delivery",
+    sol3_tagline: "Zero error, zero delivery delay system",
+    sol3_h1: "4 major NDTs (RT/UT/MT/PT) applied to all products",
+    sol3_h2: "Precision design error prevention based on 3D simulation",
+    sol3_h3: "ISO 9001-based quality management system certified",
 
     about_fac_a_badge: "Building A",
     about_fac_b_badge: "Building B",
@@ -220,7 +262,7 @@ export const translations = {
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "Forging the Future of", hero_title_2: "Steel Facilities and Frames",
     hero_desc: "Dooshin Engineering designs and manufactures premium steel facilities and large press frames based on 20+ years of engineering expertise and exclusive heavy machining infrastructure. We promise unparalleled trust through strict quality control and razor-sharp delivery times.",
-    hero_btn_inquiry: "Request Quote", hero_btn_facilities: "View Facilities", hero_stat_infra: "Infrastructure", hero_stat_infra_desc: "80TON Heavy Machining",
+    hero_btn_inquiry: "Contact Us", hero_btn_facilities: "Facilities & View", hero_stat_infra: "Infrastructure", hero_stat_infra_desc: "80TON Heavy Machining",
     hero_stat_finance: "Financial Stability", hero_stat_finance_desc: "Bank Credit Rating B+", hero_stat_exp: "Experience", hero_stat_exp_desc: "Years of Trust",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15-Step Process Compressed into", problem_title_2: "4 Core Manufacturing Steps", problem_desc: "We introduce our exclusive and thorough process system perfectly controlled inside our factory without outsourcing from design to delivery.",
@@ -254,6 +296,27 @@ export const translations = {
     about_phil3_title: "Strict Delivery Compliance", about_phil3_desc: "We strictly keep our delivery promises with partners through a precise one-stop process from machining to welding."
   },
   ja: {
+
+    cta_badge1_title: "銀行格付け B+",
+    cta_badge1_desc: "不渡りリスクのない強固な財務健全性を保証",
+    cta_badge2_title: "80TONクレーン自社インフラ",
+    cta_badge2_desc: "超大型構造物および成形機フレームのワンストップ加工",
+
+    sol1_short: "80TONクレーンインフラ",
+    sol1_tagline: "超大型設備を自社で対応",
+    sol1_h1: "80TONクレーン 自社インフラ",
+    sol1_h2: "数十トン単位の大型製鉄設備のハンドリング",
+    sol1_h3: "外注なしの独立した工場内処理",
+    sol2_short: "財務安定性 B+",
+    sol2_tagline: "長期プロジェクトを完遂する財務体力",
+    sol2_h1: "銀行信用格付けB+",
+    sol2_h2: "不実リスクのない強固な財務健全性の保証",
+    sol2_h3: "長期大型プロジェクト契約の履行力100%",
+    sol3_short: "無欠点品質＆納期",
+    sol3_tagline: "誤差ゼロ、納期遅延ゼロのシステム",
+    sol3_h1: "4大非破壊検査（RT/UT/MT/PT）の全数実施",
+    sol3_h2: "3Dシミュレーションによる精密設計エラーの遮断",
+    sol3_h3: "ISO 9001基盤の品質経営システム認証",
 
     about_fac_a_badge: "A棟",
     about_fac_b_badge: "B棟",
@@ -346,7 +409,7 @@ export const translations = {
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "鉄鋼設備とフレームの", hero_title_2: "未来をフォージングする",
     hero_desc: "（株）斗信エンジは20年以上の蓄積されたエンジニアリングの歴史と独自の加工インフラをもとに、最高品質の鉄鋼設備および大型成形機フレームを精密設計・製作します。徹底した品質管理と厳格な納期遵守により、パートナー企業に厚い信頼をお約束します。",
-    hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "保有設備を見る", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "大型クレーン加工インフラ",
+    hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "会社全景及び設備", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "大型クレーン加工インフラ",
     hero_stat_finance: "財務の安定性", hero_stat_finance_desc: "銀行企業信用格付け", hero_stat_exp: "業歴", hero_stat_exp_desc: "長期の信頼の実績",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15段階のワンストップ工程を圧縮した", problem_title_2: "4段階の核心製造プロセス", problem_desc: "設計から納品まで、外注なしに工場内部で完全に制御される当社独自の徹底した工程システムをご紹介します。",
