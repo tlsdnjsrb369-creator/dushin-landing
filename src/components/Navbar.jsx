@@ -7,10 +7,6 @@ import { usePathname } from "next/navigation";
 import { Globe, ChevronDown, Menu, X } from "lucide-react";
 import { useTranslation } from "@/context/LanguageContext";
 
-const ARCHIVES_SUBMENU = [
-  { name: "주요 납품 제작 실적", href: "/archives/performance" },
-  { name: "면허 및 자격증", href: "/archives/certificates" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,6 +45,11 @@ export default function Navbar() {
     { name: t('nav_about'), href: "/about" },
     { name: t('nav_services'), href: "/services" },
     { name: t('nav_inquiry'), href: "/inquiry" },
+  ];
+
+  const archivesSubmenu = [
+    { name: t('nav_archives_perf'), href: "/archives/performance" },
+    { name: t('nav_archives_cert'), href: "/archives/certificates" },
   ];
 
   const isArchivesActive = pathname.startsWith("/archives");
@@ -115,7 +116,7 @@ export default function Navbar() {
                   archivesOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"
                 }`}
               >
-                {ARCHIVES_SUBMENU.map((sub) => (
+                {archivesSubmenu.map((sub) => (
                   <Link
                     key={sub.href}
                     href={sub.href}
@@ -211,7 +212,7 @@ export default function Navbar() {
               }`}
             >
               <div className="flex flex-col gap-1 pl-4 pt-1">
-                {ARCHIVES_SUBMENU.map((sub) => (
+                {archivesSubmenu.map((sub) => (
                   <Link
                     key={sub.href}
                     href={sub.href}

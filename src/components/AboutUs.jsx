@@ -198,8 +198,8 @@ export default function AboutUs() {
             {/* 상단: 대형 외부 전경 갤러리 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { src: "/factory_exterior.jpg", title: "압도적 스케일의 대형 제철 설비 제작 전경" },
-                { src: "/factory_exterior2.jpg", title: "최첨단 인프라를 갖춘 (주)두신이엔지 외관" }
+                { src: "/factory_exterior.jpg", title: t('about_fac_img1') },
+                { src: "/factory_exterior2.jpg", title: t('about_fac_img2') }
               ].map((img, idx) => (
                 <div key={idx} className="relative aspect-video lg:aspect-[21/9] bg-slate-100 rounded-2xl overflow-hidden group border border-slate-200 shadow-md">
                   <div className="absolute inset-0 bg-slate-200 animate-pulse" /> {/* 로딩 스켈레톤 */}
@@ -225,34 +225,34 @@ export default function AboutUs() {
             <div className="flex flex-col gap-6 border-t border-slate-100 pt-8">
               <div className="text-left mb-2">
                 <span className="text-brand-blue font-bold tracking-widest text-xs mb-2 block uppercase">Factory Facilities</span>
-                <h5 className="text-slate-900 font-black text-2xl">전체 면적: 450평 (38m x 39m)</h5>
+                <h5 className="text-slate-900 font-black text-2xl">{t('about_fac_area')}</h5>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
-                    id: "A동",
-                    name: "A동 (제작/제조 라인)",
+                    id: t('about_fac_a_badge'),
+                    name: t('about_fac_a'),
                     img: "/factory_a.jpg",
                     size: "14.5m x 38m",
-                    hoist: "10TON*5TON 2대, 5TON 1대",
+                    hoist: t('about_fac_a_hoist'),
                     colorClass: "bg-brand-red",
                     textClass: "text-brand-red"
                   },
                   {
-                    id: "B동",
-                    name: "B동 절단반",
+                    id: t('about_fac_b_badge'),
+                    name: t('about_fac_b'),
                     img: "/factory_b.jpg",
                     size: "10m x 38m",
-                    hoist: "10TON 1대, 5TON 1대",
+                    hoist: t('about_fac_b_hoist'),
                     colorClass: "bg-slate-700",
                     textClass: "text-slate-700"
                   },
                   {
-                    id: "C동",
-                    name: "C동 대형 프레스 및 용접",
+                    id: t('about_fac_c_badge'),
+                    name: t('about_fac_c'),
                     img: "/factory_c.jpg",
                     size: "14.5m x 38m",
-                    hoist: "20TON*20TON 2대, 10TON 1대",
+                    hoist: t('about_fac_c_hoist'),
                     colorClass: "bg-brand-blue",
                     textClass: "text-brand-blue"
                   }
@@ -277,11 +277,11 @@ export default function AboutUs() {
                       <h4 className="font-extrabold text-slate-800 text-lg mb-4">{bldg.name}</h4>
                       <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-slate-100">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-bold text-slate-400">규격</span>
+                          <span className="text-xs font-bold text-slate-400">{t('about_fac_size_label')}</span>
                           <span className="text-sm font-mono font-bold text-slate-700 bg-slate-50 px-2 py-0.5 rounded">{bldg.size}</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-xs font-bold text-slate-400">호이스트</span>
+                          <span className="text-xs font-bold text-slate-400">{t('about_fac_hoist_label')}</span>
                           <span className={`text-sm font-bold ${bldg.textClass}`}>{bldg.hoist}</span>
                         </div>
                       </div>
@@ -307,15 +307,15 @@ export default function AboutUs() {
         {/* 헤더 타이틀 */}
         <div className="about-title text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest text-brand-blue uppercase block mb-3">
-            ABOUT US
+            {t('about_badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            끊임없는 혁신과 기술력으로<br />
-            <span className="text-brand-blue">미래를 창조하는 기업</span>
+            {t('about_title_1')}<br />
+            <span className="text-brand-blue">{t('about_title_2')}</span>
           </h2>
           <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)]" />
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-            (주)두신이엔지는 2002년 설립 이래 정밀 기계 및 대형 제철 설비 분야에서 독보적인 기술력과 인프라를 구축해 왔습니다.
+            {t('about_desc')}
           </p>
         </div>
 
