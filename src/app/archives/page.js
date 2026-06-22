@@ -1,4 +1,5 @@
 "use client";
+import SubPageBackground from "@/components/SubPageBackground";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -55,7 +56,7 @@ export default function ArchivesPage() {
   }, []);
 
   return (
-    <section className="relative min-h-screen py-24 bg-white overflow-hidden" ref={containerRef}>
+    <section className="relative min-h-screen py-24 bg-transparent overflow-hidden" ref={containerRef}>
       {/* 장식용 배경 요소 제거하여 극도의 미니멀리즘 유지 */}
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

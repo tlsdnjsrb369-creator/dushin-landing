@@ -14,15 +14,45 @@ export default function CTA() {
     message: "",
     agree: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.agree) {
       alert("개인정보 수집 및 이용에 동의해주세요.");
       return;
     }
-    setSubmitted(true);
+    
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await res.json();
+      if (data.success) {
+        alert(t('contact_success') || "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.");
+        setSubmitted(true);
+        setFormData({
+          company: "",
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+          agree: false
+        });
+      } else {
+        alert(t('contact_fail') || "이메일 전송에 실패했습니다. 다시 시도해 주세요.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert(t('contact_fail') || "이메일 전송에 실패했습니다. 다시 시도해 주세요.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -34,7 +64,7 @@ export default function CTA() {
   };
 
   return (
-    <section id="cta" className="relative py-28 bg-white border-t border-slate-200/80 overflow-hidden">
+    <section id="cta" className="relative py-28 bg-transparent border-t border-slate-200/80 overflow-hidden">
       {/* 백그라운드 광원 효과 */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] glow-radial opacity-20 pointer-events-none rounded-full" />
       <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
@@ -203,10 +233,17 @@ export default function CTA() {
                   {/* 전송 버튼 */}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-brand-blue to-blue-600 text-white font-extrabold tracking-wider rounded-lg hover:scale-[1.02] active:scale-98 transition-all duration-300 shadow-[0_4px_15px_rgba(0,85,164,0.15)] flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full py-4 bg-gradient-to-r from-brand-blue to-blue-600 text-white font-extrabold tracking-wider rounded-lg hover:scale-[1.02] active:scale-98 transition-all duration-300 shadow-[0_4px_15px_rgba(0,85,164,0.15)] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    {t('cta_form_submit')}
-                    <Send className="w-4 h-4 stroke-[2.5]" />
+                    {isSubmitting ? (
+                      <span className="animate-pulse">전송 중...</span>
+                    ) : (
+                      <>
+                        {t('cta_form_submit')}
+                        <Send className="w-4 h-4 stroke-[2.5]" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

@@ -99,7 +99,7 @@ export default function Solution() {
     <section
       id="solution"
       ref={sectionRef}
-      className="relative py-28 bg-white overflow-hidden"
+      className="relative py-28 bg-transparent overflow-hidden"
     >
       {/* 장식용 배경 광원 */}
       <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] glow-radial opacity-40 pointer-events-none rounded-full" />

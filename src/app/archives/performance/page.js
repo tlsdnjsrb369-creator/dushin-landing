@@ -1,4 +1,5 @@
 "use client";
+import SubPageBackground from "@/components/SubPageBackground";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -191,8 +192,10 @@ export default function PerformancePage() {
   }, [selectedProject]);
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-24 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <>
+      <SubPageBackground />
+      <main className="min-h-screen bg-transparent pt-32 pb-24 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* 헤더 */}
         <div className="mb-14 border-b border-brand-red/20 pb-10">
@@ -343,5 +346,6 @@ export default function PerformancePage() {
         </div>
       )}
     </main>
+    </>
   );
 }

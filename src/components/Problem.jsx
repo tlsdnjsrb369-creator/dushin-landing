@@ -67,7 +67,7 @@ export default function Problem() {
       title: t('problem_step1'),
       subtitle: "Design & Material",
       desc: t('problem_step1_desc'),
-      flow: ["수주", "설계", "소재입고"]
+      flow: [t('process_01'), t('process_02'), t('process_03')]
     },
     {
       step: "STEP 02",
@@ -75,7 +75,7 @@ export default function Problem() {
       title: t('problem_step2'),
       subtitle: "Machining & Welding",
       desc: t('problem_step2_desc'),
-      flow: ["CNC Cutting", "베벨링 및 가용접", "용접"]
+      flow: [t('process_04'), t('process_05'), t('process_06')]
     },
     {
       step: "STEP 03",
@@ -83,7 +83,7 @@ export default function Problem() {
       title: t('problem_step3'),
       subtitle: "QC & Inspection",
       desc: t('problem_step3_desc'),
-      flow: ["비파괴검사", "소둔, 쇼트, 페인팅", "기계가공", "기상검사"]
+      flow: [t('process_07'), t('process_08'), t('process_09'), t('process_10')]
     },
     {
       step: "STEP 04",
@@ -91,7 +91,7 @@ export default function Problem() {
       title: t('problem_step4'),
       subtitle: "Assembly & Delivery",
       desc: t('problem_step4_desc'),
-      flow: ["조립작업", "시운전", "최종검사", "포장 및 출하", "설치 및 시운전"]
+      flow: [t('process_11'), t('process_12'), t('process_13'), t('process_14'), t('process_15')]
     }
   ];
 
@@ -99,7 +99,7 @@ export default function Problem() {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative py-24 bg-white border-y border-slate-200/80 overflow-hidden"
+      className="relative py-24 bg-transparent border-y border-slate-200/80 overflow-hidden"
     >
       {/* 장식용 탑 레이저 라인 */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />

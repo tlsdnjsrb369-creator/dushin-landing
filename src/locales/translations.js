@@ -108,12 +108,17 @@ export const translations = {
     perf20_title: "DSMF Φ1350x560kw COLUMN PIPE-(주)대한중전기",
     perf20_desc: "초고압 환경에서의 내구성을 보장하는 대구경(Φ1350) 중전기용 특수 컬럼 파이프(Column Pipe) 제작 납품입니다.",
     nav_about: "회사소개", nav_services: "제공 서비스", nav_facilities: "설비현황", nav_inquiry: "제작 문의", nav_archives: "기술 자료실", nav_cta: "견적 요청하기",
-    footer_home: "홈", footer_address: "주소: 인천광역시 서구 검단천로356번길 46 (오류동)", footer_contact: "대표번호: 032-562-5494 | 팩스: 032-562-5495",
-    footer_biz: "이메일: skj1994@naver.com | 사업자등록번호: 137-81-94279", footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
+    footer_home: "홈",
+    footer_addr_val: "인천광역시 서구 검단천로356번길 46 (오류동)",
+    footer_tel_lbl: "대표번호", footer_tel_val: "032-562-5494",
+    footer_fax_lbl: "팩스", footer_fax_val: "032-562-5495",
+    footer_email_lbl: "이메일", footer_email_val: "skj1994@naver.com",
+    footer_biz_lbl: "사업자등록번호", footer_biz_val: "137-81-94279",
+    footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "철강 설비와 프레임의", hero_title_2: "미래를 포징(Forging)하다",
     hero_desc: "(주)두신이엔지는 20년 이상의 축적된 엔지니어링 업력과 독보적인 가공 인프라를 바탕으로 제철 설비 및 성형기 프레임을 정밀 설계·제작합니다. 철저한 품질 경영과 칼날 같은 납기 준수로 파트너사에게 두터운 신뢰를 약속합니다.",
-    hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "회사 전경 및 설비", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "대형 크레인 가공 인프라",
+    contact_success: "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.", contact_fail: "이메일 전송에 실패했습니다. 다시 시도해 주세요.", hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "회사 전경 및 설비", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "대형 크레인 가공 인프라",
     hero_stat_finance: "재무 안정성", hero_stat_finance_desc: "은행 기업신용등급평가", hero_stat_exp: "업력", hero_stat_exp_desc: "장기 신뢰의 업력",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15단계 원스톱 공정을 압축한", problem_title_2: "4단계 핵심 제조 프로세스", problem_desc: "분야별 전문 파트너십과 당사의 체계적인 품질 관리 시스템을 결합하여, 설계부터 정밀 가공, 도장 및 최종 조립까지 유기적으로 연결된 고품질 제작 솔루션을 제공합니다.",
@@ -146,7 +151,11 @@ export const translations = {
     about_history_4: "검단일반산업단지 자가 공장 신축/이전 및 공장등록 완료", about_history_5: "ISO 9001:2015 품질경영시스템 인증 획득", about_history_6: "위험성평가 우수사업장 인정 (한국산업안전보건공단)",
     about_phil1_title: "철저한 안전", about_phil1_desc: "무재해 사업장을 지향하며 안전한 작업 환경 구축을 최우선 가치로 삼습니다.",
     about_phil2_title: "완벽한 품질", about_phil2_desc: "ISO 9001 기반의 철저한 품질 경영과 정밀한 비파괴 검사(RT, UT, MT, PT)로 완벽한 품질을 실현합니다.",
-    about_phil3_title: "철저한 납기 준수", about_phil3_desc: "가공부터 용접까지 아우르는 정밀한 원스톱 공정으로 파트너사와의 납기 약속을 철저히 지킵니다."
+    about_phil3_title: "철저한 납기 준수", about_phil3_desc: "가공부터 용접까지 아우르는 정밀한 원스톱 공정으로 파트너사와의 납기 약속을 철저히 지킵니다.",
+    common_companyName: "(주)두신이엔지",
+    process_01: "수주", process_02: "설계", process_03: "소재입고", process_04: "CNC Cutting", process_05: "베벨링 및 가용접",
+    process_06: "용접", process_07: "비파괴검사", process_08: "소둔, 쇼트, 페인팅", process_09: "기계가공", process_10: "기상검사",
+    process_11: "조립작업", process_12: "시운전", process_13: "최종검사", process_14: "포장 및 출하", process_15: "설치 및 시운전"
   },
   en: {
 
@@ -257,12 +266,17 @@ export const translations = {
     perf20_title: "DSMF Φ1350x560kw COLUMN PIPE - Daehan Heavy Electric Co., Ltd.",
     perf20_desc: "Manufactured and delivered a special column pipe for heavy electrical machinery with a large diameter (Φ1350) ensuring durability in ultra-high voltage environments.",
     nav_about: "About Us", nav_services: "Services", nav_facilities: "Facilities", nav_inquiry: "Inquiry", nav_archives: "Archives", nav_cta: "Request Quote",
-    footer_home: "Home", footer_address: "Address: 46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon", footer_contact: "Tel: +82-32-562-5494 | Fax: +82-32-562-5495",
-    footer_biz: "Email: skj1994@naver.com | Biz Reg No: 137-81-94279", footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
+    footer_home: "Home",
+    footer_addr_val: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon, Republic of Korea",
+    footer_tel_lbl: "Tel", footer_tel_val: "+82-32-562-5494",
+    footer_fax_lbl: "Fax", footer_fax_val: "+82-32-562-5495",
+    footer_email_lbl: "Email", footer_email_val: "skj1994@naver.com",
+    footer_biz_lbl: "Business License", footer_biz_val: "137-81-94279",
+    footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "Forging the Future of", hero_title_2: "Steel Facilities and Frames",
     hero_desc: "Dooshin Engineering designs and manufactures premium steel facilities and large press frames based on 20+ years of engineering expertise and exclusive heavy machining infrastructure. We promise unparalleled trust through strict quality control and razor-sharp delivery times.",
-    hero_btn_inquiry: "Contact Us", hero_btn_facilities: "Facilities & View", hero_stat_infra: "Infrastructure", hero_stat_infra_desc: "80TON Heavy Machining",
+    contact_success: "Your inquiry has been successfully submitted. We will contact you soon.", contact_fail: "Failed to send the email. Please try again later.", hero_btn_inquiry: "Contact Us", hero_btn_facilities: "Facilities & View", hero_stat_infra: "Infrastructure", hero_stat_infra_desc: "80TON Heavy Machining",
     hero_stat_finance: "Financial Stability", hero_stat_finance_desc: "Bank Credit Rating B+", hero_stat_exp: "Experience", hero_stat_exp_desc: "Years of Trust",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15-Step Process Compressed into", problem_title_2: "4 Core Manufacturing Steps", problem_desc: "We introduce our exclusive and thorough process system perfectly controlled inside our factory without outsourcing from design to delivery.",
@@ -293,7 +307,11 @@ export const translations = {
     about_history_4: "Constructed & Relocated to New Factory in Geomdan Industrial Complex", about_history_5: "Acquired ISO 9001:2015 Quality Management System Certification", about_history_6: "Recognized as Excellent Workplace for Risk Assessment (KOSHA)",
     about_phil1_title: "Thorough Safety", about_phil1_desc: "We aim for a disaster-free workplace and make building a safe working environment our top priority.",
     about_phil2_title: "Perfect Quality", about_phil2_desc: "We realize perfect quality through thorough quality management based on ISO 9001 and precise NDT (RT, UT, MT, PT).",
-    about_phil3_title: "Strict Delivery Compliance", about_phil3_desc: "We strictly keep our delivery promises with partners through a precise one-stop process from machining to welding."
+    about_phil3_title: "Strict Delivery Compliance", about_phil3_desc: "We strictly keep our delivery promises with partners through a precise one-stop process from machining to welding.",
+    common_companyName: "Dooshin ENG",
+    process_01: "Order", process_02: "Design", process_03: "Material Inbound", process_04: "CNC Cutting", process_05: "Beveling & Tacking",
+    process_06: "Welding", process_07: "NDT", process_08: "Shot & Painting", process_09: "Machining", process_10: "Dimensional Inspection",
+    process_11: "Assembly", process_12: "Trial Run", process_13: "Final Inspection", process_14: "Packing & Shipping", process_15: "Installation & Test"
   },
   ja: {
 
@@ -404,12 +422,17 @@ export const translations = {
     perf20_title: "DSMF Φ1350x560kw COLUMN PIPE - （株）大韓重電機",
     perf20_desc: "超高圧環境での耐久性を保証する大口径（Φ1350）重電機用特殊カラムパイプ（Column Pipe）の製作納品です。",
     nav_about: "会社紹介", nav_services: "提供サービス", nav_facilities: "設備現況", nav_inquiry: "製作のお問い合わせ", nav_archives: "技術資料室", nav_cta: "見積もりを依頼する",
-    footer_home: "ホーム", footer_address: "住所: 仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)", footer_contact: "代表番号: 032-562-5494 | FAX: 032-562-5495",
-    footer_biz: "メール: skj1994@naver.com | 事業者登録番号: 137-81-94279", footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
+    footer_home: "ホーム",
+    footer_addr_val: "仁川広域市西区検丹川路356番ギル46 (五柳洞)",
+    footer_tel_lbl: "代表電話", footer_tel_val: "+82-32-562-5494",
+    footer_fax_lbl: "ファックス", footer_fax_val: "+82-32-562-5495",
+    footer_email_lbl: "Eメール", footer_email_val: "skj1994@naver.com",
+    footer_biz_lbl: "事業者登録番号", footer_biz_val: "137-81-94279",
+    footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "鉄鋼設備とフレームの", hero_title_2: "未来をフォージングする",
     hero_desc: "（株）斗信エンジは20年以上の蓄積されたエンジニアリングの歴史と独自の加工インフラをもとに、最高品質の鉄鋼設備および大型成形機フレームを精密設計・製作します。徹底した品質管理と厳格な納期遵守により、パートナー企業に厚い信頼をお約束します。",
-    hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "会社全景及び設備", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "大型クレーン加工インフラ",
+    contact_success: "お問い合わせが正常に受け付けられました。確認後、ご連絡いたします。", contact_fail: "メールの送信に失敗しました。後でもう一度お試しください。", hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "会社全景及び設備", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "大型クレーン加工インフラ",
     hero_stat_finance: "財務の安定性", hero_stat_finance_desc: "銀行企業信用格付け", hero_stat_exp: "業歴", hero_stat_exp_desc: "長期の信頼の実績",
     
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15段階のワンストップ工程を圧縮した", problem_title_2: "4段階の核心製造プロセス", problem_desc: "設計から納品まで、外注なしに工場内部で完全に制御される当社独自の徹底した工程システムをご紹介します。",
@@ -440,6 +463,10 @@ export const translations = {
     about_history_4: "黔丹一般産業団地に自己工場新築・移転および工場登録完了", about_history_5: "ISO 9001:2015 品質経営システム認証獲得", about_history_6: "危険性評価優秀事業場認定（韓国産業安全保健公団）",
     about_phil1_title: "徹底した安全", about_phil1_desc: "無災害事業場を目指し、安全な作業環境の構築を最優先の価値とします。",
     about_phil2_title: "完璧な品質", about_phil2_desc: "ISO 9001基盤の徹底した品質経営と精密な非破壊検査(RT, UT, MT, PT)で完璧な品質を実現します。",
-    about_phil3_title: "徹底した納期遵守", about_phil3_desc: "加工から溶接に至る精密なワンストップ工程により、パートナー企業との納期の約束を徹底的に守ります。"
+    about_phil3_title: "徹底した納期遵守", about_phil3_desc: "加工から溶接に至る精密なワンストップ工程により、パートナー企業との納期の約束を徹底的に守ります。",
+    common_companyName: "(株)斗信エンジ",
+    process_01: "受注", process_02: "設計", process_03: "素材入庫", process_04: "CNC切断", process_05: "開先加工・仮付け",
+    process_06: "溶接", process_07: "非破壊検査", process_08: "ショット・塗装", process_09: "機械加工", process_10: "次元検査",
+    process_11: "組み立て", process_12: "試運転", process_13: "最終検査", process_14: "梱包・出荷", process_15: "現地設置・試運転"
   }
 };

@@ -1,4 +1,5 @@
 "use client";
+import SubPageBackground from "@/components/SubPageBackground";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -30,8 +31,10 @@ export default function CertificatesPage() {
   }, [selectedCert]);
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <>
+      <SubPageBackground />
+      <main className="min-h-screen bg-transparent pt-32 pb-24 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* ── 헤더 ─────────────────────────────────────────────────────── */}
         <div className="mb-14 pb-10 border-b border-black/10">
@@ -148,5 +151,6 @@ export default function CertificatesPage() {
         </div>
       )}
     </main>
+    </>
   );
 }

@@ -7,6 +7,42 @@ import { Building, Target, Users, MapPin, SearchCheck, Calendar, ShieldCheck, Ph
 import Image from "next/image";
 import { useTranslation } from "@/context/LanguageContext";
 
+const WeatherBadge = () => {
+  const [weather, setWeather] = useState({ temp: null, icon: null });
+
+  useEffect(() => {
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=37.58&longitude=126.63&current=temperature_2m,weather_code")
+      .then(res => res.json())
+      .then(data => {
+        if (!data || !data.current) return;
+        const temp = Math.round(data.current.temperature_2m);
+        const code = data.current.weather_code;
+        
+        let icon = "☀️";
+        if (code === 1 || code === 2 || code === 3) icon = "⛅";
+        else if (code >= 45 && code <= 48) icon = "🌫️";
+        else if (code >= 51 && code <= 67) icon = "🌧️";
+        else if (code >= 71 && code <= 77) icon = "❄️";
+        else if (code >= 80 && code <= 82) icon = "🌦️";
+        else if (code >= 85 && code <= 86) icon = "🌨️";
+        else if (code >= 95) icon = "⛈️";
+
+        setWeather({ temp, icon });
+      })
+      .catch(err => console.error("Weather fetch failed", err));
+  }, []);
+
+  if (weather.temp === null) return null;
+
+  return (
+    <div className="bg-white/85 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md border border-white/60 inline-flex items-center gap-1.5 self-start pointer-events-auto">
+      <span className="text-sm leading-none">{weather.icon}</span>
+      <span className="text-xs font-bold text-slate-800 tracking-tight">{weather.temp}°C</span>
+      <span className="text-[10px] text-slate-500 font-semibold ml-0.5 tracking-wide">인천 검단</span>
+    </div>
+  );
+};
+
 export default function AboutUs() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("ceo");
@@ -149,19 +185,33 @@ export default function AboutUs() {
 
         {activeTab === "location" && (
           <div className="flex flex-col gap-6">
-            {/* 구글 지도 iframe */}
-            <div className="w-full h-72 md:h-80 bg-slate-100 rounded-xl border border-slate-200 overflow-hidden relative group shadow-inner">
-              <iframe 
-                src="https://www.google.com/maps?q=인천광역시+서구+검단천로356번길+46&output=embed" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0"
-                title="두신이엔지 오시는 길"
-              />
+            {/* 구글 지도 iframe 및 오버레이 */}
+            <div className="w-full h-[500px] md:h-[600px] bg-white/50 backdrop-blur-sm rounded-xl border border-slate-200/80 overflow-hidden relative group shadow-sm p-1.5 md:p-2.5">
+              <div className="w-full h-full relative rounded-lg overflow-hidden bg-slate-100">
+                <iframe 
+                  src="https://www.google.com/maps?q=인천광역시+서구+검단천로356번길+46&output=embed&z=15" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                  title="두신이엔지 오시는 길"
+                />
+                
+                {/* 커스텀 오버레이 (기존 구글맵 라벨 가리기 및 커스텀 정보 제공) */}
+                <div className="absolute top-2.5 left-2.5 z-10 flex flex-col gap-2 pointer-events-none">
+                  <div 
+                    className="bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl shadow-lg border border-slate-100/50 flex flex-col pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors"
+                    onClick={() => window.open('https://maps.google.com/?q=인천광역시 서구 검단천로356번길 46', '_blank')}
+                  >
+                    <h3 className="font-black text-slate-800 text-sm md:text-base mb-0.5 tracking-tight">(주)두신이엔지</h3>
+                    <span className="text-[11px] text-slate-500 font-semibold tracking-wide">인천 서구 검단천로356번길 46</span>
+                  </div>
+                  <WeatherBadge />
+                </div>
+              </div>
             </div>
             
             {/* 주소 및 연락처 정보 */}
@@ -297,7 +347,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-28 bg-white border-y border-slate-200/80 overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-28 bg-transparent border-y border-slate-200/80 overflow-hidden">
       {/* 배경 장식 */}
       <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] glow-radial opacity-30 pointer-events-none rounded-full" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] glow-radial opacity-20 pointer-events-none rounded-full" />

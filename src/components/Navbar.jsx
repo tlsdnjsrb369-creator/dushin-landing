@@ -58,18 +58,25 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "py-4 glassmorphism shadow-sm border-b border-slate-200/60"
-          : "py-6 bg-transparent"
+          ? "py-4 bg-[#1a1a1a]/95 backdrop-blur-md shadow-lg border-b border-gray-800"
+          : "py-6 bg-[#1a1a1a]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* 로고 영역 */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-10 w-10 md:h-12 md:w-12 shrink-0">
-            <Image src="/logo.png" alt="(주)두신이엔지 로고" fill sizes="(max-width: 768px) 40px, 48px" className="object-contain object-left" priority />
+          <div className="relative h-12 w-12 md:h-14 md:w-14 shrink-0 bg-white p-1.5 rounded-sm shadow-sm flex items-center justify-center">
+            <Image 
+              src="/logo.png" 
+              alt={`${t('common_companyName')} 로고`} 
+              fill 
+              sizes="(max-width: 768px) 48px, 56px" 
+              className="object-contain object-center transition-opacity group-hover:opacity-80" 
+              priority 
+            />
           </div>
-          <span className="text-xl md:text-2xl font-black tracking-tight text-slate-900 group-hover:text-brand-blue transition-colors">
-            (주)두신이엔지
+          <span className="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors">
+            {t('common_companyName')}
           </span>
         </Link>
 
@@ -81,8 +88,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-slate-900 after:transition-all after:duration-300 ${
-                  isActive ? "text-slate-900 after:w-full" : "text-slate-500 hover:text-slate-900 after:w-0 hover:after:w-full"
+                className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 ${
+                  isActive ? "text-white after:w-full" : "text-gray-300 hover:text-white after:w-0 hover:after:w-full"
                 }`}
               >
                 {link.name}
@@ -99,8 +106,8 @@ export default function Navbar() {
           >
             <button
               onClick={() => setArchivesOpen((prev) => !prev)}
-              className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-slate-900 after:transition-all after:duration-300 ${
-                isArchivesActive ? "text-slate-900 after:w-full" : "text-slate-500 hover:text-slate-900 after:w-0 hover:after:w-full"
+              className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 ${
+                isArchivesActive ? "text-white after:w-full" : "text-gray-300 hover:text-white after:w-0 hover:after:w-full"
               }`}
             >
               {t('nav_archives')}
@@ -143,31 +150,31 @@ export default function Navbar() {
             <button
               onClick={() => setLangOpen(!langOpen)}
               onBlur={() => setTimeout(() => setLangOpen(false), 200)}
-              className="flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors py-2"
+              className="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors py-2"
             >
               <Globe className="w-5 h-5" />
               <span className="text-sm font-bold uppercase">{lang}</span>
               <ChevronDown className="w-3 h-3" />
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-2 flex flex-col bg-white shadow-xl border border-slate-100 rounded-lg py-2 min-w-[140px] z-50">
-                <button onClick={() => { setLang('ko'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${lang === 'ko' ? 'font-bold text-slate-900' : 'text-slate-600'}`}>KO (한국어)</button>
-                <button onClick={() => { setLang('en'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${lang === 'en' ? 'font-bold text-slate-900' : 'text-slate-600'}`}>EN (English)</button>
-                <button onClick={() => { setLang('ja'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${lang === 'ja' ? 'font-bold text-slate-900' : 'text-slate-600'}`}>JA (日本語)</button>
+              <div className="absolute right-0 top-full mt-2 flex flex-col bg-[#1a1a1a] shadow-2xl border border-gray-800 rounded-lg py-2 min-w-[140px] z-50">
+                <button onClick={() => { setLang('ko'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-gray-800 transition-colors ${lang === 'ko' ? 'font-bold text-white' : 'text-gray-400'}`}>KO (한국어)</button>
+                <button onClick={() => { setLang('en'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-gray-800 transition-colors ${lang === 'en' ? 'font-bold text-white' : 'text-gray-400'}`}>EN (English)</button>
+                <button onClick={() => { setLang('ja'); setLangOpen(false); }} className={`px-4 py-2.5 text-left text-sm hover:bg-gray-800 transition-colors ${lang === 'ja' ? 'font-bold text-white' : 'text-gray-400'}`}>JA (日本語)</button>
               </div>
             )}
           </div>
 
           <Link
             href="/inquiry"
-            className="hidden md:flex px-5 py-2 text-xs md:text-sm font-bold tracking-wider text-slate-900 uppercase rounded-md border-2 border-slate-900 hover:bg-slate-900 hover:text-white duration-300 transition-all shadow-sm"
+            className="hidden md:flex px-5 py-2 text-xs md:text-sm font-bold tracking-wider text-slate-900 bg-white uppercase rounded-md border-2 border-white hover:bg-gray-200 hover:border-gray-200 duration-300 transition-all shadow-sm"
           >
             {t('nav_cta')}
           </Link>
 
           {/* 모바일 햄버거 */}
           <button
-            className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-gray-800 transition-colors"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="메뉴 열기"
           >
@@ -182,13 +189,13 @@ export default function Navbar() {
           mobileOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col gap-1 px-6 pb-6 pt-4 bg-white border-t border-slate-100 shadow-lg">
+        <nav className="flex flex-col gap-1 px-6 pb-6 pt-4 bg-[#1a1a1a] border-t border-gray-800 shadow-lg">
           {regularLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={`py-3 px-4 rounded-lg text-sm font-semibold transition-colors ${
-                pathname === link.href ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-50"
+                pathname === link.href ? "bg-white text-slate-900" : "text-gray-300 hover:bg-gray-800 hover:text-white"
               }`}
             >
               {link.name}
@@ -200,7 +207,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileArchivesOpen((prev) => !prev)}
               className={`w-full flex justify-between items-center py-3 px-4 rounded-lg text-sm font-semibold transition-colors ${
-                isArchivesActive ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-50"
+                isArchivesActive ? "bg-white text-slate-900" : "text-gray-300 hover:bg-gray-800 hover:text-white"
               }`}
             >
               <span>{t('nav_archives')}</span>
@@ -219,7 +226,7 @@ export default function Navbar() {
                     className={`py-2.5 px-4 rounded-lg text-sm font-semibold transition-colors ${
                       pathname === sub.href
                         ? "bg-brand-blue text-white"
-                        : "text-slate-600 hover:bg-slate-50"
+                        : "text-gray-400 hover:bg-gray-800 hover:text-white"
                     }`}
                   >
                     {sub.name}
@@ -230,13 +237,13 @@ export default function Navbar() {
           </div>
 
           {/* 모바일 언어 선택 */}
-          <div className="flex gap-2 mt-3 pt-3 border-t border-slate-100">
+          <div className="flex gap-2 mt-3 pt-3 border-t border-gray-800">
             {['ko', 'en', 'ja'].map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
                 className={`flex-1 py-2 rounded-lg text-xs font-bold uppercase transition-colors ${
-                  lang === l ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  lang === l ? "bg-white text-slate-900" : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
                 }`}
               >
                 {l}
