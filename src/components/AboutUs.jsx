@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Building, Target, Users, MapPin, SearchCheck, Calendar, ShieldCheck, Phone, Printer } from "lucide-react";
@@ -45,9 +46,19 @@ const WeatherBadge = () => {
 
 export default function AboutUs() {
   const { t } = useTranslation();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("ceo");
   const sectionRef = useRef(null);
   const tabContentRef = useRef(null);
+
+  // URL ?tab= 쿼리 파라미터로 초기 탭 설정
+  useEffect(() => {
+    const tabParam = searchParams?.get("tab");
+    const validTabs = ["ceo", "status", "history", "philosophy", "location", "facilities"];
+    if (tabParam && validTabs.includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -86,32 +97,25 @@ export default function AboutUs() {
     );
   }, [activeTab]);
 
-  const tabs = [
-    { id: "ceo", label: t('about_tab1'), icon: <Users className="w-4 h-4" /> },
-    { id: "status", label: t('about_tab2'), icon: <Building className="w-4 h-4" /> },
-    { id: "history", label: t('about_tab3'), icon: <Calendar className="w-4 h-4" /> },
-    { id: "philosophy", label: t('about_tab4'), icon: <Target className="w-4 h-4" /> },
-    { id: "location", label: t('about_tab5'), icon: <MapPin className="w-4 h-4" /> },
-    { id: "facilities", label: t('about_tab6'), icon: <SearchCheck className="w-4 h-4" /> }
-  ];
+  // 삭제: tabs 배열 (sidebar 탭 메뉴 사용 안 함)
 
   const renderTabContent = () => {
     return (
       <div ref={tabContentRef}>
         {activeTab === "ceo" && (
-          <div className="flex flex-col items-center justify-center text-center h-full min-h-[350px] bg-slate-50/50 rounded-xl border border-slate-100 p-8">
-            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm border border-slate-200">
-              <Users className="w-8 h-8 text-slate-400" />
+          <div className="flex flex-col items-center justify-center text-center h-full min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-14">
+            <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-8 shadow-md border border-slate-200">
+              <Users className="w-12 h-12 text-slate-400" />
             </div>
-            <h3 className="text-xl font-bold text-slate-800 mb-4">{t('about_tab1')}</h3>
-            <p className="text-slate-500 font-medium leading-relaxed max-w-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
+            <p className="text-slate-500 font-medium leading-loose text-lg max-w-2xl">
               {t('about_ceo_desc')}
             </p>
           </div>
         )}
 
         {activeTab === "status" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {[
               { label: t('about_status_company'), value: t('about_status_company_val') },
               { label: t('about_status_date'), value: t('about_status_date_val') },
@@ -120,16 +124,16 @@ export default function AboutUs() {
               { label: t('about_status_prod'), value: t('about_status_prod_val') },
               { label: t('about_status_size'), value: t('about_status_size_val') }
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col border-b border-slate-100 pb-4">
-                <span className="text-xs font-bold text-slate-400 mb-1">{item.label}</span>
-                <span className="text-base font-semibold text-slate-800">{item.value}</span>
+              <div key={idx} className="flex flex-col border-b border-slate-100 pb-6">
+                <span className="text-sm font-bold text-slate-400 mb-2">{item.label}</span>
+                <span className="text-xl font-semibold text-slate-800 leading-snug">{item.value}</span>
               </div>
             ))}
           </div>
         )}
 
         {activeTab === "history" && (
-          <div className="relative pl-6 md:pl-8 py-4 before:absolute before:inset-y-0 before:left-[11px] md:before:left-[15px] before:w-[2px] before:bg-slate-200">
+          <div className="relative pl-8 md:pl-12 py-6 before:absolute before:inset-y-0 before:left-[14px] md:before:left-[18px] before:w-[2px] before:bg-slate-200">
             {[
               { year: "2002", text: t('about_history_1') },
               { year: "2010", text: t('about_history_2') },
@@ -138,12 +142,12 @@ export default function AboutUs() {
               { year: "2019", text: t('about_history_5') },
               { year: "2023", text: t('about_history_6') }
             ].map((item, idx) => (
-              <div key={idx} className="relative mb-8 last:mb-0 group">
-                <div className="absolute -left-[30px] md:-left-[34px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-brand-blue group-hover:bg-brand-blue transition-colors duration-300 shadow-[0_0_8px_rgba(0,85,164,0.4)]" />
-                <span className="text-brand-blue font-bold text-sm md:text-base tracking-wider block mb-1">
+              <div key={idx} className="relative mb-12 last:mb-0 group">
+                <div className="absolute -left-[34px] md:-left-[38px] top-2 w-5 h-5 rounded-full bg-white border-2 border-brand-blue group-hover:bg-brand-blue transition-colors duration-300 shadow-[0_0_8px_rgba(0,85,164,0.4)]" />
+                <span className="text-brand-blue font-bold text-lg md:text-xl tracking-wider block mb-2">
                   {item.year}
                 </span>
-                <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">
+                <p className="text-slate-700 font-medium text-base md:text-lg leading-loose">
                   {item.text}
                 </p>
               </div>
@@ -152,32 +156,49 @@ export default function AboutUs() {
         )}
 
         {activeTab === "philosophy" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: t('about_phil1_title'),
                 desc: t('about_phil1_desc'),
-                icon: <ShieldCheck className="w-8 h-8 text-brand-blue" />
+                icon: <ShieldCheck className="w-12 h-12 text-white drop-shadow-lg" />,
+                bgImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
               },
               {
                 title: t('about_phil2_title'),
                 desc: t('about_phil2_desc'),
-                icon: <Target className="w-8 h-8 text-brand-blue" />
+                icon: <Target className="w-12 h-12 text-white drop-shadow-lg" />,
+                bgImage: "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80&w=800"
               },
               {
                 title: t('about_phil3_title'),
                 desc: t('about_phil3_desc'),
-                icon: <Calendar className="w-8 h-8 text-brand-blue" />
+                icon: <Calendar className="w-12 h-12 text-white drop-shadow-lg" />,
+                bgImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=800"
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-6 rounded-xl bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:border-brand-blue hover:shadow-md group flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
+              <div
+                key={idx}
+                className="group relative rounded-2xl overflow-hidden min-h-[420px] flex flex-col items-center justify-center text-center p-10 cursor-default shadow-xl border border-slate-700"
+                style={{ backgroundImage: `url(${item.bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              >
+                {/* 호버 시 살짝 확대되는 배경 */}
+                <div
+                  className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  style={{ backgroundImage: `url(${item.bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
+                {/* 다크 오버레이 */}
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-all duration-500" />
+                {/* 콘텐츠 */}
+                <div className="relative z-10 flex flex-col items-center gap-5">
+                  <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300 shadow-xl">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-2xl font-extrabold text-white drop-shadow-md tracking-tight">{item.title}</h4>
+                  <p className="text-base text-white/90 font-medium leading-relaxed mt-1 max-w-[260px]">
+                    {item.desc}
+                  </p>
                 </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-1">{item.title}</h4>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed mt-2">
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -347,12 +368,12 @@ export default function AboutUs() {
   };
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-28 bg-transparent border-y border-slate-200/80 overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-32 bg-transparent border-y border-slate-200/80 overflow-hidden">
       {/* 배경 장식 */}
       <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] glow-radial opacity-30 pointer-events-none rounded-full" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] glow-radial opacity-20 pointer-events-none rounded-full" />
       
-      <div className={`mx-auto px-6 md:px-12 relative z-10 transition-all duration-700 ease-in-out ${activeTab === 'facilities' ? 'max-w-[100rem]' : 'max-w-7xl'}`}>
+      <div className={`mx-auto px-6 md:px-16 relative z-10 transition-all duration-700 ease-in-out ${activeTab === 'facilities' ? 'max-w-[100rem]' : 'max-w-7xl'}`}>
         
         {/* 헤더 타이틀 */}
         <div className="about-title text-center max-w-3xl mx-auto mb-16">
@@ -369,42 +390,9 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* 탭 네비게이터 및 콘텐츠 영역 */}
-        <div className={`flex flex-col gap-10 lg:gap-12 items-start ${activeTab === 'facilities' ? 'lg:flex-col lg:items-center' : 'lg:flex-row'}`}>
-          
-          {/* 좌측 탭 메뉴 (모바일에서는 상단) */}
-          <div className={`w-full flex gap-2 pb-4 lg:pb-0 hide-scrollbar ${
-            activeTab === 'facilities' 
-              ? 'flex-row overflow-x-auto justify-start lg:justify-center' 
-              : 'lg:w-1/4 flex-row lg:flex-col overflow-x-auto lg:overflow-visible'
-          }`}>
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`min-w-fit ${activeTab === 'facilities' ? 'px-6 py-4' : 'lg:min-w-full px-5 py-4'} rounded-xl flex items-center gap-3 transition-all duration-300 font-bold text-sm md:text-base ${
-                  activeTab === tab.id
-                    ? `bg-slate-900 text-white shadow-[0_4px_15px_rgba(0,0,0,0.1)] ${activeTab === 'facilities' ? 'lg:-translate-y-1' : 'lg:translate-x-2'}`
-                    : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-700 border border-slate-200/60"
-                }`}
-              >
-                <span className={`${activeTab === tab.id ? "text-brand-blue" : "text-slate-400"}`}>
-                  {tab.icon}
-                </span>
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* 우측 탭 상세 콘텐츠 */}
-          <div 
-            className={`w-full bg-white rounded-2xl border border-slate-200/80 shadow-lg p-6 md:p-10 min-h-[400px] transition-all duration-500 ${
-              activeTab === 'facilities' ? 'lg:w-full' : 'lg:w-3/4'
-            }`}
-          >
-            {renderTabContent()}
-          </div>
-
+        {/* 콘텐츠 영역 — 좌측 탭 삭제로 풀와이드 */}
+        <div className="w-full bg-white rounded-2xl border border-slate-200/80 shadow-lg p-8 md:p-14 lg:p-16 min-h-[500px]">
+          {renderTabContent()}
         </div>
 
       </div>

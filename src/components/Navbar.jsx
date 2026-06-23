@@ -11,11 +11,14 @@ import { useTranslation } from "@/context/LanguageContext";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [archivesOpen, setArchivesOpen] = useState(false);
   const [mobileArchivesOpen, setMobileArchivesOpen] = useState(false);
   const pathname = usePathname();
   const { lang, setLang, t } = useTranslation();
   const [langOpen, setLangOpen] = useState(false);
+  const aboutRef = useRef(null);
   const archivesRef = useRef(null);
 
   useEffect(() => {
@@ -30,6 +33,9 @@ export default function Navbar() {
       if (archivesRef.current && !archivesRef.current.contains(e.target)) {
         setArchivesOpen(false);
       }
+      if (aboutRef.current && !aboutRef.current.contains(e.target)) {
+        setAboutOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -38,13 +44,22 @@ export default function Navbar() {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
+    setMobileAboutOpen(false);
     setMobileArchivesOpen(false);
   }, [pathname]);
 
   const regularLinks = [
-    { name: t('nav_about'), href: "/about" },
     { name: t('nav_services'), href: "/services" },
     { name: t('nav_inquiry'), href: "/inquiry" },
+  ];
+
+  const aboutSubmenu = [
+    { name: t('nav_about_ceo'),        href: "/about", tab: "ceo" },
+    { name: t('nav_about_status'),     href: "/about", tab: "status" },
+    { name: t('nav_about_history'),    href: "/about", tab: "history" },
+    { name: t('nav_about_philosophy'), href: "/about", tab: "philosophy" },
+    { name: t('nav_about_location'),   href: "/about", tab: "location" },
+    { name: t('nav_about_facilities'), href: "/about", tab: "facilities" },
   ];
 
   const archivesSubmenu = [
@@ -52,6 +67,7 @@ export default function Navbar() {
     { name: t('nav_archives_cert'), href: "/archives/certificates" },
   ];
 
+  const isAboutActive = pathname.startsWith("/about");
   const isArchivesActive = pathname.startsWith("/archives");
 
   return (
@@ -82,6 +98,47 @@ export default function Navbar() {
 
         {/* 데스크톱 메뉴 */}
         <nav className="hidden lg:flex items-center gap-8">
+
+          {/* 회사소개 드롭다운 — 첫 번째 */}
+          <div
+            ref={aboutRef}
+            className="relative"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <button
+              onClick={() => setAboutOpen((prev) => !prev)}
+              className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 ${
+                isAboutActive ? "text-white after:w-full" : "text-gray-300 hover:text-white after:w-0 hover:after:w-full"
+              }`}
+            >
+              {t('nav_about')}
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            <div className="absolute left-0 top-full w-56 pt-2">
+              <div
+                className={`flex flex-col bg-slate-900 shadow-2xl rounded-xl py-2 z-[999] border border-slate-700 transition-all duration-200 origin-top ${
+                  aboutOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"
+                }`}
+              >
+                {aboutSubmenu.map((sub) => (
+                  <Link
+                    key={sub.tab}
+                    href={`${sub.href}?tab=${sub.tab}`}
+                    className="px-5 py-3 text-sm font-semibold transition-colors duration-200 text-slate-200 hover:text-white hover:bg-slate-800"
+                    onClick={() => setAboutOpen(false)}
+                  >
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 제공 서비스 / 제작 문의 */}
           {regularLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -201,6 +258,36 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* 모바일 회사소개 아코디언 */}
+          <div>
+            <button
+              onClick={() => setMobileAboutOpen((prev) => !prev)}
+              className={`w-full flex justify-between items-center py-3 px-4 rounded-lg text-sm font-semibold transition-colors ${
+                isAboutActive ? "bg-white text-slate-900" : "text-gray-300 hover:bg-gray-800 hover:text-white"
+              }`}
+            >
+              <span>{t('nav_about')}</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileAboutOpen ? "rotate-180" : ""}`} />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                mobileAboutOpen ? "max-h-80" : "max-h-0"
+              }`}
+            >
+              <div className="flex flex-col gap-1 pl-4 pt-1">
+                {aboutSubmenu.map((sub) => (
+                  <Link
+                    key={sub.tab}
+                    href={`${sub.href}?tab=${sub.tab}`}
+                    className="py-2.5 px-4 rounded-lg text-sm font-semibold transition-colors text-gray-400 hover:bg-gray-800 hover:text-white"
+                  >
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* 모바일 기술자료실 아코디언 */}
           <div>

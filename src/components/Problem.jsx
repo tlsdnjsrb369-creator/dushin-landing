@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { PenTool, Settings, SearchCheck, Truck, ArrowRight } from "lucide-react";
+import { PenTool, Settings, SearchCheck, Truck, ArrowRight, ClipboardList, Monitor, Package, Scissors, Hammer, Flame, Paintbrush, Ruler, PlayCircle, CheckCircle, MapPin, Wrench } from "lucide-react";
 import { useTranslation } from "@/context/LanguageContext";
 
 export default function Problem() {
@@ -67,7 +67,11 @@ export default function Problem() {
       title: t('problem_step1'),
       subtitle: "Design & Material",
       desc: t('problem_step1_desc'),
-      flow: [t('process_01'), t('process_02'), t('process_03')]
+      flow: [
+        { label: t('process_01'), icon: <ClipboardList className="w-5 h-5" /> },
+        { label: t('process_02'), icon: <Monitor className="w-5 h-5" /> },
+        { label: t('process_03'), icon: <Package className="w-5 h-5" /> }
+      ]
     },
     {
       step: "STEP 02",
@@ -75,7 +79,11 @@ export default function Problem() {
       title: t('problem_step2'),
       subtitle: "Machining & Welding",
       desc: t('problem_step2_desc'),
-      flow: [t('process_04'), t('process_05'), t('process_06')]
+      flow: [
+        { label: t('process_04'), icon: <Scissors className="w-5 h-5" /> },
+        { label: t('process_05'), icon: <Hammer className="w-5 h-5" /> },
+        { label: t('process_06'), icon: <Flame className="w-5 h-5" /> }
+      ]
     },
     {
       step: "STEP 03",
@@ -83,7 +91,12 @@ export default function Problem() {
       title: t('problem_step3'),
       subtitle: "QC & Inspection",
       desc: t('problem_step3_desc'),
-      flow: [t('process_07'), t('process_08'), t('process_09'), t('process_10')]
+      flow: [
+        { label: t('process_07'), icon: <SearchCheck className="w-5 h-5" /> },
+        { label: t('process_08'), icon: <Paintbrush className="w-5 h-5" /> },
+        { label: t('process_09'), icon: <Settings className="w-5 h-5" /> },
+        { label: t('process_10'), icon: <Ruler className="w-5 h-5" /> }
+      ]
     },
     {
       step: "STEP 04",
@@ -91,7 +104,13 @@ export default function Problem() {
       title: t('problem_step4'),
       subtitle: "Assembly & Delivery",
       desc: t('problem_step4_desc'),
-      flow: [t('process_11'), t('process_12'), t('process_13'), t('process_14'), t('process_15')]
+      flow: [
+        { label: t('process_11'), icon: <Wrench className="w-5 h-5" /> },
+        { label: t('process_12'), icon: <PlayCircle className="w-5 h-5" /> },
+        { label: t('process_13'), icon: <CheckCircle className="w-5 h-5" /> },
+        { label: t('process_14'), icon: <Truck className="w-5 h-5" /> },
+        { label: t('process_15'), icon: <MapPin className="w-5 h-5" /> }
+      ]
     }
   ];
 
@@ -165,9 +184,12 @@ export default function Problem() {
                 <div className="flex flex-wrap gap-2 items-center">
                   {item.flow.map((flowItem, fIdx) => (
                     <div key={fIdx} className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-slate-700 bg-slate-50 px-2 py-1 rounded border border-slate-100 group-hover:border-brand-red/30 transition-colors">
-                        {flowItem}
-                      </span>
+                      <div className="group/btn flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-brand-red bg-slate-50 hover:bg-red-50/50 px-3 py-2 rounded border border-slate-100 hover:border-brand-red/50 transition-colors duration-300 cursor-default">
+                        <div className="w-5 h-5 flex items-center justify-center opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 flex-shrink-0">
+                          {flowItem.icon}
+                        </div>
+                        <span className="whitespace-nowrap">{flowItem.label}</span>
+                      </div>
                       {fIdx < item.flow.length - 1 && (
                         <ArrowRight className="w-3 h-3 text-slate-300" />
                       )}
