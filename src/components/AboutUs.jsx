@@ -47,18 +47,21 @@ const WeatherBadge = () => {
 export default function AboutUs() {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
-  const [activeTab, setActiveTab] = useState("ceo");
+
+  // URL ?tab= 쿼리 파라미터로 활성 탭 동기화 (렌더 단계 처리 → effect 내 setState 회피)
+  const tabParam = searchParams?.get("tab");
+  const validTabs = ["ceo", "status", "history", "philosophy", "location", "facilities"];
+  const urlTab = tabParam && validTabs.includes(tabParam) ? tabParam : null;
+
+  const [activeTab, setActiveTab] = useState(urlTab ?? "ceo");
+  const [prevUrlTab, setPrevUrlTab] = useState(urlTab);
+  if (urlTab && urlTab !== prevUrlTab) {
+    setPrevUrlTab(urlTab);
+    setActiveTab(urlTab);
+  }
+
   const sectionRef = useRef(null);
   const tabContentRef = useRef(null);
-
-  // URL ?tab= 쿼리 파라미터로 초기 탭 설정
-  useEffect(() => {
-    const tabParam = searchParams?.get("tab");
-    const validTabs = ["ceo", "status", "history", "philosophy", "location", "facilities"];
-    if (tabParam && validTabs.includes(tabParam)) {
-      setActiveTab(tabParam);
-    }
-  }, [searchParams]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -168,18 +171,20 @@ export default function AboutUs() {
                 title: t('about_phil2_title'),
                 desc: t('about_phil2_desc'),
                 icon: <Target className="w-12 h-12 text-white drop-shadow-lg" />,
-                bgImage: "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80&w=800"
+                // 비파괴검사(RT/UT/PT) 사진 — public/images/quality-ndt.jpg 파일로 교체하세요
+                bgImage: "/images/quality-ndt.jpg"
               },
               {
                 title: t('about_phil3_title'),
                 desc: t('about_phil3_desc'),
                 icon: <Calendar className="w-12 h-12 text-white drop-shadow-lg" />,
-                bgImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=800"
+                // 납기 준수 — 마감일이 표시된 달력 (Unsplash, 상업적 사용 무료)
+                bgImage: "https://images.unsplash.com/photo-1633526543814-9718c8922b7a?auto=format&fit=crop&q=80&w=1200"
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group relative rounded-2xl overflow-hidden min-h-[420px] flex flex-col items-center justify-center text-center p-10 cursor-default shadow-xl border border-slate-700"
+                className="group relative rounded-2xl overflow-hidden min-h-[420px] flex flex-col items-center justify-center text-center p-10 cursor-default shadow-xl border border-slate-700 bg-slate-800"
                 style={{ backgroundImage: `url(${item.bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
                 {/* 호버 시 살짝 확대되는 배경 */}

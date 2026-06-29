@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo, useCallback } from "react";
 import { translations } from "@/locales/translations";
 
 const LanguageContext = createContext();
@@ -7,11 +7,12 @@ const LanguageContext = createContext();
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState("ko");
 
-  const t = (key) => {
-    return translations[lang]?.[key] || translations["ko"]?.[key] || key;
-  };
+  const t = useCallback(
+    (key) => translations[lang]?.[key] || translations["ko"]?.[key] || key,
+    [lang]
+  );
 
-  const value = useMemo(() => ({ lang, setLang, t }), [lang]);
+  const value = useMemo(() => ({ lang, setLang, t }), [lang, t]);
 
   return (
     <LanguageContext.Provider value={value}>

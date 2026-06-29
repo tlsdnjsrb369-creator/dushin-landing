@@ -1,6 +1,34 @@
 export const translations = {
   ko: {
 
+    // ── 홈 섹션: 사업분야 ──
+    home_biz_badge: "BUSINESS AREAS",
+    home_biz_title_1: "용접·제관 전문 기술로 완성하는",
+    home_biz_title_2: "두신이엔지의 핵심 사업분야",
+    home_biz_desc: "절단부터 제관·용접·정밀가공, 비파괴검사까지. 자체 인프라로 전 공정을 일괄 책임지는 용접·제관 전문기업입니다.",
+    home_biz1_title: "제관 (Fabrication)",
+    home_biz1_desc: "도면 기반 정밀 절단·절곡·조립으로 대형 철구조물과 제철 설비 프레임을 제작합니다.",
+    home_biz2_title: "용접 (Welding)",
+    home_biz2_desc: "숙련 용접사와 WPS 기반 시공으로 고강도·고압 환경을 견디는 무결점 용접 품질을 보장합니다.",
+    home_biz3_title: "정밀 가공 (Machining)",
+    home_biz3_desc: "대형 가공 설비와 80TON 크레인 인프라로 수십 톤 단위 초대형 부품을 정밀 가공합니다.",
+    home_biz4_title: "비파괴검사·품질 (NDT/QC)",
+    home_biz4_desc: "RT/UT/MT/PT 4대 비파괴검사와 ISO 9001 품질경영으로 납품 전 전수 검증합니다.",
+    home_biz_cta: "사업분야 자세히 보기",
+
+    // ── 홈 섹션: 주요 실적 하이라이트 ──
+    home_perf_badge: "KEY PROJECTS",
+    home_perf_title_1: "국내외 주요 제철소가 신뢰한",
+    home_perf_title_2: "두신이엔지 납품 실적",
+    home_perf_desc: "현대제철·동국제강·JFE 등 국내외 대형 제철소와 글로벌 프로젝트에 핵심 설비를 납품해 왔습니다.",
+    home_perf_cta: "전체 실적 보기",
+
+    // ── 홈 섹션: 주요 고객사 ──
+    home_clients_badge: "CLIENTS & PARTNERS",
+    home_clients_title_1: "대한민국을 대표하는 기업들과",
+    home_clients_title_2: "함께 성장합니다",
+    home_clients_desc: "두신이엔지의 기술력은 국내 유수의 제철·중공업·건설사들의 까다로운 품질 기준으로 검증되었습니다.",
+
     cta_badge1_title: "은행 신용평가등급 B+",
     cta_badge1_desc: "부실 리스크 없는 견고한 재무건전성 보장",
     cta_badge2_title: "80TON 크레인 자체 인프라",
@@ -118,7 +146,7 @@ export const translations = {
     footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "철강 설비와 프레임의", hero_title_2: "미래를 포징(Forging)하다",
-    hero_desc: "(주)두신이엔지는 20년 이상의 축적된 엔지니어링 업력과 독보적인 가공 인프라를 바탕으로 제철 설비 및 성형기 프레임을 정밀 설계·제작합니다. 철저한 품질 경영과 칼날 같은 납기 준수로 파트너사에게 두터운 신뢰를 약속합니다.",
+    hero_desc: "(주)두신이엔지는 20년 이상의 축적된 엔지니어링 업력과 독보적인 가공 인프라를 바탕으로 제철 설비·대형 철구조물·성형기 프레임을 제관·용접·정밀가공합니다. 철저한 품질 경영과 칼날 같은 납기 준수로 파트너사에게 두터운 신뢰를 약속합니다.",
     contact_success: "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.", contact_fail: "이메일 전송에 실패했습니다. 다시 시도해 주세요.", hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "회사 전경 및 설비", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "대형 크레인 가공 인프라",
     hero_stat_finance: "재무 안정성", hero_stat_finance_desc: "은행 기업신용등급평가", hero_stat_exp: "업력", hero_stat_exp_desc: "장기 신뢰의 업력",
     
@@ -159,6 +187,34 @@ export const translations = {
     process_11: "조립작업", process_12: "시운전", process_13: "최종검사", process_14: "포장 및 출하", process_15: "설치 및 시운전"
   },
   en: {
+
+    // ── Home: Business Areas ──
+    home_biz_badge: "BUSINESS AREAS",
+    home_biz_title_1: "Built on Specialized",
+    home_biz_title_2: "Welding & Fabrication Expertise",
+    home_biz_desc: "From cutting to fabrication, welding, precision machining, and non-destructive testing — a welding & steel fabrication specialist managing the entire process in-house.",
+    home_biz1_title: "Fabrication",
+    home_biz1_desc: "Precision cutting, bending, and assembly from drawings to build large steel structures and steel-facility frames.",
+    home_biz2_title: "Welding",
+    home_biz2_desc: "Skilled welders and WPS-based procedures ensure flawless welds that withstand high-strength, high-pressure environments.",
+    home_biz3_title: "Precision Machining",
+    home_biz3_desc: "Large machining equipment and 80TON crane infrastructure to precision-machine ultra-large parts weighing tens of tons.",
+    home_biz4_title: "NDT & Quality",
+    home_biz4_desc: "Full inspection before delivery with RT/UT/MT/PT non-destructive testing and ISO 9001 quality management.",
+    home_biz_cta: "Explore Our Services",
+
+    // ── Home: Key Projects ──
+    home_perf_badge: "KEY PROJECTS",
+    home_perf_title_1: "Trusted by Major Steelworks",
+    home_perf_title_2: "Delivery Track Record",
+    home_perf_desc: "We have supplied core equipment to major domestic and overseas steelworks and global projects, including Hyundai Steel, Dongkuk Steel, and JFE.",
+    home_perf_cta: "View All Projects",
+
+    // ── Home: Clients ──
+    home_clients_badge: "CLIENTS & PARTNERS",
+    home_clients_title_1: "Growing Together with",
+    home_clients_title_2: "Korea's Leading Companies",
+    home_clients_desc: "Dushin Engineering's expertise has been validated by the demanding quality standards of Korea's leading steel, heavy industry, and construction companies.",
 
     cta_badge1_title: "Bank Credit Rating B+",
     cta_badge1_desc: "Guaranteed solid financial stability",
@@ -277,7 +333,7 @@ export const translations = {
     footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "Forging the Future of", hero_title_2: "Steel Facilities and Frames",
-    hero_desc: "Dooshin Engineering designs and manufactures premium steel facilities and large press frames based on 20+ years of engineering expertise and exclusive heavy machining infrastructure. We promise unparalleled trust through strict quality control and razor-sharp delivery times.",
+    hero_desc: "Dooshin Engineering fabricates, welds, and precision-machines steel facilities, large steel structures, and press frames based on 20+ years of engineering expertise and exclusive heavy machining infrastructure. We promise unparalleled trust through strict quality control and razor-sharp delivery times.",
     contact_success: "Your inquiry has been successfully submitted. We will contact you soon.", contact_fail: "Failed to send the email. Please try again later.", hero_btn_inquiry: "Contact Us", hero_btn_facilities: "Facilities & View", hero_stat_infra: "Infrastructure", hero_stat_infra_desc: "80TON Heavy Machining",
     hero_stat_finance: "Financial Stability", hero_stat_finance_desc: "Bank Credit Rating B+", hero_stat_exp: "Experience", hero_stat_exp_desc: "Years of Trust",
     
@@ -316,6 +372,34 @@ export const translations = {
     process_11: "Assembly", process_12: "Trial Run", process_13: "Final Inspection", process_14: "Packing & Shipping", process_15: "Installation & Test"
   },
   ja: {
+
+    // ── ホーム: 事業分野 ──
+    home_biz_badge: "BUSINESS AREAS",
+    home_biz_title_1: "溶接・製缶の専門技術で完成する",
+    home_biz_title_2: "斗信エンジの主要事業分野",
+    home_biz_desc: "切断から製缶・溶接・精密加工、非破壊検査まで。自社インフラで全工程を一括して担う溶接・製缶の専門企業です。",
+    home_biz1_title: "製缶 (Fabrication)",
+    home_biz1_desc: "図面に基づく精密な切断・曲げ・組立で、大型鉄構造物や鉄鋼設備フレームを製作します。",
+    home_biz2_title: "溶接 (Welding)",
+    home_biz2_desc: "熟練の溶接士とWPSに基づく施工で、高強度・高圧環境に耐える無欠陥の溶接品質を保証します。",
+    home_biz3_title: "精密加工 (Machining)",
+    home_biz3_desc: "大型加工設備と80TONクレーンインフラで、数十トン単位の超大型部品を精密加工します。",
+    home_biz4_title: "非破壊検査・品質 (NDT/QC)",
+    home_biz4_desc: "RT/UT/MT/PTの4大非破壊検査とISO 9001品質経営で、納品前に全数検証します。",
+    home_biz_cta: "事業分野を詳しく見る",
+
+    // ── ホーム: 主要実績 ──
+    home_perf_badge: "KEY PROJECTS",
+    home_perf_title_1: "国内外の主要製鉄所が信頼する",
+    home_perf_title_2: "斗信エンジの納品実績",
+    home_perf_desc: "現代製鉄・東国製鋼・JFEなど、国内外の大型製鉄所やグローバルプロジェクトに中核設備を納品してきました。",
+    home_perf_cta: "すべての実績を見る",
+
+    // ── ホーム: 主要取引先 ──
+    home_clients_badge: "CLIENTS & PARTNERS",
+    home_clients_title_1: "韓国を代表する企業とともに",
+    home_clients_title_2: "成長します",
+    home_clients_desc: "斗信エンジの技術力は、韓国有数の製鉄・重工業・建設企業の厳しい品質基準で検証されています。",
 
     cta_badge1_title: "銀行格付け B+",
     cta_badge1_desc: "不渡りリスクのない強固な財務健全性を保証",
@@ -434,7 +518,7 @@ export const translations = {
     footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
     hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "鉄鋼設備とフレームの", hero_title_2: "未来をフォージングする",
-    hero_desc: "（株）斗信エンジは20年以上の蓄積されたエンジニアリングの歴史と独自の加工インフラをもとに、最高品質の鉄鋼設備および大型成形機フレームを精密設計・製作します。徹底した品質管理と厳格な納期遵守により、パートナー企業に厚い信頼をお約束します。",
+    hero_desc: "（株）斗信エンジは20年以上の蓄積されたエンジニアリングの歴史と独自の加工インフラをもとに、鉄鋼設備・大型鉄構造物・成形機フレームを製缶・溶接・精密加工します。徹底した品質管理と厳格な納期遵守により、パートナー企業に厚い信頼をお約束します。",
     contact_success: "お問い合わせが正常に受け付けられました。確認後、ご連絡いたします。", contact_fail: "メールの送信に失敗しました。後でもう一度お試しください。", hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "会社全景及び設備", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "大型クレーン加工インフラ",
     hero_stat_finance: "財務の安定性", hero_stat_finance_desc: "銀行企業信用格付け", hero_stat_exp: "業歴", hero_stat_exp_desc: "長期の信頼の実績",
     

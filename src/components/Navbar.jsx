@@ -18,8 +18,17 @@ export default function Navbar() {
   const pathname = usePathname();
   const { lang, setLang, t } = useTranslation();
   const [langOpen, setLangOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const aboutRef = useRef(null);
   const archivesRef = useRef(null);
+
+  // 페이지 이동 시 모바일 메뉴 닫기 (렌더 단계 처리 → effect 내 setState 회피)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+    setMobileAboutOpen(false);
+    setMobileArchivesOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -40,13 +49,6 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-    setMobileAboutOpen(false);
-    setMobileArchivesOpen(false);
-  }, [pathname]);
 
   const regularLinks = [
     { name: t('nav_services'), href: "/services" },
