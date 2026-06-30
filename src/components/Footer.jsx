@@ -1,10 +1,14 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "@/context/LanguageContext";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const pathname = usePathname();
+  // 업무일지(내부 도구)에서는 푸터 숨김
+  if (pathname.startsWith("/worklog")) return null;
   return (
     <footer className="bg-[#1a1a1a] border-t border-[#2a2a2a] py-16 relative z-10 mt-auto">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">

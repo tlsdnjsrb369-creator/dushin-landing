@@ -48,7 +48,7 @@ export default function WorklogAdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 pt-24 pb-16">
+    <div className="min-h-screen bg-slate-50 px-4 pt-10 pb-16">
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-5">
           <h1 className="text-2xl font-extrabold text-slate-900">업무일지 관리자</h1>

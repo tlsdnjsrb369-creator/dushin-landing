@@ -114,7 +114,7 @@ export default function WorklogPage() {
   // ── 로그인 화면 ──
   if (!token) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 pt-24 pb-12">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 pt-10 pb-12">
         <div className="w-full max-w-sm bg-white rounded-2xl border border-slate-200 shadow-lg p-7">
           <h1 className="text-2xl font-extrabold text-slate-900 text-center mb-1">업무일지</h1>
           <p className="text-sm text-slate-500 text-center mb-6">QR을 찍거나, 이름·PIN으로 로그인하세요</p>
@@ -154,7 +154,7 @@ export default function WorklogPage() {
 
   // ── 기록 화면 ──
   return (
-    <div className="min-h-screen bg-slate-50 px-4 pt-24 pb-16">
+    <div className="min-h-screen bg-slate-50 px-4 pt-10 pb-16">
       <div className="max-w-lg mx-auto">
         <div className="flex justify-between items-center mb-5">
           <div>

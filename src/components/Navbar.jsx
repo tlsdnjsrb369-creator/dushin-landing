@@ -50,6 +50,9 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // 업무일지(내부 도구)에서는 마케팅 네비게이션 숨김
+  if (pathname.startsWith("/worklog")) return null;
+
   const regularLinks = [
     { name: t('nav_services'), href: "/services" },
     { name: t('nav_inquiry'), href: "/inquiry" },
