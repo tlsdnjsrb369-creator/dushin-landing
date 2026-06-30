@@ -31,7 +31,7 @@ export default function WorklogAdminPage() {
 
   function downloadCsv() {
     if (!logs || logs.length === 0) return;
-    const header = ["날짜", "이름", "소속", "시작", "종료", "업무 내용", "현장/공정", "작업 분류"];
+    const header = ["날짜", "이름", "소속", "시작", "종료", "업무 내용", "회사명", "작업 분류"];
     const rows = logs.map((l) => [
       l.work_date, l.workers?.name || "", l.workers?.team || "", l.start_time || "", l.end_time || "",
       l.task || "", l.site || "", l.category || "",
@@ -93,7 +93,7 @@ export default function WorklogAdminPage() {
                     <th className="px-4 py-3 font-bold">소속</th>
                     <th className="px-4 py-3 font-bold">시간</th>
                     <th className="px-4 py-3 font-bold">업무 내용</th>
-                    <th className="px-4 py-3 font-bold">현장/공정</th>
+                    <th className="px-4 py-3 font-bold">회사명</th>
                     <th className="px-4 py-3 font-bold">분류</th>
                   </tr>
                 </thead>

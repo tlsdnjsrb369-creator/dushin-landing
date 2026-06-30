@@ -3,8 +3,13 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 
-const CATEGORIES = ["용접", "가공", "조립", "검사", "도장", "기타"];
+const CATEGORIES = ["용접", "사상", "제관", "조립", "보조"];
+const WORK_ITEMS = ["S-90 COMPOST Ass'y 제작"];
+const COMPANIES = ["용운", "재원", "일광", "심팩"];
 const TEAMS = ["현장", "사무"];
+const CUSTOM = "__custom__";
+
+const emptyForm = { start_time: "", end_time: "", taskSel: "", taskCustom: "", companySel: "", companyCustom: "", category: CATEGORIES[0] };
 
 export default function WorklogPage() {
   const [workers, setWorkers] = useState([]);
@@ -16,7 +21,7 @@ export default function WorklogPage() {
   const [logs, setLogs] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ start_time: "", end_time: "", task: "", site: "", category: CATEGORIES[0] });
+  const [form, setForm] = useState(emptyForm);
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -37,20 +42,17 @@ export default function WorklogPage() {
   useEffect(() => {
     fetch("/api/worklog/workers").then((r) => r.json()).then((d) => setWorkers(d.workers || [])).catch(() => {});
 
-    // QR 스캔 자동 로그인 (?k=...)
     const k = new URLSearchParams(window.location.search).get("k");
     if (k) {
       fetch("/api/worklog/qr-login", {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k }),
       }).then((r) => r.json()).then((d) => {
         if (d.token) applyLogin(d);
-        // 주소창에서 QR 비밀키 제거
         window.history.replaceState({}, "", "/worklog");
       }).catch(() => {});
       return;
     }
 
-    // 평소 로그인 유지
     const savedToken = localStorage.getItem("worklog_token");
     const savedWorker = localStorage.getItem("worklog_worker");
     if (savedToken && savedWorker) {
@@ -88,17 +90,19 @@ export default function WorklogPage() {
 
   async function addLog(e) {
     e.preventDefault();
-    if (!form.task.trim()) { setError("업무 내용을 입력하세요."); return; }
+    const task = form.taskSel === CUSTOM ? form.taskCustom.trim() : form.taskSel;
+    const company = form.companySel === CUSTOM ? form.companyCustom.trim() : form.companySel;
+    if (!task) { setError("업무 내용을 선택하세요."); return; }
     setError(""); setLoading(true);
     try {
       const r = await fetch("/api/worklog/logs", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ ...form, work_date: today }),
+        body: JSON.stringify({ start_time: form.start_time, end_time: form.end_time, task, site: company, category: form.category, work_date: today }),
       });
       const d = await r.json();
       if (!r.ok) { setError(d.error || "저장에 실패했습니다."); return; }
-      setForm({ start_time: "", end_time: "", task: "", site: "", category: CATEGORIES[0] });
+      setForm(emptyForm);
       loadLogs(token);
     } finally { setLoading(false); }
   }
@@ -119,7 +123,6 @@ export default function WorklogPage() {
           <h1 className="text-2xl font-extrabold text-slate-900 text-center mb-1">업무일지</h1>
           <p className="text-sm text-slate-500 text-center mb-6">QR을 찍거나, 이름·PIN으로 로그인하세요</p>
 
-          {/* 현장/사무 선택 */}
           <div className="flex gap-2 mb-4">
             {TEAMS.map((tm) => (
               <button key={tm} type="button" onClick={() => { setTeam(tm); setName(""); }}
@@ -179,14 +182,30 @@ export default function WorklogPage() {
               <input type="time" value={form.end_time} onChange={(e) => setForm({ ...form, end_time: e.target.value })} className={inputCls} />
             </div>
           </div>
+
+          {/* 업무 내용 (선택 + 직접입력) */}
           <div>
             <label className="text-xs font-bold text-slate-500 block mb-1">업무 내용</label>
-            <input type="text" placeholder="예: A동 프레임 용접" value={form.task} onChange={(e) => setForm({ ...form, task: e.target.value })} className={inputCls} />
+            <select value={form.taskSel} onChange={(e) => setForm({ ...form, taskSel: e.target.value })} className={inputCls}>
+              <option value="">선택하세요</option>
+              {WORK_ITEMS.map((w) => <option key={w} value={w}>{w}</option>)}
+              <option value={CUSTOM}>기타 (직접 입력)</option>
+            </select>
+            {form.taskSel === CUSTOM && (
+              <input type="text" placeholder="업무 내용 직접 입력" value={form.taskCustom}
+                onChange={(e) => setForm({ ...form, taskCustom: e.target.value })} className={`${inputCls} mt-2`} />
+            )}
           </div>
+
+          {/* 회사명 + 작업 분류 */}
           <div className="flex gap-2">
             <div className="flex-1">
-              <label className="text-xs font-bold text-slate-500 block mb-1">현장/공정</label>
-              <input type="text" placeholder="예: 현대제철 당진" value={form.site} onChange={(e) => setForm({ ...form, site: e.target.value })} className={inputCls} />
+              <label className="text-xs font-bold text-slate-500 block mb-1">회사명</label>
+              <select value={form.companySel} onChange={(e) => setForm({ ...form, companySel: e.target.value })} className={inputCls}>
+                <option value="">선택</option>
+                {COMPANIES.map((c) => <option key={c} value={c}>{c}</option>)}
+                <option value={CUSTOM}>기타</option>
+              </select>
             </div>
             <div className="flex-1">
               <label className="text-xs font-bold text-slate-500 block mb-1">작업 분류</label>
@@ -195,6 +214,11 @@ export default function WorklogPage() {
               </select>
             </div>
           </div>
+          {form.companySel === CUSTOM && (
+            <input type="text" placeholder="회사명 직접 입력" value={form.companyCustom}
+              onChange={(e) => setForm({ ...form, companyCustom: e.target.value })} className={inputCls} />
+          )}
+
           {error && <p className="text-sm text-brand-red font-semibold">{error}</p>}
           <button type="submit" disabled={loading}
             className="w-full py-3 rounded-lg bg-brand-blue text-white font-bold text-base hover:bg-blue-700 active:scale-95 transition disabled:opacity-50">
@@ -212,9 +236,9 @@ export default function WorklogPage() {
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-sm font-bold text-brand-blue">{log.start_time || "--"} ~ {log.end_time || "--"}</span>
                   {log.category && <span className="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">{log.category}</span>}
+                  {log.site && <span className="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">{log.site}</span>}
                 </div>
                 <p className="text-base text-slate-800 font-medium">{log.task}</p>
-                {log.site && <p className="text-sm text-slate-500 mt-0.5">{log.site}</p>}
               </div>
               <button onClick={() => delLog(log.id)} className="text-sm text-slate-400 hover:text-brand-red font-semibold shrink-0">삭제</button>
             </div>
