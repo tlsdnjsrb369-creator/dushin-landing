@@ -141,7 +141,7 @@ export default function Hero() {
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_infra')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                <span ref={count1Ref}>0</span>
+                <span ref={count1Ref}>80</span>
               </span>
               <span className="text-brand-blue font-bold text-lg ml-1">TON</span>
             </div>
@@ -168,7 +168,7 @@ export default function Hero() {
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_exp')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                <span ref={count3Ref}>0</span>
+                <span ref={count3Ref}>24</span>
               </span>
               <span className="text-brand-red font-bold text-lg ml-1">+</span>
             </div>
