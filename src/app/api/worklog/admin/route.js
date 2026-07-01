@@ -19,6 +19,19 @@ export async function POST(req) {
       return NextResponse.json({ workers });
     }
 
+    if (action === "joblist") {
+      const jobs = await sb("jobs?select=id,su_no,name,company,qr_token&active=eq.true&order=su_no.desc");
+      return NextResponse.json({ jobs });
+    }
+
+    if (action === "sessions") {
+      const d = date || new Date().toISOString().slice(0, 10);
+      const sessions = await sb(
+        `work_sessions?select=*,workers(name),jobs(su_no,name,company)&started_at=gte.${d}T00:00:00&started_at=lte.${d}T23:59:59&order=started_at`
+      );
+      return NextResponse.json({ sessions });
+    }
+
     const d = date || new Date().toISOString().slice(0, 10);
     const logs = await sb(
       `work_logs?select=*,workers(name,team)&work_date=eq.${d}&order=worker_id,start_time`

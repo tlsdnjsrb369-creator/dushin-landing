@@ -53,7 +53,9 @@ export default function WorklogAdminPage() {
         <div className="flex justify-between items-center mb-5">
           <h1 className="text-2xl font-extrabold text-slate-900">업무일지 관리자</h1>
           <div className="flex gap-3">
-            <Link href="/worklog/qr" className="text-sm font-semibold text-slate-500 hover:text-brand-blue">QR 코드 인쇄</Link>
+            <Link href="/worklog/board" className="text-sm font-semibold text-brand-blue hover:underline">배치판</Link>
+            <Link href="/worklog/jobs" className="text-sm font-semibold text-slate-500 hover:text-brand-blue">작업 QR/NFC</Link>
+            <Link href="/worklog/qr" className="text-sm font-semibold text-slate-500 hover:text-brand-blue">직원 QR</Link>
             <Link href="/worklog" className="text-sm font-semibold text-slate-500 hover:text-brand-blue">← 직원 화면</Link>
           </div>
         </div>
