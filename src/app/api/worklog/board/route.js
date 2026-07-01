@@ -25,6 +25,10 @@ export async function POST(req) {
       if (ids.length) jobs = await sb(`jobs?select=id,su_no,name,company&id=in.(${ids.join(",")})`);
       return NextResponse.json({ workers, open, jobs });
     }
+    if (b.action === "alljobs") {
+      const jobs = await sb("jobs?select=id,su_no,name,company&active=eq.true&order=su_no.desc&limit=500");
+      return NextResponse.json({ jobs });
+    }
     if (b.action === "search") {
       const q = encodeURIComponent((b.q || "").replace(/[%,()*]/g, ""));
       const jobs = await sb(`jobs?select=id,su_no,name,company&or=(name.ilike.*${q}*,su_no.ilike.*${q}*)&active=eq.true&order=su_no.desc&limit=20`);

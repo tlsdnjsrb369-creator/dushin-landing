@@ -20,7 +20,7 @@ export default function LayoutBoardPage() {
   const [drag, setDrag] = useState(null);
   const [modal, setModal] = useState(null); // { workerId, zone }
   const [q, setQ] = useState("");
-  const [results, setResults] = useState([]);
+  const [allJobs, setAllJobs] = useState([]);
   const [job, setJob] = useState(null);
   const [cat, setCat] = useState(CATEGORIES[0]);
   const [error, setError] = useState("");
@@ -42,8 +42,8 @@ export default function LayoutBoardPage() {
     const { ok, data } = await call({ action: "state", jobIds: [] });
     if (!ok) { setError(data.error || "PIN 오류"); return; }
     setWorkers(data.workers || []); setOpen(data.open || []); setJobs(data.jobs || []); setAuthed(true);
+    const aj = await call({ action: "alljobs" }); if (aj.ok) setAllJobs(aj.data.jobs || []);
   }
-  async function doSearch(v) { setQ(v); if (v.length < 1) { setResults([]); return; } const { ok, data } = await call({ action: "search", q: v }); if (ok) setResults(data.jobs || []); }
   function openModal(workerId, zone) { setModal({ workerId, zone }); setJob(null); setCat(CATEGORIES[0]); setQ(""); setResults([]); setSel(null); setDrag(null); }
   async function confirmAssign() {
     await call({ action: "assign", workerId: modal.workerId, jobId: job?.id || null, category: cat, zone: modal.zone });
@@ -149,17 +149,16 @@ export default function LayoutBoardPage() {
               </div>
             ) : (
               <>
-                <input value={q} onChange={(e) => doSearch(e.target.value)} placeholder="제품명·수주번호 검색"
+                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="제품명·수주번호로 좁히기 (또는 아래에서 선택)"
                   className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm mb-1" />
-                {results.length > 0 && (
-                  <div className="border border-slate-200 rounded-lg mb-3 max-h-40 overflow-y-auto">
-                    {results.map((j) => (
-                      <button key={j.id} onClick={() => { setJob(j); setResults([]); setQ(""); }} className="w-full text-left px-3 py-2 hover:bg-slate-50 border-b border-slate-100 text-sm">
-                        {j.name} <span className="text-xs text-slate-400">{j.su_no}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
+                <div className="border border-slate-200 rounded-lg mb-3 max-h-44 overflow-y-auto">
+                  {allJobs.filter((j) => !q || (j.name || "").toLowerCase().includes(q.toLowerCase()) || (j.su_no || "").toLowerCase().includes(q.toLowerCase())).slice(0, 80).map((j) => (
+                    <button key={j.id} onClick={() => { setJob(j); setQ(""); }} className="w-full text-left px-3 py-2 hover:bg-slate-50 border-b border-slate-100 text-sm">
+                      {j.name} <span className="text-xs text-slate-400">{j.company} · {j.su_no}</span>
+                    </button>
+                  ))}
+                  {allJobs.length === 0 && <p className="px-3 py-2 text-xs text-slate-400">제품 목록 불러오는 중...</p>}
+                </div>
               </>
             )}
 
