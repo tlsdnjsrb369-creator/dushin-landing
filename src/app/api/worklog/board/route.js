@@ -19,7 +19,7 @@ export async function POST(req) {
 
     if (b.action === "state") {
       const workers = await sb("workers?select=id,name,team&order=team,name");
-      const open = await sb("work_sessions?select=id,worker_id,job_id,category,started_at&ended_at=is.null");
+      const open = await sb("work_sessions?select=id,worker_id,job_id,category,zone,started_at&ended_at=is.null");
       const ids = [...new Set([...(b.jobIds || []), ...open.map((s) => s.job_id)])].filter((x) => x != null);
       let jobs = [];
       if (ids.length) jobs = await sb(`jobs?select=id,su_no,name,company&id=in.(${ids.join(",")})`);
@@ -32,7 +32,7 @@ export async function POST(req) {
     }
     if (b.action === "assign") {
       await endWorkerOpen(b.workerId);
-      const ins = await sb("work_sessions", { method: "POST", body: { worker_id: Number(b.workerId), job_id: Number(b.jobId), category: b.category || "" }, prefer: "return=representation" });
+      const ins = await sb("work_sessions", { method: "POST", body: { worker_id: Number(b.workerId), job_id: b.jobId ? Number(b.jobId) : null, category: b.category || "", zone: b.zone || null }, prefer: "return=representation" });
       return NextResponse.json({ session: ins[0] });
     }
     if (b.action === "end") {
