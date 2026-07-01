@@ -21,6 +21,7 @@ export default function LayoutBoardPage() {
   const [modal, setModal] = useState(null); // { workerId, zone }
   const [q, setQ] = useState("");
   const [allJobs, setAllJobs] = useState([]);
+  const [companyF, setCompanyF] = useState("");
   const [job, setJob] = useState(null);
   const [cat, setCat] = useState(CATEGORIES[0]);
   const [error, setError] = useState("");
@@ -44,7 +45,7 @@ export default function LayoutBoardPage() {
     setWorkers(data.workers || []); setOpen(data.open || []); setJobs(data.jobs || []); setAuthed(true);
     const aj = await call({ action: "alljobs" }); if (aj.ok) setAllJobs(aj.data.jobs || []);
   }
-  function openModal(workerId, zone) { setModal({ workerId, zone }); setJob(null); setCat(CATEGORIES[0]); setQ(""); setResults([]); setSel(null); setDrag(null); }
+  function openModal(workerId, zone) { setModal({ workerId, zone }); setJob(null); setCat(CATEGORIES[0]); setQ(""); setCompanyF(""); setSel(null); setDrag(null); }
   async function confirmAssign() {
     await call({ action: "assign", workerId: modal.workerId, jobId: job?.id || null, category: cat, zone: modal.zone });
     setModal(null); reload();
@@ -54,6 +55,7 @@ export default function LayoutBoardPage() {
 
   const assignedIds = new Set(open.map((s) => s.worker_id));
   const pool = workers.filter((w) => !assignedIds.has(w.id));
+  const companies = [...new Set(allJobs.map((j) => j.company).filter(Boolean))].sort();
   const jobName = (id) => jobs.find((j) => j.id === id)?.name || "";
   const elapsed = (t) => Math.max(0, Math.round((now - new Date(t).getTime()) / 60000));
 
@@ -149,16 +151,30 @@ export default function LayoutBoardPage() {
               </div>
             ) : (
               <>
-                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="제품명·수주번호로 좁히기 (또는 아래에서 선택)"
-                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm mb-1" />
-                <div className="border border-slate-200 rounded-lg mb-3 max-h-44 overflow-y-auto">
-                  {allJobs.filter((j) => !q || (j.name || "").toLowerCase().includes(q.toLowerCase()) || (j.su_no || "").toLowerCase().includes(q.toLowerCase())).slice(0, 80).map((j) => (
-                    <button key={j.id} onClick={() => { setJob(j); setQ(""); }} className="w-full text-left px-3 py-2 hover:bg-slate-50 border-b border-slate-100 text-sm">
-                      {j.name} <span className="text-xs text-slate-400">{j.company} · {j.su_no}</span>
-                    </button>
-                  ))}
-                  {allJobs.length === 0 && <p className="px-3 py-2 text-xs text-slate-400">제품 목록 불러오는 중...</p>}
-                </div>
+                {!companyF ? (
+                  <div className="border border-slate-200 rounded-lg mb-3 max-h-44 overflow-y-auto">
+                    <p className="px-3 py-1.5 text-[11px] text-slate-400 bg-slate-50">먼저 회사를 고르세요</p>
+                    {companies.map((c) => (
+                      <button key={c} onClick={() => { setCompanyF(c); setQ(""); }} className="w-full flex justify-between items-center text-left px-3 py-2 hover:bg-slate-50 border-b border-slate-100 text-sm font-semibold">
+                        <span>{c}</span><span className="text-xs text-slate-400">{allJobs.filter((j) => j.company === c).length}건</span>
+                      </button>
+                    ))}
+                    {companies.length === 0 && <p className="px-3 py-2 text-xs text-slate-400">불러오는 중...</p>}
+                  </div>
+                ) : (
+                  <>
+                    <button onClick={() => setCompanyF("")} className="text-xs text-brand-blue font-bold mb-1">← 회사 다시 ({companyF})</button>
+                    <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="제품명 좁히기"
+                      className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm mb-1" />
+                    <div className="border border-slate-200 rounded-lg mb-3 max-h-40 overflow-y-auto">
+                      {allJobs.filter((j) => j.company === companyF && (!q || (j.name || "").toLowerCase().includes(q.toLowerCase()) || (j.su_no || "").toLowerCase().includes(q.toLowerCase()))).map((j) => (
+                        <button key={j.id} onClick={() => { setJob(j); setQ(""); }} className="w-full text-left px-3 py-2 hover:bg-slate-50 border-b border-slate-100 text-sm">
+                          {j.name} <span className="text-xs text-slate-400">{j.su_no}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </>
             )}
 
