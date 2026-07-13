@@ -28,14 +28,14 @@ export default function PerformanceHighlight() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-bold tracking-widest text-brand-red uppercase block mb-3">
+          <span className="text-sm font-bold tracking-widest text-brand-blue uppercase block mb-3">
             {t("home_perf_badge")}
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight">
             {t("home_perf_title_1")}<br />
             <span className="text-brand-blue">{t("home_perf_title_2")}</span>
           </h2>
-          <div className="w-16 h-[2px] bg-brand-red mx-auto mb-6 shadow-[0_2px_8px_rgba(229,9,20,0.4)]" />
+          <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)]" />
           <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
             {t("home_perf_desc")}
           </p>

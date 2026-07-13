@@ -145,7 +145,7 @@ export default function Hero() {
               </span>
               <span className="text-brand-blue font-bold text-lg ml-1">TON</span>
             </div>
-            <span className="text-slate-400 text-xs mt-3 border-t border-slate-200 pt-2 font-semibold">
+            <span className="text-slate-400 text-[13px] mt-3 border-t border-slate-200 pt-2 font-semibold">
               {t('hero_stat_infra_desc')}
             </span>
           </div>
@@ -155,10 +155,10 @@ export default function Hero() {
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_finance')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                B<span className="text-brand-red inline-block origin-center hover:scale-110 transition-transform cursor-default font-extrabold">+</span>
+                B<span className="text-brand-red inline-block origin-center hover:scale-110 transition-transform cursor-default font-extrabold">B</span>
               </span>
             </div>
-            <span className="text-slate-400 text-xs mt-3 border-t border-slate-200 pt-2 font-semibold">
+            <span className="text-slate-400 text-[13px] mt-3 border-t border-slate-200 pt-2 font-semibold">
               {t('hero_stat_finance_desc')}
             </span>
           </div>
@@ -172,7 +172,7 @@ export default function Hero() {
               </span>
               <span className="text-brand-red font-bold text-lg ml-1">+</span>
             </div>
-            <span className="text-slate-400 text-xs mt-3 border-t border-slate-200 pt-2 font-semibold">
+            <span className="text-slate-400 text-[13px] mt-3 border-t border-slate-200 pt-2 font-semibold">
               {t('hero_stat_exp_desc')}
             </span>
           </div>

@@ -8,7 +8,7 @@
   --color-dark-card: #f8fafc; /* slate-50 */
   --color-dark-border: #e2e8f0; /* slate-200 */
   
-  --font-sans: var(--font-geist-sans), "Pretendard", -apple-system, sans-serif;
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
@@ -21,6 +21,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  font-family: var(--font-sans);
 }
 
 /* 라이트 모드 테크 격자 그리드 배경 */

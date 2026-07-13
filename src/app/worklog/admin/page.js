@@ -54,6 +54,7 @@ export default function WorklogAdminPage() {
           <h1 className="text-2xl font-extrabold text-slate-900">업무일지 관리자</h1>
           <div className="flex gap-3">
             <Link href="/worklog/sessions" className="text-sm font-semibold text-brand-blue hover:underline">기록조회</Link>
+            <Link href="/worklog/report" className="text-sm font-semibold text-brand-blue hover:underline">공수 집계</Link>
             <Link href="/worklog/layout" className="text-sm font-semibold text-brand-blue hover:underline">배치도</Link>
             <Link href="/worklog/board" className="text-sm font-semibold text-brand-blue hover:underline">배치판</Link>
             <Link href="/worklog/jobs" className="text-sm font-semibold text-slate-500 hover:text-brand-blue">작업 QR/NFC</Link>
