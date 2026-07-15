@@ -163,7 +163,7 @@ export const translations = {
     footer_biz_lbl: "사업자등록번호", footer_biz_val: "137-81-94279",
     footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
-    hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "철강 설비와 프레임의", hero_title_2: "미래를 포징(Forging)하다",
+    hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "철강 설비와 프레임의", hero_title_2: "미래를 만들어갑니다",
     hero_desc: "(주)두신이엔지는 2002년 설립 이래 축적된 용접·제관 기술을 바탕으로 제철 설비·대형 철구조물·성형기 프레임을 제작합니다. 절단·제관·용접·비파괴검사는 자체 인프라로 직접 수행하고, 정밀가공은 검증된 협력사와 함께 전 공정을 일괄 책임집니다. 철저한 품질 경영과 정확한 납기로 파트너사에 두터운 신뢰를 약속합니다.",
     contact_success: "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.", contact_fail: "이메일 전송에 실패했습니다. 다시 시도해 주세요.", hero_btn_inquiry: "제작 문의하기", hero_btn_facilities: "회사 전경 및 설비", hero_stat_infra: "인프라 역량", hero_stat_infra_desc: "총 크레인 인양능력 (20톤×4기)",
     hero_stat_finance: "재무 안정성", hero_stat_finance_desc: "은행 기업신용등급평가", hero_stat_exp: "업력", hero_stat_exp_desc: "장기 신뢰의 업력",
@@ -171,7 +171,7 @@ export const translations = {
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15단계의 원스톱 공정을 압축한", problem_title_2: "4단계 핵심 제조 프로세스", problem_desc: "두신이엔지의 자체 제작 인프라(절단·제관·용접)와 각 분야 최고 수준의 전문 파트너사 네트워크를 결합하여, 도면 검토부터 최종 조립 납품까지 모든 공정을 당사가 직접 책임지고 총괄 관리합니다. 이를 통해 설계부터 최종 조립까지 유기적으로 연결된 고신뢰·고품질 제작 솔루션을 제공합니다.",
     problem_step1: "정밀 설계 및 자재 검수", problem_step1_desc: "요구사항 분석 후 최적의 제작 방향을 위한 1차 검토 및 정밀 설계(CAD)를 완료하고, 소재 입고 시 엄격한 검수를 거칩니다.",
     problem_step2: "정밀 가공 및 제관", problem_step2_desc: "고이께 모형 절단기(CNC)를 사용해 정밀 커팅을 거친 후, 당사 최고의 기술진이 베벨링, 가용접 및 정밀 용접을 완벽하게 수행합니다.",
-    problem_step3: "비파괴 검사 및 QC", problem_step3_desc: "고품질을 위해 4대 비파괴검사(RT, UT, MT, PT)와 소둔·쇼트·페인팅 처리를 거치며, 정밀 기계가공(협력)과 기상검사로 오차를 최소화합니다.",
+    problem_step3: "비파괴 검사 및 QC", problem_step3_desc: "고품질을 위해 4대 비파괴검사(RT, UT, MT, PT)와 소둔·쇼트·페인팅 처리를 거치며, 정밀 기계가공(협력)으로 오차를 최소화합니다.",
     problem_step4: "최종 조립 및 시운전 납품", problem_step4_desc: "가공된 제관품들을 완벽하게 조립하고 자체 시운전 및 발주처 최종 검사를 거쳐 안전한 패킹을 통해 현장 설치 및 납품을 완료합니다.",
 
     cta_badge: "GET IN TOUCH", cta_title_1: "귀사의 성공적인 기계 제작,", cta_title_2: "두신이엔지가 함께합니다.", cta_desc: "설계 도면 분석부터 복수 크레인(총 80톤) 인양 활용, 최종 품질 검사까지 당사의 전문 엔지니어가 직접 상담해 드립니다. 신뢰할 수 있는 파트너십의 첫걸음을 떼어보십시오.",
@@ -376,7 +376,7 @@ export const translations = {
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15-Step Process Compressed into", problem_title_2: "4 Core Manufacturing Steps", problem_desc: "By combining Dooshin ENG's in-house fabrication infrastructure (cutting, fabrication, welding) with a network of top-tier professional partners, we take full responsibility and comprehensively manage all processes from drawing review to final delivery. Through this, we provide a high-reliability, high-quality manufacturing solution seamlessly connected from design to final assembly.",
     problem_step1: "Precision Design & Material Inspection", problem_step1_desc: "After requirements analysis, we complete the first review and precision design (CAD) for the optimal manufacturing direction, and undergo strict inspection upon material warehousing.",
     problem_step2: "Machining & Welding", problem_step2_desc: "After precision cutting using a Koike CNC cutter, our best technicians perfectly perform beveling, tack welding, and precision welding.",
-    problem_step3: "NDT & QC", problem_step3_desc: "For high quality, we process 4 major NDTs (RT, UT, MT, PT), annealing, shot, and painting, minimizing errors through partner precision machining and dimensional inspection.",
+    problem_step3: "NDT & QC", problem_step3_desc: "For high quality, we process 4 major NDTs (RT, UT, MT, PT), annealing, shot, and painting, minimizing errors through partner precision machining.",
     problem_step4: "Final Assembly & Delivery", problem_step4_desc: "We perfectly assemble machined parts, conduct in-house test runs and client final inspections, and safely pack and deliver for on-site installation.",
 
     cta_badge: "GET IN TOUCH", cta_title_1: "Your successful machinery manufacturing,", cta_title_2: "Dooshin Eng is with you.", cta_desc: "From design drawing analysis to multi-crane (80T total) handling and final quality inspection, our expert engineers provide direct consultation.",
@@ -571,7 +571,7 @@ export const translations = {
     footer_biz_lbl: "事業者登録番号", footer_biz_val: "137-81-94279",
     footer_copyright: "Copyright © 2026 Dushin Engineering. All Rights Reserved.",
     
-    hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "鉄鋼設備とフレームの", hero_title_2: "未来をフォージングする",
+    hero_badge: "Heavy Industry Engineering Leader", hero_title_1: "鉄鋼設備とフレームの", hero_title_2: "未来を築きます",
     hero_desc: "（株）斗信エンジは2002年の設立以来、蓄積された溶接・製缶技術をもとに鉄鋼設備・大型鉄構造物・成形機フレームを製作します。切断・製缶・溶接・非破壊検査は自社インフラで直接行い、精密加工は信頼できる協力会社とともに全工程を一括して担います。徹底した品質管理と正確な納期により、パートナー企業に厚い信頼をお約束します。",
     contact_success: "お問い合わせが正常に受け付けられました。確認後、ご連絡いたします。", contact_fail: "メールの送信に失敗しました。後でもう一度お試しください。", hero_btn_inquiry: "製作のお問い合わせ", hero_btn_facilities: "会社全景及び設備", hero_stat_infra: "インフラ力量", hero_stat_infra_desc: "総クレーン揚重能力 (20t×4基)",
     hero_stat_finance: "財務の安定性", hero_stat_finance_desc: "銀行企業信用格付け", hero_stat_exp: "業歴", hero_stat_exp_desc: "長期の信頼の実績",
@@ -579,7 +579,7 @@ export const translations = {
     problem_badge: "MANUFACTURING PROCESS", problem_title_1: "15段階のワンストップ工程を圧縮した", problem_title_2: "4段階の核心製造プロセス", problem_desc: "（株）斗信エンジの自社製作インフラ（切断・製缶・溶接）と各分野の最高水準の専門パートナーネットワークを組み合わせ、図面検討から最終組立・納品までの全工程を当社が直接責任を持って総括管理します。これにより、設計から最終組立まで有機的に連携した高信頼・高品質の製作ソリューションを提供します。",
     problem_step1: "精密設計および資材検収", problem_step1_desc: "要求事項の分析後、最適な製作方向のための一次検討および精密設計（CAD）を完了し、素材入荷時に厳格な検収を経ます。",
     problem_step2: "精密切断および製管", problem_step2_desc: "コイケ模型切断機（CNC）を使用して精密なカッティングを経た後、当社の技術陣がベベリング、仮溶接および精密溶接を確実に遂行します。",
-    problem_step3: "非破壊検査およびQC", problem_step3_desc: "高品質のために4大非破壊検査（RT, UT, MT, PT）と焼鈍・ショット・塗装処理を経て、精密機械加工（協力）と機上検査で誤差を最小化します。",
+    problem_step3: "非破壊検査およびQC", problem_step3_desc: "高品質のために4大非破壊検査（RT, UT, MT, PT）と焼鈍・ショット・塗装処理を経て、精密機械加工（協力）で誤差を最小化します。",
     problem_step4: "最終組立および試運転・納品", problem_step4_desc: "加工された製管品を確実に組み立て、独自の試運転および発注先の最終検査を経て、安全な梱包により現場設置および納品を完了します。",
 
     cta_badge: "GET IN TOUCH", cta_title_1: "貴社の成功的な機械製作、", cta_title_2: "斗信エンジがお供します。", cta_desc: "設計図面の分析から複数クレーン(合計80t)の活用、最終品質検査まで、当社の専門エンジニアが直接ご相談に応じます。信頼できるパートナーシップの第一歩を踏み出してください。",

@@ -94,8 +94,7 @@ export default function Problem() {
       flow: [
         { label: t('process_07'), icon: <SearchCheck className="w-5 h-5" /> },
         { label: t('process_08'), icon: <Paintbrush className="w-5 h-5" /> },
-        { label: t('process_09'), icon: <Settings className="w-5 h-5" /> },
-        { label: t('process_10'), icon: <Ruler className="w-5 h-5" /> }
+        { label: t('process_09'), icon: <Settings className="w-5 h-5" /> }
       ]
     },
     {
