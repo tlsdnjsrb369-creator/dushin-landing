@@ -15,7 +15,7 @@ export default function PerformancePage() {
     {
       id: 1,
       title: t('perf1_title'),
-      date: "YYYY",
+      date: "2019.01",
       description: t('perf1_desc'),
       thumbnail: "/images/spco-1.jpg",
       images: [
@@ -26,7 +26,7 @@ export default function PerformancePage() {
     {
       id: 2,
       title: t('perf2_title'),
-      date: "YYYY",
+      date: "2019.07",
       description: t('perf2_desc'),
       thumbnail: "/images/spco-mnm-1.jpg",
       images: ["/images/spco-mnm-1.jpg", "/images/spco-mnm-2.jpg"]
@@ -34,7 +34,7 @@ export default function PerformancePage() {
     {
       id: 3,
       title: t('perf3_title'),
-      date: "YYYY",
+      date: "2018.02",
       description: t('perf3_desc'),
       thumbnail: "/images/jfe-cooler-1.jpg",
       images: ["/images/jfe-cooler-1.jpg", "/images/jfe-cooler-2.jpg", "/images/jfe-cooler-3.jpg", "/images/jfe-cooler-4.jpg", "/images/jfe-cooler-5.jpg", "/images/jfe-cooler-6.jpg"]
@@ -42,7 +42,7 @@ export default function PerformancePage() {
     {
       id: 4,
       title: t('perf4_title'),
-      date: "YYYY",
+      date: "2016.08",
       description: t('perf4_desc'),
       thumbnail: "/images/mhises-2.jpg",
       images: ["/images/mhises-2.jpg", "/images/mhises-1.jpg"]
@@ -50,7 +50,7 @@ export default function PerformancePage() {
     {
       id: 5,
       title: t('perf5_title'),
-      date: "YYYY",
+      date: "2019.04",
       description: t('perf5_desc'),
       thumbnail: "/images/mhi-lf-1.jpg",
       images: ["/images/mhi-lf-1.jpg"]
@@ -58,7 +58,7 @@ export default function PerformancePage() {
     {
       id: 6,
       title: t('perf6_title'),
-      date: "YYYY",
+      date: "2022.03",
       description: t('perf6_desc'),
       thumbnail: "/images/nmf-ring-1.jpg",
       images: ["/images/nmf-ring-1.jpg", "/images/nmf-ring-2.jpg"]
@@ -66,7 +66,7 @@ export default function PerformancePage() {
     {
       id: 7,
       title: t('perf7_title'),
-      date: "YYYY",
+      date: "2016.08",
       description: t('perf7_desc'),
       thumbnail: "/images/nse-steel-1.jpg",
       images: ["/images/nse-steel-1.jpg", "/images/nse-steel-2.jpg", "/images/nse-steel-3.jpg", "/images/nse-steel-4.jpg", "/images/nse-steel-5.jpg", "/images/nse-steel-6.jpg", "/images/nse-steel-7.jpg", "/images/nse-steel-8.jpg", "/images/nse-steel-9.jpg"]
@@ -74,7 +74,7 @@ export default function PerformancePage() {
     {
       id: 8,
       title: t('perf8_title'),
-      date: "YYYY",
+      date: "2023.05",
       description: t('perf8_desc'),
       thumbnail: "/images/stc-walkway-1.jpg",
       images: ["/images/stc-walkway-1.jpg", "/images/stc-walkway-2.jpg", "/images/stc-walkway-3.jpg", "/images/stc-walkway-4.jpg", "/images/stc-walkway-5.jpg"]
@@ -82,7 +82,7 @@ export default function PerformancePage() {
     {
       id: 9,
       title: t('perf9_title'),
-      date: "YYYY",
+      date: "2014.05",
       description: t('perf9_desc'),
       thumbnail: "/images/dongkuk-cassette-1.jpg",
       images: ["/images/dongkuk-cassette-1.jpg", "/images/dongkuk-cassette-2.jpg", "/images/dongkuk-cassette-3.jpg", "/images/dongkuk-cassette-4.jpg"]
@@ -90,7 +90,7 @@ export default function PerformancePage() {
     {
       id: 10,
       title: t('perf10_title'),
-      date: "YYYY",
+      date: "2018.05",
       description: t('perf10_desc'),
       thumbnail: "/images/hyundai-buffer-1.jpg",
       images: ["/images/hyundai-buffer-1.jpg", "/images/hyundai-buffer-2.jpg"]
@@ -98,7 +98,7 @@ export default function PerformancePage() {
     {
       id: 11,
       title: t('perf11_title'),
-      date: "YYYY",
+      date: "2017.09",
       description: t('perf11_desc'),
       thumbnail: "/images/hyundai-ladle-inflow-1.jpg",
       images: ["/images/hyundai-ladle-inflow-1.jpg", "/images/hyundai-ladle-inflow-2.jpg", "/images/hyundai-ladle-inflow-3.jpg"]
@@ -106,7 +106,7 @@ export default function PerformancePage() {
     {
       id: 12,
       title: t('perf12_title'),
-      date: "YYYY",
+      date: "2018.05",
       description: t('perf12_desc'),
       thumbnail: "/images/hyundai-90t-ladle-1.jpg",
       images: ["/images/hyundai-90t-ladle-1.jpg", "/images/hyundai-90t-ladle-2.jpg", "/images/hyundai-90t-ladle-3.jpg"]
@@ -114,7 +114,7 @@ export default function PerformancePage() {
     {
       id: 13,
       title: t('perf13_title'),
-      date: "YYYY",
+      date: "2020.06",
       description: t('perf13_desc'),
       thumbnail: "/images/hyundai-roof-1.jpg",
       images: ["/images/hyundai-roof-1.jpg", "/images/hyundai-roof-2.jpg", "/images/hyundai-roof-3.jpg", "/images/hyundai-roof-4.jpg"]
@@ -122,7 +122,7 @@ export default function PerformancePage() {
     {
       id: 14,
       title: t('perf14_title'),
-      date: "YYYY",
+      date: "2020.03",
       description: t('perf14_desc'),
       thumbnail: "/images/hyundai-120t-pipe-1.jpg",
       images: ["/images/hyundai-120t-pipe-1.jpg", "/images/hyundai-120t-pipe-2.jpg", "/images/hyundai-120t-pipe-3.jpg", "/images/hyundai-120t-pipe-4.jpg"]
@@ -130,7 +130,7 @@ export default function PerformancePage() {
     {
       id: 15,
       title: t('perf15_title'),
-      date: "YYYY",
+      date: "2019.05",
       description: t('perf15_desc'),
       thumbnail: "/images/daewoo-penstock-1.jpg",
       images: ["/images/daewoo-penstock-1.jpg", "/images/daewoo-penstock-2.jpg", "/images/daewoo-penstock-3.jpg", "/images/daewoo-penstock-4.jpg", "/images/daewoo-penstock-5.jpg", "/images/daewoo-penstock-6.jpg", "/images/daewoo-penstock-7.jpg", "/images/daewoo-penstock-8.jpg", "/images/daewoo-penstock-9.jpg", "/images/daewoo-penstock-10.jpg"]
@@ -138,7 +138,7 @@ export default function PerformancePage() {
     {
       id: 16,
       title: t('perf16_title'),
-      date: "YYYY",
+      date: "2023.06",
       description: t('perf16_desc'),
       thumbnail: "/images/rcp-assembly-1.jpg",
       images: ["/images/rcp-assembly-1.jpg", "/images/rcp-assembly-2.jpg"]
@@ -146,7 +146,7 @@ export default function PerformancePage() {
     {
       id: 17,
       title: t('perf17_title'),
-      date: "YYYY",
+      date: "2022.07",
       description: t('perf17_desc'),
       thumbnail: "/images/press-bending-1.jpg",
       images: ["/images/press-bending-1.jpg", "/images/press-bending-2.jpg", "/images/press-bending-3.jpg", "/images/press-bending-4.jpg", "/images/press-bending-5.jpg", "/images/press-bending-6.jpg", "/images/press-bending-7.jpg", "/images/press-bending-8.jpg"]
@@ -154,7 +154,7 @@ export default function PerformancePage() {
     {
       id: 18,
       title: t('perf18_title'),
-      date: "YYYY",
+      date: "2023.08",
       description: t('perf18_desc'),
       thumbnail: "/images/cooling-conveyor-1.jpg",
       images: ["/images/cooling-conveyor-1.jpg", "/images/cooling-conveyor-2.jpg", "/images/cooling-conveyor-3.jpg"]
@@ -162,7 +162,7 @@ export default function PerformancePage() {
     {
       id: 19,
       title: t('perf19_title'),
-      date: "YYYY",
+      date: "2022.05",
       description: t('perf19_desc'),
       thumbnail: "/images/samsung-base-1.jpg",
       images: ["/images/samsung-base-1.jpg", "/images/samsung-base-2.jpg", "/images/samsung-base-3.jpg", "/images/samsung-base-4.jpg", "/images/samsung-base-5.jpg"]
@@ -170,12 +170,12 @@ export default function PerformancePage() {
     {
       id: 20,
       title: t('perf20_title'),
-      date: "YYYY",
+      date: "2024.02",
       description: t('perf20_desc'),
       thumbnail: "/images/dsmf-pipe-1.jpg",
       images: ["/images/dsmf-pipe-1.jpg", "/images/dsmf-pipe-2.jpg", "/images/dsmf-pipe-3.jpg", "/images/dsmf-pipe-4.jpg"]
     }
-  ];
+  ].sort((a, b) => b.date.localeCompare(a.date));
 
   const hasItems = projects.length > 0;
 
