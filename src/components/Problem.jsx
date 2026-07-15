@@ -63,7 +63,7 @@ export default function Problem() {
   const steps = [
     {
       step: "STEP 01",
-      icon: <PenTool className="w-8 h-8 text-brand-red" />,
+      icon: <PenTool className="w-8 h-8 text-brand-blue" />,
       title: t('problem_step1'),
       subtitle: "Design & Material",
       desc: t('problem_step1_desc'),
@@ -75,7 +75,7 @@ export default function Problem() {
     },
     {
       step: "STEP 02",
-      icon: <Settings className="w-8 h-8 text-brand-red" />,
+      icon: <Settings className="w-8 h-8 text-brand-blue" />,
       title: t('problem_step2'),
       subtitle: "Machining & Welding",
       desc: t('problem_step2_desc'),
@@ -87,7 +87,7 @@ export default function Problem() {
     },
     {
       step: "STEP 03",
-      icon: <SearchCheck className="w-8 h-8 text-brand-red" />,
+      icon: <SearchCheck className="w-8 h-8 text-brand-blue" />,
       title: t('problem_step3'),
       subtitle: "QC & Inspection",
       desc: t('problem_step3_desc'),
@@ -100,7 +100,7 @@ export default function Problem() {
     },
     {
       step: "STEP 04",
-      icon: <Truck className="w-8 h-8 text-brand-red" />,
+      icon: <Truck className="w-8 h-8 text-brand-blue" />,
       title: t('problem_step4'),
       subtitle: "Assembly & Delivery",
       desc: t('problem_step4_desc'),
@@ -121,19 +121,19 @@ export default function Problem() {
       className="relative py-24 bg-transparent border-y border-slate-200/80 overflow-hidden"
     >
       {/* 장식용 탑 레이저 라인 */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="problem-title text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold tracking-widest text-brand-red uppercase block mb-3">
+          <span className="text-xs font-bold tracking-widest text-brand-blue uppercase block mb-3">
             {t('problem_badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
             {t('problem_title_1')}<br />
-            <span className="text-brand-red">{t('problem_title_2')}</span>
+            <span className="text-brand-blue">{t('problem_title_2')}</span>
           </h2>
-          <div className="w-16 h-[2px] bg-brand-red mx-auto mb-6 shadow-[0_2px_8px_rgba(229,9,20,0.4)]" />
+          <div className="w-16 h-[2px] bg-brand-blue mx-auto mb-6 shadow-[0_2px_8px_rgba(0,85,164,0.4)]" />
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
             {t('problem_desc')}
           </p>
@@ -148,24 +148,24 @@ export default function Problem() {
               className="group p-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
             >
               {/* 마우스 호버 시 활성화되는 오버레이 */}
-              <div className="absolute inset-0 bg-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-brand-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               
               {/* 탑 보더 라이팅 효과 */}
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-slate-200 to-transparent group-hover:from-brand-red/50 group-hover:via-brand-red group-hover:to-brand-red/50 transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-slate-200 to-transparent group-hover:from-brand-blue/50 group-hover:via-brand-blue group-hover:to-brand-blue/50 transition-all duration-500" />
               
               {/* 상단 STEP 및 아이콘 */}
               <div className="flex justify-between items-start mb-6">
-                <span className="text-2xl font-black text-slate-200 group-hover:text-brand-red/20 transition-colors duration-300">
+                <span className="text-2xl font-black text-slate-200 group-hover:text-brand-blue/20 transition-colors duration-300">
                   {item.step}
                 </span>
-                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shadow-inner group-hover:scale-110 group-hover:bg-brand-red/10 group-hover:border-brand-red/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shadow-inner group-hover:scale-110 group-hover:bg-brand-blue/10 group-hover:border-brand-blue/30 transition-all duration-300">
                   {item.icon}
                 </div>
               </div>
 
               {/* 제목 및 부제목 */}
               <div className="mb-4">
-                <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-brand-red transition-colors duration-300">
+                <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-brand-blue transition-colors duration-300">
                   {item.title}
                 </h3>
                 <span className="text-xs font-bold text-slate-400 tracking-wider block uppercase">
@@ -184,7 +184,7 @@ export default function Problem() {
                 <div className="flex flex-wrap gap-2 items-center">
                   {item.flow.map((flowItem, fIdx) => (
                     <div key={fIdx} className="flex items-center gap-2">
-                      <div className="group/btn flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-brand-red bg-slate-50 hover:bg-red-50/50 px-3 py-2 rounded border border-slate-100 hover:border-brand-red/50 transition-colors duration-300 cursor-default">
+                      <div className="group/btn flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-brand-blue bg-slate-50 hover:bg-blue-50/50 px-3 py-2 rounded border border-slate-100 hover:border-brand-blue/50 transition-colors duration-300 cursor-default">
                         <div className="w-5 h-5 flex items-center justify-center opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 flex-shrink-0">
                           {flowItem.icon}
                         </div>

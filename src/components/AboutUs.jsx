@@ -111,7 +111,7 @@ export default function AboutUs() {
               <Users className="w-12 h-12 text-slate-400" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
-            <p className="text-slate-500 font-medium leading-loose text-lg max-w-2xl">
+            <p className="text-slate-600 font-medium leading-loose text-base md:text-lg max-w-2xl whitespace-pre-line text-left">
               {t('about_ceo_desc')}
             </p>
           </div>

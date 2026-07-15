@@ -42,7 +42,8 @@ export const translations = {
     home_process_s4: "제관",
     home_process_s5: "용접",
     home_process_s6: "비파괴검사",
-    home_process_s7: "납품",
+    home_process_s7: "가공",
+    home_process_s8: "납품",
 
     cta_badge1_title: "은행 신용평가등급 BB",
     cta_badge1_desc: "안정적인 재무 건전성",
@@ -187,7 +188,7 @@ export const translations = {
 
     // AboutUs
     about_tab1: "대표이사 인사말", about_tab2: "회사현황", about_tab3: "회사연혁", about_tab4: "경영이념", about_tab5: "오시는 길", about_tab6: "회사전경 및 설비",
-    about_ceo_desc: "㈜두신이엔지 대표이사 인사말 영역입니다. 추후 업데이트 예정입니다.",
+    about_ceo_desc: "두신이엔지를 찾아주신 여러분, 반갑습니다.\n\n저희는 용접·제관 전문기업으로서 지난 시간 동안 고객과 함께 성장해왔습니다. 하나의 구조물을 완성하기까지 필요한 정성과 책임을, 저희는 가장 큰 자산으로 여깁니다. 축적된 기술 위에 끊임없는 개선과 새로운 도전을 더해, 변화하는 산업 환경에 앞서 대응하는 기업으로 나아가겠습니다.\n\n고객의 신뢰에 품질과 신의로 보답하며, 오래도록 함께하는 든든한 동반자가 되겠습니다. 감사합니다.\n\n㈜두신이엔지 대표이사 신건주",
     about_status_company: "회사명", about_status_company_val: "(주)두신이엔지", about_status_date: "설립일", about_status_date_val: "2002년 4월 1일",
     about_status_ceo: "대표이사", about_status_ceo_val: "신건주", about_status_addr: "소재지", about_status_addr_val: "인천광역시 서구 검단천로356번길 46 (오류동)",
     about_status_prod: "주요생산품", about_status_prod_val: "제철설비, 대형 프레스 프레임, 산업기계, 대형 제관 및 용접 가공", about_status_size: "공장부지", about_status_size_val: "450평 (38m x 39m)",
@@ -244,7 +245,8 @@ export const translations = {
     home_process_s4: "Fabrication",
     home_process_s5: "Welding",
     home_process_s6: "NDT",
-    home_process_s7: "Delivery",
+    home_process_s7: "Machining",
+    home_process_s8: "Delivery",
 
     cta_badge1_title: "Bank Credit Rating BB",
     cta_badge1_desc: "Stable financial soundness",
@@ -387,7 +389,7 @@ export const translations = {
     sol3_title: "High-Reliability Quality & Reliable Delivery", sol3_tag: "3D simulation design & full-inspection system", sol3_desc: "We block errors with 3D simulation from the initial design stage with our own engineering system, and supply high-quality products on time through precision NDT and dimensional inspection.",
 
     about_tab1: "CEO Greeting", about_tab2: "Company Status", about_tab3: "Company History", about_tab4: "Management Philosophy", about_tab5: "Location", about_tab6: "Facilities & View",
-    about_ceo_desc: "This is the CEO greeting area of Dooshin Engineering. To be updated later.",
+    about_ceo_desc: "Welcome, and thank you for visiting Dooshin Engineering.\n\nAs a specialist in welding and steel fabrication, we have grown together with our customers over the years. We regard the care and responsibility required to complete every single structure as our greatest asset. Building on our accumulated expertise with constant improvement and new challenges, we will stay ahead of a changing industrial environment.\n\nWe will repay your trust with quality and integrity, and become a dependable partner for the long term. Thank you.\n\nDooshin Engineering Co., Ltd.  CEO Geon-joo Shin",
     about_status_company: "Company", about_status_company_val: "Dooshin Engineering Co., Ltd.", about_status_date: "Established", about_status_date_val: "April 1, 2002",
     about_status_ceo: "CEO", about_status_ceo_val: "Geon-joo Shin", about_status_addr: "Address", about_status_addr_val: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
     about_status_prod: "Main Products", about_status_prod_val: "Steel facilities, Large press frames, Industrial machinery, Large pipe and welding", about_status_size: "Factory Size", about_status_size_val: "1,487㎡ (38m x 39m)",
@@ -444,7 +446,8 @@ export const translations = {
     home_process_s4: "製缶",
     home_process_s5: "溶接",
     home_process_s6: "非破壊検査",
-    home_process_s7: "納品",
+    home_process_s7: "加工",
+    home_process_s8: "納品",
 
     cta_badge1_title: "銀行格付け BB",
     cta_badge1_desc: "安定した財務健全性",
@@ -587,7 +590,7 @@ export const translations = {
     sol3_title: "高信頼の品質＆確実な納期", sol3_tag: "3Dシミュレーション設計および全数検査システム", sol3_desc: "独自のエンジニアリングシステムにより、初期設計段階から3Dシミュレーションでエラーを遮断し、精密非破壊検査(NDT)と機上検査を経て、納期遅延なく高品質な製品を適時に供給します。",
     
     about_tab1: "代表理事挨拶", about_tab2: "会社状況", about_tab3: "会社沿革", about_tab4: "経営理念", about_tab5: "アクセス", about_tab6: "会社全景および設備",
-    about_ceo_desc: "（株）斗信エンジの代表理事挨拶領域です。後日アップデート予定です。",
+    about_ceo_desc: "斗信エンジをお訪ねくださった皆様、ようこそいらっしゃいました。\n\n当社は溶接・製缶の専門企業として、これまでお客様とともに成長してまいりました。一つの構造物を完成させるまでに必要な真心と責任を、私たちは最大の資産と考えています。蓄積された技術の上に絶え間ない改善と新たな挑戦を重ね、変化する産業環境に先んじて対応する企業へと進んでまいります。\n\nお客様の信頼に品質と信義でお応えし、末永く共に歩む頼れるパートナーになります。ありがとうございます。\n\n（株）斗信エンジ 代表理事 申 建柱",
     about_status_company: "会社名", about_status_company_val: "（株）斗信エンジ", about_status_date: "設立日", about_status_date_val: "2002年4月1日",
     about_status_ceo: "代表理事", about_status_ceo_val: "申 建柱 (シン ゴンジュ)", about_status_addr: "所在地", about_status_addr_val: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
     about_status_prod: "主要生産品", about_status_prod_val: "鉄鋼設備、大型プレスフレーム、産業機械、大型製管および溶接加工", about_status_size: "工場敷地", about_status_size_val: "450坪 (38m x 39m)",

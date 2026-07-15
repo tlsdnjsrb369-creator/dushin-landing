@@ -44,8 +44,8 @@ export default function PerformancePage() {
       title: t('perf4_title'),
       date: "YYYY",
       description: t('perf4_desc'),
-      thumbnail: "/images/mhises-1.jpg",
-      images: ["/images/mhises-1.jpg", "/images/mhises-2.jpg"]
+      thumbnail: "/images/mhises-2.jpg",
+      images: ["/images/mhises-2.jpg", "/images/mhises-1.jpg"]
     },
     {
       id: 5,
