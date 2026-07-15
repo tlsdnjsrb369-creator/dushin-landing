@@ -17,6 +17,8 @@ export default function ProcessFlow() {
     t("home_process_s6"),
     t("home_process_s7"),
     t("home_process_s8"),
+    t("home_process_s9"),
+    t("home_process_s10"),
   ];
 
   return (

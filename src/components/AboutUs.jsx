@@ -106,11 +106,11 @@ export default function AboutUs() {
     return (
       <div ref={tabContentRef}>
         {activeTab === "ceo" && (
-          <div className="flex flex-col items-center justify-center text-center h-full min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-14">
-            <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-8 shadow-md border border-slate-200">
-              <Users className="w-12 h-12 text-slate-400" />
+          <div className="flex flex-col items-center h-full min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
+            <div className="w-full max-w-3xl mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <img src="/factory_exterior.jpg" alt="㈜두신이엔지 공장 전경" className="w-full h-48 md:h-64 object-cover" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 text-center">{t('about_tab1')}</h3>
             <p className="text-slate-600 font-medium leading-loose text-base md:text-lg max-w-2xl whitespace-pre-line text-left">
               {t('about_ceo_desc')}
             </p>

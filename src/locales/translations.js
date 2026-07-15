@@ -43,7 +43,9 @@ export const translations = {
     home_process_s5: "용접",
     home_process_s6: "비파괴검사",
     home_process_s7: "가공",
-    home_process_s8: "납품",
+    home_process_s8: "조립",
+    home_process_s9: "시운전",
+    home_process_s10: "납품",
 
     cta_badge1_title: "은행 신용평가등급 BB",
     cta_badge1_desc: "안정적인 재무 건전성",
@@ -246,7 +248,9 @@ export const translations = {
     home_process_s5: "Welding",
     home_process_s6: "NDT",
     home_process_s7: "Machining",
-    home_process_s8: "Delivery",
+    home_process_s8: "Assembly",
+    home_process_s9: "Test Run",
+    home_process_s10: "Delivery",
 
     cta_badge1_title: "Bank Credit Rating BB",
     cta_badge1_desc: "Stable financial soundness",
@@ -447,7 +451,9 @@ export const translations = {
     home_process_s5: "溶接",
     home_process_s6: "非破壊検査",
     home_process_s7: "加工",
-    home_process_s8: "納品",
+    home_process_s8: "組立",
+    home_process_s9: "試運転",
+    home_process_s10: "納品",
 
     cta_badge1_title: "銀行格付け BB",
     cta_badge1_desc: "安定した財務健全性",
