@@ -6,7 +6,9 @@ export default function ServicesPage() {
   return (
     <>
       <SubPageBackground />
-      <Problem />
+      <div className="pt-24 md:pt-28">
+        <Problem />
+      </div>
     </>
   );
 }

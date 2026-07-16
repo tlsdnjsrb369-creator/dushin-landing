@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <div className="relative bg-white font-sans selection:bg-brand-blue selection:text-white">
       <Hero />
+      <StatsBand />
       <BusinessAreas />
       <ProcessFlow />
       <PerformanceHighlight />
-      <StatsBand />
       <Clients />
       <CTA />
     </div>
