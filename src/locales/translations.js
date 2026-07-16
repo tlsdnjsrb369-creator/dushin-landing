@@ -47,6 +47,15 @@ export const translations = {
     home_process_s9: "시운전",
     home_process_s10: "납품",
 
+    cta_contact_title: "전화·방문 상담도 환영합니다",
+    cta_contact_addr: "인천 서구 검단천로356번길 46 (오류동)",
+
+    // ── 홈: 숫자로 보는 두신 ──
+    home_stats_1_num: "2002", home_stats_1_label: "설립연도",
+    home_stats_2_num: "1,500+", home_stats_2_label: "누적 제작 실적(건)",
+    home_stats_3_num: "12기", home_stats_3_label: "천장크레인 (최대 20톤)",
+    home_stats_4_num: "3개동", home_stats_4_label: "자가 공장 (A·B·C동)",
+
     cta_badge1_title: "은행 신용평가등급 BB",
     cta_badge1_desc: "안정적인 재무 건전성",
     cta_badge2_title: "총 80톤 크레인 (20톤×4기)",
@@ -252,6 +261,15 @@ export const translations = {
     home_process_s9: "Test Run",
     home_process_s10: "Delivery",
 
+    cta_contact_title: "Phone and visit inquiries are also welcome",
+    cta_contact_addr: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
+
+    // ── Home: Stats ──
+    home_stats_1_num: "2002", home_stats_1_label: "Founded",
+    home_stats_2_num: "1,500+", home_stats_2_label: "Completed projects",
+    home_stats_3_num: "12", home_stats_3_label: "Overhead cranes (max 20T)",
+    home_stats_4_num: "3", home_stats_4_label: "Factory buildings (A·B·C)",
+
     cta_badge1_title: "Bank Credit Rating BB",
     cta_badge1_desc: "Stable financial soundness",
     cta_badge2_title: "Total 80T Cranes (20T×4)",
@@ -454,6 +472,15 @@ export const translations = {
     home_process_s8: "組立",
     home_process_s9: "試運転",
     home_process_s10: "納品",
+
+    cta_contact_title: "お電話・ご訪問でのご相談も歓迎します",
+    cta_contact_addr: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
+
+    // ── ホーム: 数字で見る斗信 ──
+    home_stats_1_num: "2002", home_stats_1_label: "設立年度",
+    home_stats_2_num: "1,500+", home_stats_2_label: "累積製作実績(件)",
+    home_stats_3_num: "12基", home_stats_3_label: "天井クレーン (最大20t)",
+    home_stats_4_num: "3棟", home_stats_4_label: "自社工場 (A·B·C棟)",
 
     cta_badge1_title: "銀行格付け BB",
     cta_badge1_desc: "安定した財務健全性",

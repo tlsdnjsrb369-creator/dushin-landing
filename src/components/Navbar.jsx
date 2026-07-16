@@ -256,6 +256,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); setMobileArchivesOpen(false); }}
               className={`py-3 px-4 rounded-lg text-sm font-semibold transition-colors ${
                 pathname === link.href ? "bg-white text-slate-900" : "text-gray-300 hover:bg-gray-800 hover:text-white"
               }`}
@@ -285,6 +286,7 @@ export default function Navbar() {
                   <Link
                     key={sub.tab}
                     href={`${sub.href}?tab=${sub.tab}`}
+                    onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); setMobileArchivesOpen(false); }}
                     className="py-2.5 px-4 rounded-lg text-sm font-semibold transition-colors text-gray-400 hover:bg-gray-800 hover:text-white"
                   >
                     {sub.name}
@@ -315,6 +317,7 @@ export default function Navbar() {
                   <Link
                     key={sub.href}
                     href={sub.href}
+                    onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); setMobileArchivesOpen(false); }}
                     className={`py-2.5 px-4 rounded-lg text-sm font-semibold transition-colors ${
                       pathname === sub.href
                         ? "bg-brand-blue text-white"

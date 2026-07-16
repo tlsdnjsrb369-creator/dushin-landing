@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, FileText, Phone, Mail, Building } from "lucide-react";
+import { Send, FileText, Phone, Mail, Building, Printer, MapPin } from "lucide-react";
 import { useTranslation } from "@/context/LanguageContext";
 
 export default function CTA() {
@@ -89,7 +89,7 @@ export default function CTA() {
             <div className="flex flex-col gap-4 border-t border-slate-200/80 pt-8">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center shadow-sm">
-                  <span className="text-xs font-bold text-brand-blue">B+</span>
+                  <span className="text-xs font-bold text-brand-blue">BB</span>
                 </div>
                 <div>
                   <span className="text-sm font-bold text-slate-800 block">{t('cta_badge1_title')}</span>
@@ -105,6 +105,29 @@ export default function CTA() {
                   <span className="text-sm font-bold text-slate-800 block">{t('cta_badge2_title')}</span>
                   <span className="text-xs text-slate-500 font-medium">{t('cta_badge2_desc')}</span>
                 </div>
+              </div>
+            </div>
+
+            {/* 직접 연락 카드 — 폼이 부담스러운 방문자용 */}
+            <div className="mt-8 p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <span className="text-sm font-bold text-slate-800 block mb-4">{t('cta_contact_title')}</span>
+              <div className="flex flex-col gap-3">
+                <a href="tel:032-562-5494" className="flex items-center gap-3 group">
+                  <Phone className="w-4 h-4 text-brand-blue shrink-0" />
+                  <span className="text-sm font-semibold text-slate-700 group-hover:text-brand-blue transition-colors">032-562-5494</span>
+                </a>
+                <div className="flex items-center gap-3">
+                  <Printer className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="text-sm font-medium text-slate-600">FAX 032-568-5494</span>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=인천광역시 서구 검단천로356번길 46"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 group"
+                >
+                  <MapPin className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="text-sm font-medium text-slate-600 group-hover:text-brand-blue transition-colors">{t('cta_contact_addr')}</span>
+                </a>
               </div>
             </div>
           </div>
