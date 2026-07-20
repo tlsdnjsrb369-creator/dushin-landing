@@ -117,10 +117,8 @@ export default function Problem() {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative py-24 bg-transparent border-y border-slate-200/80 overflow-hidden"
+      className="relative py-24 bg-transparent overflow-hidden"
     >
-      {/* 장식용 탑 레이저 라인 */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         

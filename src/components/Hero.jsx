@@ -124,7 +124,7 @@ export default function Hero() {
           </Link>
           {/* 회사 전경 및 설비 — 흰 배경 친화적으로 어두운 테두리/글자색 */}
           <Link
-            href="/about"
+            href="/about?tab=facilities"
             className="px-8 py-4 border-2 border-slate-800 bg-white/70 backdrop-blur-sm text-slate-800 font-bold tracking-wider rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-sm"
           >
             {t('hero_btn_facilities')}

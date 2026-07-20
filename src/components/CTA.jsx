@@ -64,10 +64,9 @@ export default function CTA() {
   };
 
   return (
-    <section id="cta" className="relative py-28 bg-transparent border-t border-slate-200/80 overflow-hidden">
+    <section id="cta" className="relative py-28 bg-transparent overflow-hidden">
       {/* 백그라운드 광원 효과 */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] glow-radial opacity-20 pointer-events-none rounded-full" />
-      <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
