@@ -3,6 +3,7 @@
 import Hero from "@/components/Hero";
 import BusinessAreas from "@/components/home/BusinessAreas";
 import ProcessFlow from "@/components/home/ProcessFlow";
+import FieldGallery from "@/components/home/FieldGallery";
 import PerformanceHighlight from "@/components/home/PerformanceHighlight";
 import StatsBand from "@/components/home/StatsBand";
 import Clients from "@/components/home/Clients";
@@ -15,6 +16,7 @@ export default function Home() {
       <StatsBand />
       <BusinessAreas />
       <ProcessFlow />
+      <FieldGallery />
       <PerformanceHighlight />
       <Clients />
       <CTA />

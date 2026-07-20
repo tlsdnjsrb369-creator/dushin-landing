@@ -47,6 +47,21 @@ export const translations = {
     home_process_s9: "시운전",
     home_process_s10: "납품",
 
+    // ── 홈: 현장 갤러리 ──
+    home_field_badge: "FIELD",
+    home_field_title_1: "두신이엔지의",
+    home_field_title_2: "생생한 현장 이야기",
+    home_field_desc: "인천 검단 공장에서 오늘도 제작이 진행 중입니다. 자재 입고부터 출하까지, 실제 현장의 모습을 그대로 전합니다.",
+    home_field_1: "자재 입고 (사급)",
+    home_field_2: "절단",
+    home_field_3: "제관·취부",
+    home_field_4: "용접",
+    home_field_5: "대형 프레임 제작",
+    home_field_6: "사상",
+    home_field_7: "품질 검사",
+    home_field_8: "출하",
+    home_field_video: "현장 영상 — 용접 작업",
+
     cta_contact_title: "전화·방문 상담도 환영합니다",
     cta_contact_addr: "인천 서구 검단천로356번길 46 (오류동)",
 
@@ -261,6 +276,21 @@ export const translations = {
     home_process_s9: "Test Run",
     home_process_s10: "Delivery",
 
+    // ── Home: Field Gallery ──
+    home_field_badge: "FIELD",
+    home_field_title_1: "Dushin Engineering,",
+    home_field_title_2: "Straight from the Shop Floor",
+    home_field_desc: "Fabrication is underway today at our Incheon Geomdan plant. From material arrival to shipment, this is our shop as it really is.",
+    home_field_1: "Material arrival",
+    home_field_2: "Cutting",
+    home_field_3: "Fit-up",
+    home_field_4: "Welding",
+    home_field_5: "Large frame build",
+    home_field_6: "Grinding",
+    home_field_7: "Inspection",
+    home_field_8: "Shipping",
+    home_field_video: "Field video — welding",
+
     cta_contact_title: "Phone and visit inquiries are also welcome",
     cta_contact_addr: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
 
@@ -472,6 +502,21 @@ export const translations = {
     home_process_s8: "組立",
     home_process_s9: "試運転",
     home_process_s10: "納品",
+
+    // ── ホーム: 現場ギャラリー ──
+    home_field_badge: "FIELD",
+    home_field_title_1: "斗信エンジの",
+    home_field_title_2: "生きた現場ストーリー",
+    home_field_desc: "仁川黔丹工場では今日も製作が進んでいます。資材入庫から出荷まで、実際の現場の姿をそのままお伝えします。",
+    home_field_1: "資材入庫",
+    home_field_2: "切断",
+    home_field_3: "製缶・取付",
+    home_field_4: "溶接",
+    home_field_5: "大型フレーム製作",
+    home_field_6: "仕上げ",
+    home_field_7: "品質検査",
+    home_field_8: "出荷",
+    home_field_video: "現場映像 — 溶接作業",
 
     cta_contact_title: "お電話・ご訪問でのご相談も歓迎します",
     cta_contact_addr: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
