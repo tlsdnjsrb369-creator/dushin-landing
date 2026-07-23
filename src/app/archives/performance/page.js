@@ -25,8 +25,8 @@ export default function PerformancePage() {
       title: t('perf23_title'),
       date: "2025.05",
       description: t('perf23_desc'),
-      thumbnail: "/images/nikko-1.jpg",
-      images: ["/images/nikko-1.jpg", "/images/nikko-2.jpg", "/images/nikko-3.jpg", "/images/nikko-4.jpg"]
+      thumbnail: "/images/nikko-4.jpg",
+      images: ["/images/nikko-4.jpg", "/images/nikko-1.jpg", "/images/nikko-2.jpg", "/images/nikko-3.jpg"]
     },
     {
       id: 1,
