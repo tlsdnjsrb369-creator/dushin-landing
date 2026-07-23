@@ -13,6 +13,22 @@ export default function PerformancePage() {
   // ── 실적 프로젝트 데이터 배열 ──────────────────────────────────────────────
   const projects = [
     {
+      id: 22,
+      title: t('perf22_title'),
+      date: "2025.08",
+      description: t('perf22_desc'),
+      thumbnail: "/images/bucket-1.jpg",
+      images: ["/images/bucket-1.jpg", "/images/bucket-2.jpg", "/images/bucket-3.jpg", "/images/bucket-4.jpg"]
+    },
+    {
+      id: 23,
+      title: t('perf23_title'),
+      date: "2025.05",
+      description: t('perf23_desc'),
+      thumbnail: "/images/nikko-1.jpg",
+      images: ["/images/nikko-1.jpg", "/images/nikko-2.jpg", "/images/nikko-3.jpg", "/images/nikko-4.jpg"]
+    },
+    {
       id: 1,
       title: t('perf1_title'),
       date: "2019.01",
