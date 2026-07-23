@@ -168,6 +168,14 @@ export default function PerformancePage() {
       images: ["/images/samsung-base-1.jpg", "/images/samsung-base-2.jpg", "/images/samsung-base-3.jpg", "/images/samsung-base-4.jpg", "/images/samsung-base-5.jpg"]
     },
     {
+      id: 21,
+      title: t('perf21_title'),
+      date: "2024.10",
+      description: t('perf21_desc'),
+      thumbnail: "/images/kdw-cooling-1.jpg",
+      images: ["/images/kdw-cooling-1.jpg", "/images/kdw-cooling-2.jpg", "/images/kdw-cooling-3.jpg", "/images/kdw-cooling-4.jpg"]
+    },
+    {
       id: 20,
       title: t('perf20_title'),
       date: "2024.02",
