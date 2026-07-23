@@ -18,6 +18,7 @@ export default function PerformancePage() {
       date: "2025.08",
       description: t('perf22_desc'),
       thumbnail: "/images/bucket-1.jpg",
+      video: "/videos/scrap-bucket.mp4",
       images: ["/images/bucket-1.jpg", "/images/bucket-2.jpg", "/images/bucket-3.jpg", "/images/bucket-4.jpg"]
     },
     {
@@ -351,6 +352,20 @@ export default function PerformancePage() {
             
             {/* 모달 갤러리 영역 */}
             <div className="p-5 md:p-8 overflow-y-auto bg-slate-50 flex-grow">
+              {selectedProject.video && (
+                <div className="relative w-full rounded-xl overflow-hidden border border-slate-200 bg-black shadow-sm mb-6 md:mb-8">
+                  <video
+                    src={selectedProject.video}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full max-h-[70vh] object-contain bg-black"
+                  />
+                  <span className="absolute top-3 left-3 bg-brand-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">▶ 작동 영상</span>
+                </div>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                 {selectedProject.images.map((imgSrc, idx) => (
                   <div key={idx} className="relative aspect-video w-full rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
