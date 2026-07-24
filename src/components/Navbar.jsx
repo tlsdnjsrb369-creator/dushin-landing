@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Globe, ChevronDown, Menu, X } from "lucide-react";
+import { Globe, ChevronDown, Menu, X, Phone } from "lucide-react";
 import { useTranslation } from "@/context/LanguageContext";
 
 
@@ -226,6 +226,14 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          <a
+            href="tel:032-562-5494"
+            className="hidden lg:flex items-center gap-1.5 text-gray-200 hover:text-white transition-colors text-sm font-bold tracking-wide"
+          >
+            <Phone className="w-4 h-4" />
+            032-562-5494
+          </a>
 
           <Link
             href="/inquiry"

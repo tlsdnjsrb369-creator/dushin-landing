@@ -28,6 +28,8 @@ export const translations = {
     home_clients_title_1: "국내외 주요 프로젝트에",
     home_clients_title_2: "함께해 온 납품 실적",
     home_clients_desc: "두신이엔지의 기술력은 국내외 유수의 제철·중공업·건설 프로젝트의 까다로운 품질 기준으로 검증되었습니다.",
+    archives_card_perf_desc: "제철설비·프레스 프레임·대형 철구조물 등 실제 제작 실적을 사진으로 확인하세요.",
+    archives_card_cert_desc: "ISO 9001 품질경영, 비파괴검사 등 두신이엔지가 보유한 인증 현황입니다.",
     home_clients_partners_label: "주요 파트너 (직접 거래처)",
     home_clients_endusers_label: "최종 적용처 (End Users)",
 
@@ -64,6 +66,7 @@ export const translations = {
 
     cta_contact_title: "전화·방문 상담도 환영합니다",
     cta_contact_addr: "인천 서구 검단천로356번길 46 (오류동)",
+    cta_drawing_note: "도면·사양서는 위 이메일로 보내주시면 더 빠르고 정확한 견적이 가능합니다.",
 
     // ── 홈: 숫자로 보는 두신 ──
     home_stats_1_num: "2002", home_stats_1_label: "설립연도",
@@ -263,6 +266,8 @@ export const translations = {
     home_clients_title_1: "Part of Major Projects",
     home_clients_title_2: "at Home and Abroad",
     home_clients_desc: "Dushin Engineering's expertise has been proven against the demanding quality standards of major steel, heavy-industry, and construction projects at home and abroad.",
+    archives_card_perf_desc: "See our real project record — steel facilities, press frames, and large steel structures — in photos.",
+    archives_card_cert_desc: "Certifications held by Dushin Engineering, including ISO 9001 quality management and NDT.",
     home_clients_partners_label: "Key Partners (Direct Clients)",
     home_clients_endusers_label: "End Users",
 
@@ -299,6 +304,7 @@ export const translations = {
 
     cta_contact_title: "Phone and visit inquiries are also welcome",
     cta_contact_addr: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
+    cta_drawing_note: "Send your drawings or specifications to the email above for a faster, more accurate quote.",
 
     // ── Home: Stats ──
     home_stats_1_num: "2002", home_stats_1_label: "Founded",
@@ -496,6 +502,8 @@ export const translations = {
     home_clients_title_1: "国内外の主要プロジェクトに",
     home_clients_title_2: "携わってきた納品実績",
     home_clients_desc: "斗信エンジの技術力は、国内外の主要な製鉄・重工業・建設プロジェクトの厳しい品質基準で検証されています。",
+    archives_card_perf_desc: "鉄鋼設備・プレスフレーム・大型鉄構造物など、実際の製作実績を写真でご確認ください。",
+    archives_card_cert_desc: "ISO 9001品質経営、非破壊検査など、斗信エンジが保有する認証の現況です。",
     home_clients_partners_label: "主要パートナー (直接取引先)",
     home_clients_endusers_label: "最終適用先 (End Users)",
 
@@ -532,6 +540,7 @@ export const translations = {
 
     cta_contact_title: "お電話・ご訪問でのご相談も歓迎します",
     cta_contact_addr: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
+    cta_drawing_note: "図面・仕様書は上記メールにお送りいただくと、より迅速で正確なお見積りが可能です。",
 
     // ── ホーム: 数字で見る斗信 ──
     home_stats_1_num: "2002", home_stats_1_label: "設立年度",

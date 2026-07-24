@@ -78,7 +78,7 @@ export default function Hero() {
         alt="두신이엔지 대형 프레스 프레임 용접 현장"
         fill
         priority
-        className="object-cover opacity-25"
+        className="object-cover opacity-40"
       />
 
       {/* 오버레이 — 이전 대비 불투명도를 낮춰 사진이 더 잘 비치도록 */}

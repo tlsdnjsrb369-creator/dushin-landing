@@ -119,6 +119,10 @@ export default function CTA() {
                   <Printer className="w-4 h-4 text-slate-400 shrink-0" />
                   <span className="text-sm font-medium text-slate-600">FAX 032-568-5494</span>
                 </div>
+                <a href="mailto:skj1994@naver.com" className="flex items-center gap-3 group">
+                  <Mail className="w-4 h-4 text-brand-blue shrink-0" />
+                  <span className="text-sm font-semibold text-slate-700 group-hover:text-brand-blue transition-colors">skj1994@naver.com</span>
+                </a>
                 <a
                   href="https://maps.google.com/?q=인천광역시 서구 검단천로356번길 46"
                   target="_blank" rel="noopener noreferrer"
@@ -128,6 +132,9 @@ export default function CTA() {
                   <span className="text-sm font-medium text-slate-600 group-hover:text-brand-blue transition-colors">{t('cta_contact_addr')}</span>
                 </a>
               </div>
+              <p className="text-xs text-slate-500 mt-4 leading-relaxed border-t border-slate-200 pt-3">
+                {t('cta_drawing_note')}
+              </p>
             </div>
           </div>
 
