@@ -67,6 +67,11 @@ export const translations = {
     cta_contact_title: "전화·방문 상담도 환영합니다",
     cta_contact_addr: "인천 서구 검단천로356번길 46 (오류동)",
     cta_drawing_note: "도면·사양서는 위 이메일로 보내주시면 더 빠르고 정확한 견적이 가능합니다.",
+    about_loc_addr_label: "상세 주소",
+    about_loc_addr_val: "인천광역시 서구 검단천로356번길 46",
+    about_loc_addr_sub: "(검단일반산업단지 내)",
+    about_loc_tel_label: "전화번호",
+    about_loc_fax_label: "팩스번호",
 
     // ── 홈: 숫자로 보는 두신 ──
     home_stats_1_num: "2002", home_stats_1_label: "설립연도",
@@ -305,6 +310,11 @@ export const translations = {
     cta_contact_title: "Phone and visit inquiries are also welcome",
     cta_contact_addr: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
     cta_drawing_note: "Send your drawings or specifications to the email above for a faster, more accurate quote.",
+    about_loc_addr_label: "Address",
+    about_loc_addr_val: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
+    about_loc_addr_sub: "(Geomdan Industrial Complex)",
+    about_loc_tel_label: "Phone",
+    about_loc_fax_label: "Fax",
 
     // ── Home: Stats ──
     home_stats_1_num: "2002", home_stats_1_label: "Founded",
@@ -541,6 +551,11 @@ export const translations = {
     cta_contact_title: "お電話・ご訪問でのご相談も歓迎します",
     cta_contact_addr: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
     cta_drawing_note: "図面・仕様書は上記メールにお送りいただくと、より迅速で正確なお見積りが可能です。",
+    about_loc_addr_label: "詳細住所",
+    about_loc_addr_val: "仁川広域市 西区 黔丹川路356番キル 46",
+    about_loc_addr_sub: "(黔丹一般産業団地内)",
+    about_loc_tel_label: "電話番号",
+    about_loc_fax_label: "FAX番号",
 
     // ── ホーム: 数字で見る斗信 ──
     home_stats_1_num: "2002", home_stats_1_label: "設立年度",

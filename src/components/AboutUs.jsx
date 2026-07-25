@@ -245,22 +245,22 @@ export default function AboutUs() {
               <div className="flex items-start gap-3 p-4 rounded-lg bg-slate-50 border border-slate-100">
                 <MapPin className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-xs font-bold text-slate-400 block mb-1">상세 주소</span>
-                  <span className="text-sm font-semibold text-slate-800">인천광역시 서구 검단천로356번길 46<br/>(검단일반산업단지 내)</span>
+                  <span className="text-xs font-bold text-slate-400 block mb-1">{t('about_loc_addr_label')}</span>
+                  <span className="text-sm font-semibold text-slate-800">{t('about_loc_addr_val')}<br/>{t('about_loc_addr_sub')}</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-slate-50 border border-slate-100">
                   <Phone className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-xs font-bold text-slate-400 block mb-1">전화번호</span>
+                    <span className="text-xs font-bold text-slate-400 block mb-1">{t('about_loc_tel_label')}</span>
                     <span className="text-sm font-semibold text-slate-800">032-562-5494</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-slate-50 border border-slate-100">
                   <Printer className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-xs font-bold text-slate-400 block mb-1">팩스번호</span>
+                    <span className="text-xs font-bold text-slate-400 block mb-1">{t('about_loc_fax_label')}</span>
                     <span className="text-sm font-semibold text-slate-800">032-568-5494</span>
                   </div>
                 </div>
