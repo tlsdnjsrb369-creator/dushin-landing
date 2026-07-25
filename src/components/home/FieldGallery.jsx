@@ -43,26 +43,34 @@ export default function FieldGallery() {
           </p>
         </motion.div>
 
-        {/* 현장 영상 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg mb-10 bg-slate-900"
-        >
-          <video
-            src="/videos/field-weld.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full max-h-[480px] object-cover"
-          />
-          <span className="absolute bottom-3 left-4 text-xs font-bold text-white/90 bg-black/45 px-3 py-1.5 rounded-full backdrop-blur-sm">
-            {t("home_field_video")}
-          </span>
-        </motion.div>
+        {/* 현장 영상 — A동 / C동 나란히 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          {[
+            { src: "/videos/field-weld.mp4", label: t("home_field_video_a") },
+            { src: "/videos/field-weld-c.mp4", label: t("home_field_video_c") },
+          ].map((v, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+              className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900"
+            >
+              <video
+                src={v.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full aspect-video object-cover"
+              />
+              <span className="absolute bottom-3 left-4 text-xs font-bold text-white/90 bg-black/45 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                {v.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
 
         {/* 사진 그리드 (자재 입고 → 출하) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

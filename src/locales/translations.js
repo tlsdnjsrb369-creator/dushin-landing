@@ -63,6 +63,8 @@ export const translations = {
     home_field_7: "품질 검사",
     home_field_8: "출하",
     home_field_video: "현장 영상 — 용접 작업",
+    home_field_video_a: "용접 현장 (A동)",
+    home_field_video_c: "용접 현장 (C동)",
 
     cta_contact_title: "전화·방문 상담도 환영합니다",
     cta_contact_addr: "인천 서구 검단천로356번길 46 (오류동)",
@@ -306,6 +308,8 @@ export const translations = {
     home_field_7: "Inspection",
     home_field_8: "Shipping",
     home_field_video: "Field video — welding",
+    home_field_video_a: "Welding — Bay A",
+    home_field_video_c: "Welding — Bay C",
 
     cta_contact_title: "Phone and visit inquiries are also welcome",
     cta_contact_addr: "46, Geomdancheon-ro 356beon-gil, Seo-gu, Incheon",
@@ -547,6 +551,8 @@ export const translations = {
     home_field_7: "品質検査",
     home_field_8: "出荷",
     home_field_video: "現場映像 — 溶接作業",
+    home_field_video_a: "溶接現場 (A棟)",
+    home_field_video_c: "溶接現場 (C棟)",
 
     cta_contact_title: "お電話・ご訪問でのご相談も歓迎します",
     cta_contact_addr: "仁川広域市 西区 黔丹川路356番キル 46 (梧柳洞)",
