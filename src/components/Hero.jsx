@@ -74,8 +74,8 @@ export default function Hero() {
     >
       {/* 배경 공장 사진 — opacity-25 (이전 0.10 대비 약 15% 더 선명) */}
       <Image
-        src="/images/field-bigframe.jpg"
-        alt="두신이엔지 대형 프레스 프레임 용접 현장"
+        src="/images/factory-exterior-new.jpg"
+        alt="㈜두신이엔지 공장 전경 (A·B·C동)"
         fill
         priority
         className="object-cover opacity-40"

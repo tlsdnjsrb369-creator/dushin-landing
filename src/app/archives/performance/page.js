@@ -17,8 +17,8 @@ export default function PerformancePage() {
       title: t('perf24_title'),
       date: "2026.05",
       description: t('perf24_desc'),
-      thumbnail: "/images/sumbaek-1.jpg",
-      images: ["/images/sumbaek-1.jpg", "/images/sumbaek-2.jpg", "/images/sumbaek-3.jpg", "/images/sumbaek-4.jpg"]
+      thumbnail: "/images/sumbaek-2.jpg",
+      images: ["/images/sumbaek-2.jpg", "/images/sumbaek-3.jpg", "/images/sumbaek-1.jpg", "/images/sumbaek-4.jpg"]
     },
     {
       id: 22,
