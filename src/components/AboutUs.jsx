@@ -106,16 +106,16 @@ export default function AboutUs() {
     return (
       <div ref={tabContentRef}>
         {activeTab === "ceo" && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
             {/* 왼쪽: 인사말 */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 lg:col-span-5">
               <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
               <p className="text-slate-700 font-medium leading-loose text-base md:text-lg whitespace-pre-line">
                 {t('about_ceo_desc')}
               </p>
             </div>
-            {/* 오른쪽: 공장 전경 */}
-            <div className="order-1 lg:order-2 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+            {/* 오른쪽: 공장 전경 (더 크게) */}
+            <div className="order-1 lg:order-2 lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
               <img
                 src="/images/factory-exterior-new.jpg"
                 alt="㈜두신이엔지 공장 전경 (A·B·C동)"
