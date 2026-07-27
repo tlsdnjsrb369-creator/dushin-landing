@@ -108,7 +108,7 @@ export default function AboutUs() {
         {activeTab === "ceo" && (
           <div className="flex flex-col items-center h-full min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
             <div className="w-full max-w-3xl mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
-              <img src="/images/field-crane.jpg" alt="㈜두신이엔지 공장 내부 전경" className="w-full h-48 md:h-64 object-cover object-[center_35%]" />
+              <img src="/images/factory-exterior-new.jpg" alt="㈜두신이엔지 공장 전경 (A·B·C동)" className="w-full h-48 md:h-64 object-cover object-[center_60%]" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 text-center">{t('about_tab1')}</h3>
             <p className="text-slate-600 font-medium leading-loose text-base md:text-lg max-w-2xl whitespace-pre-line text-left">
@@ -274,7 +274,7 @@ export default function AboutUs() {
             {/* 상단: 대형 외부 전경 갤러리 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { src: "/factory_exterior.jpg", title: t('about_fac_img1') },
+                { src: "/images/factory-exterior-new.jpg", title: t('about_fac_img1') },
                 { src: "/factory_exterior2.jpg", title: t('about_fac_img2') }
               ].map((img, idx) => (
                 <div key={idx} className="relative aspect-video lg:aspect-[21/9] bg-slate-100 rounded-2xl overflow-hidden group border border-slate-200 shadow-md">
