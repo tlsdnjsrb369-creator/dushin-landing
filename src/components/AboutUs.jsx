@@ -106,14 +106,22 @@ export default function AboutUs() {
     return (
       <div ref={tabContentRef}>
         {activeTab === "ceo" && (
-          <div className="flex flex-col items-center h-full min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
-            <div className="w-full max-w-3xl mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
-              <img src="/images/factory-exterior-new.jpg" alt="㈜두신이엔지 공장 전경 (A·B·C동)" className="w-full h-auto object-contain" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
+            {/* 왼쪽: 인사말 */}
+            <div className="order-2 lg:order-1">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
+              <p className="text-slate-700 font-medium leading-loose text-base md:text-lg whitespace-pre-line">
+                {t('about_ceo_desc')}
+              </p>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 text-center">{t('about_tab1')}</h3>
-            <p className="text-slate-700 font-medium leading-loose text-lg md:text-xl max-w-3xl whitespace-pre-line text-left">
-              {t('about_ceo_desc')}
-            </p>
+            {/* 오른쪽: 공장 전경 */}
+            <div className="order-1 lg:order-2 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+              <img
+                src="/images/factory-exterior-new.jpg"
+                alt="㈜두신이엔지 공장 전경 (A·B·C동)"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
         )}
 
