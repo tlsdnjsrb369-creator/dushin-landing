@@ -17,6 +17,7 @@ export default function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [files, setFiles] = useState([]);
+  const [honeypot, setHoneypot] = useState("");
 
   const MAX_TOTAL = 4 * 1024 * 1024; // 4MB (서버 전송 한도)
 
@@ -43,11 +44,22 @@ export default function CTA() {
     try {
       const body = new FormData();
       Object.entries(formData).forEach(([k, v]) => body.append(k, v));
+      if (honeypot) body.append("website", honeypot);
       files.forEach((f) => body.append("files", f));
 
       const res = await fetch("/api/contact", { method: "POST", body });
 
-      const data = await res.json();
+      // 서버가 JSON이 아닌 오류(용량 초과 등)를 돌려줄 수 있으므로 방어
+      const data = await res.json().catch(() => ({ success: false }));
+      if (!res.ok) {
+        alert(
+          data.error ||
+            (res.status === 413
+              ? (t('cta_file_toobig') || "첨부파일 용량이 너무 큽니다. 큰 도면은 skj1994@naver.com 으로 보내주세요.")
+              : (t('contact_fail') || "이메일 전송에 실패했습니다. 다시 시도해 주세요."))
+        );
+        return;
+      }
       if (data.success) {
         alert(t('contact_success') || "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.");
         setSubmitted(true);
@@ -259,6 +271,17 @@ export default function CTA() {
                       className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all resize-none"
                     />
                   </div>
+
+                  {/* 봇 감지용 숨은 칸 — 사람에게는 보이지 않습니다 */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden"
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
 
                   {/* 도면·사양서 첨부 */}
                   <div>

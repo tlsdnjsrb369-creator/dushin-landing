@@ -7,6 +7,6 @@ export async function GET() {
     const workers = await sb("workers?select=id,name,team&order=team,name");
     return NextResponse.json({ workers });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }

@@ -17,7 +17,7 @@ export async function GET(req) {
     );
     return NextResponse.json({ logs });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }
 
@@ -43,7 +43,7 @@ export async function POST(req) {
     });
     return NextResponse.json({ log: inserted[0] });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }
 
@@ -61,6 +61,6 @@ export async function DELETE(req) {
     });
     return NextResponse.json({ ok: true });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }

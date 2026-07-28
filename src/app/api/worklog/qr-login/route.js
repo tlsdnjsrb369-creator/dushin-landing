@@ -14,6 +14,6 @@ export async function POST(req) {
     const token = signToken(w.id);
     return NextResponse.json({ token, worker: { id: w.id, name: w.name, team: w.team } });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }

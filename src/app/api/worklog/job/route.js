@@ -10,6 +10,6 @@ export async function GET(req) {
     if (!rows[0]) return NextResponse.json({ error: "작업을 찾을 수 없습니다." }, { status: 404 });
     return NextResponse.json({ job: rows[0] });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }

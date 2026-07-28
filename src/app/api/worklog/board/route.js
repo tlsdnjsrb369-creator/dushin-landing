@@ -53,6 +53,6 @@ export async function POST(req) {
     }
     return NextResponse.json({ error: "알 수 없는 요청" }, { status: 400 });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }

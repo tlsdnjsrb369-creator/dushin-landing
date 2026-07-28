@@ -1,8 +1,49 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/context/LanguageContext";
+
+// 화면에 들어왔을 때만 영상을 내려받아 재생 (데이터·로딩 절약)
+function LazyVideo({ src, poster, label }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900">
+      <video
+        src={visible ? src : undefined}
+        poster={poster}
+        autoPlay={visible}
+        muted
+        loop
+        playsInline
+        preload="none"
+        className="w-full aspect-video object-cover"
+      />
+      <span className="absolute bottom-3 left-4 text-xs font-bold text-white/90 bg-black/45 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        {label}
+      </span>
+    </div>
+  );
+}
 
 // 현장 갤러리 — 실제 촬영 사진(자재 입고→출하) + 현장 영상
 export default function FieldGallery() {
@@ -46,8 +87,8 @@ export default function FieldGallery() {
         {/* 현장 영상 — A동 / C동 나란히 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           {[
-            { src: "/videos/field-weld.mp4", label: t("home_field_video_a") },
-            { src: "/videos/field-weld-c.mp4", label: t("home_field_video_c") },
+            { src: "/videos/field-weld.mp4", poster: "/images/poster-field-weld.jpg", label: t("home_field_video_a") },
+            { src: "/videos/field-weld-c.mp4", poster: "/images/poster-field-weld-c.jpg", label: t("home_field_video_c") },
           ].map((v, i) => (
             <motion.div
               key={i}
@@ -55,19 +96,8 @@ export default function FieldGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-              className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900"
             >
-              <video
-                src={v.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full aspect-video object-cover"
-              />
-              <span className="absolute bottom-3 left-4 text-xs font-bold text-white/90 bg-black/45 px-3 py-1.5 rounded-full backdrop-blur-sm">
-                {v.label}
-              </span>
+              <LazyVideo src={v.src} poster={v.poster} label={v.label} />
             </motion.div>
           ))}
         </div>

@@ -2,7 +2,15 @@ import crypto from "crypto";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
-const SECRET = process.env.WORKLOG_SECRET || "change-me-please";
+// 서명 키는 반드시 환경변수로 지정해야 합니다(기본값 사용 시 토큰 위조 위험).
+const SECRET = process.env.WORKLOG_SECRET;
+
+function requireSecret() {
+  if (!SECRET || SECRET.length < 16) {
+    throw new Error("WORKLOG_SECRET이 설정되지 않았습니다.");
+  }
+  return SECRET;
+}
 
 // Supabase REST(PostgREST) 호출 헬퍼 — 서버에서만 사용 (서비스 키)
 export async function sb(path, { method = "GET", body, prefer } = {}) {
@@ -29,9 +37,10 @@ export async function sb(path, { method = "GET", body, prefer } = {}) {
 
 // 로그인 토큰 (HMAC 서명) — 12시간 유효
 export function signToken(workerId) {
+  const secret = requireSecret();
   const exp = Date.now() + 1000 * 60 * 60 * 12;
   const payload = `${workerId}.${exp}`;
-  const sig = crypto.createHmac("sha256", SECRET).update(payload).digest("hex");
+  const sig = crypto.createHmac("sha256", secret).update(payload).digest("hex");
   return `${payload}.${sig}`;
 }
 
@@ -40,8 +49,14 @@ export function verifyToken(token) {
   const parts = token.split(".");
   if (parts.length !== 3) return null;
   const [workerId, exp, sig] = parts;
-  const expected = crypto.createHmac("sha256", SECRET).update(`${workerId}.${exp}`).digest("hex");
-  if (sig !== expected) return null;
+  let expected;
+  try {
+    expected = crypto.createHmac("sha256", requireSecret()).update(`${workerId}.${exp}`).digest("hex");
+  } catch {
+    return null;
+  }
+  if (sig.length !== expected.length) return null;
+  if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return null;
   if (Date.now() > Number(exp)) return null;
   return workerId;
 }

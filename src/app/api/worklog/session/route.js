@@ -17,7 +17,7 @@ export async function GET(req) {
     const rows = await sb(`work_sessions?select=*&worker_id=eq.${wid}&job_id=eq.${job.id}&ended_at=is.null&order=started_at.desc&limit=1`);
     return NextResponse.json({ open: rows[0] || null });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }
 
@@ -48,6 +48,6 @@ export async function POST(req) {
       return NextResponse.json({ ok: true });
     }
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: "요청 처리 중 오류가 발생했습니다." }, { status: 500 });
   }
 }
