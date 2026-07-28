@@ -21,11 +21,11 @@ export async function POST(req) {
     const mailOptions = {
       from: process.env.EMAIL_USER || "skj1994@naver.com",
       to: "skj1994@naver.com", // 수신자
-      subject: `[(주)두신이엔지] 홈페이지 제작 문의 - ${company} (${name})`,
+      subject: `[(주)두신이엔지] 제작 문의 - ${company} (${name})`,
       html: `
         <div style="font-family: 'Malgun Gothic', sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; max-width: 600px;">
           <h2 style="color: #0055a4; border-bottom: 2px solid #0055a4; padding-bottom: 10px; margin-bottom: 20px;">
-            홈페이지 신규 상담 문의
+            홈페이지 제작·견적 문의 접수
           </h2>
           
           <table style="width: 100%; border-collapse: collapse;">
