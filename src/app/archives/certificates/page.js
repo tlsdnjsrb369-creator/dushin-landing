@@ -72,7 +72,7 @@ export default function CertificatesPage() {
             >
               {/* 이미지 영역 */}
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-black/5">
-                <img
+                <img loading="lazy" decoding="async"
                   src={encodeURI(cert.image)}
                   alt={cert.name}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"
@@ -128,7 +128,7 @@ export default function CertificatesPage() {
 
             {/* 이미지 영역 — object-contain 으로 전체 자격증 표시 */}
             <div className="flex-grow overflow-auto bg-black/[0.03] flex items-center justify-center p-6 md:p-10">
-              <img
+              <img loading="lazy" decoding="async"
                 src={encodeURI(selectedCert.image)}
                 alt={selectedCert.name}
                 style={{ objectFit: "contain", maxHeight: "70vh", width: "100%" }}

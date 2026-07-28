@@ -116,7 +116,7 @@ export default function AboutUs() {
             </div>
             {/* 오른쪽: 공장 전경 (크게) */}
             <div className="order-1 lg:order-2 lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/factory-exterior-new.jpg"
                 alt="㈜두신이엔지 공장 전경 (A·B·C동)"
                 className="w-full h-auto object-contain"
@@ -204,7 +204,7 @@ export default function AboutUs() {
                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-all duration-500" />
                 {/* 콘텐츠 */}
                 <div className="relative z-10 flex flex-col items-center gap-5">
-                  <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300 shadow-xl">
+                  <div className="w-20 h-20 rounded-full bg-white/20 border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-300 shadow-xl">
                     {item.icon}
                   </div>
                   <h4 className="text-2xl font-extrabold text-white drop-shadow-md tracking-tight">{item.title}</h4>
@@ -220,7 +220,7 @@ export default function AboutUs() {
         {activeTab === "location" && (
           <div className="flex flex-col gap-6">
             {/* 구글 지도 iframe 및 오버레이 */}
-            <div className="w-full h-[500px] md:h-[600px] bg-white/50 backdrop-blur-sm rounded-xl border border-slate-200/80 overflow-hidden relative group shadow-sm p-1.5 md:p-2.5">
+            <div className="w-full h-[500px] md:h-[600px] bg-white/70 rounded-xl border border-slate-200/80 overflow-hidden relative group shadow-sm p-1.5 md:p-2.5">
               <div className="w-full h-full relative rounded-lg overflow-hidden bg-slate-100">
                 <iframe 
                   src="https://www.google.com/maps?q=인천광역시+서구+검단천로356번길+46&output=embed&z=15" 
@@ -287,7 +287,7 @@ export default function AboutUs() {
               ].map((img, idx) => (
                 <div key={idx} className="relative aspect-video lg:aspect-[21/9] bg-slate-100 rounded-2xl overflow-hidden group border border-slate-200 shadow-md">
                   <div className="absolute inset-0 bg-slate-200 animate-pulse" /> {/* 로딩 스켈레톤 */}
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={img.src} 
                     alt={img.title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-10"
@@ -345,7 +345,7 @@ export default function AboutUs() {
                     <div className={`absolute top-0 left-0 w-full h-1 z-20 ${bldg.colorClass}`} />
                     <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
                       <div className="absolute inset-0 bg-slate-200 animate-pulse" />
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={bldg.img} 
                         alt={bldg.name} 
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 z-10"
@@ -383,7 +383,6 @@ export default function AboutUs() {
   return (
     <section id="about" ref={sectionRef} className="relative py-32 bg-transparent border-y border-slate-200/80 overflow-hidden">
       {/* 배경 장식 */}
-      <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] glow-radial opacity-30 pointer-events-none rounded-full" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] glow-radial opacity-20 pointer-events-none rounded-full" />
       
       <div className={`mx-auto px-6 md:px-16 relative z-10 transition-all duration-700 ease-in-out ${(activeTab === 'facilities' || activeTab === 'ceo') ? 'max-w-[100rem]' : 'max-w-7xl'}`}>

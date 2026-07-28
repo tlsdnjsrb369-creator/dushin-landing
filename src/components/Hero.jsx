@@ -125,7 +125,7 @@ export default function Hero() {
           {/* 회사 전경 및 설비 — 흰 배경 친화적으로 어두운 테두리/글자색 */}
           <Link
             href="/about?tab=facilities"
-            className="px-8 py-4 border-2 border-slate-800 bg-white/70 backdrop-blur-sm text-slate-800 font-bold tracking-wider rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-sm"
+            className="px-8 py-4 border-2 border-slate-800 bg-white/90 text-slate-800 font-bold tracking-wider rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-sm"
           >
             {t('hero_btn_facilities')}
           </Link>
@@ -137,7 +137,7 @@ export default function Hero() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl"
         >
           {/* 80TON 크레인 */}
-          <div className="p-6 rounded-xl bg-white/80 backdrop-blur-md border border-slate-200 shadow-md hover:border-brand-blue/60 hover:shadow-[0_4px_20px_rgba(0,85,164,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
+          <div className="p-6 rounded-xl bg-white/95 border border-slate-200 shadow-md hover:border-brand-blue/60 hover:shadow-[0_4px_20px_rgba(0,85,164,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_infra')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -151,7 +151,7 @@ export default function Hero() {
           </div>
 
           {/* 신용등급 B+ */}
-          <div className="p-6 rounded-xl bg-white/80 backdrop-blur-md border border-slate-200 shadow-md hover:border-brand-red/60 hover:shadow-[0_4px_20px_rgba(229,9,20,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
+          <div className="p-6 rounded-xl bg-white/95 border border-slate-200 shadow-md hover:border-brand-red/60 hover:shadow-[0_4px_20px_rgba(229,9,20,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_finance')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -164,7 +164,7 @@ export default function Hero() {
           </div>
 
           {/* 업력 24+ */}
-          <div className="p-6 rounded-xl bg-white/80 backdrop-blur-md border border-slate-200 shadow-md hover:border-brand-blue/60 hover:shadow-[0_4px_20px_rgba(0,85,164,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
+          <div className="p-6 rounded-xl bg-white/95 border border-slate-200 shadow-md hover:border-brand-blue/60 hover:shadow-[0_4px_20px_rgba(0,85,164,0.15)] transition-all duration-300 flex flex-col justify-between text-left">
             <span className="text-slate-500 text-sm font-bold mb-2">{t('hero_stat_exp')}</span>
             <div>
               <span className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">

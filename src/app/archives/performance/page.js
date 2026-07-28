@@ -264,7 +264,7 @@ export default function PerformancePage() {
                   {/* 이미지 썸네일 영역 (16:9) */}
                   <div className="relative aspect-video w-full overflow-hidden bg-gray-100 flex items-center justify-center border-b border-slate-100">
                     {project.thumbnail ? (
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={encodeURI(project.thumbnail)}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
@@ -377,7 +377,7 @@ export default function PerformancePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                 {selectedProject.images.map((imgSrc, idx) => (
                   <div key={idx} className="relative aspect-video w-full rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src={encodeURI(imgSrc)} 
                       alt={`${selectedProject.title} 사진 ${idx + 1}`} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
