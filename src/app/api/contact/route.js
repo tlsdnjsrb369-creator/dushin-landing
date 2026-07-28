@@ -3,7 +3,23 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    const { company, name, phone, email, message } = await req.json();
+    // 폼 데이터(첨부파일 포함) 수신
+    const form = await req.formData();
+    const company = form.get("company") || "";
+    const name = form.get("name") || "";
+    const phone = form.get("phone") || "";
+    const email = form.get("email") || "";
+    const message = form.get("message") || "";
+
+    // 첨부파일(도면·사양서) — 최대 4MB
+    const attachments = [];
+    for (const file of form.getAll("files")) {
+      if (!file || typeof file === "string" || file.size === 0) continue;
+      attachments.push({
+        filename: file.name,
+        content: Buffer.from(await file.arrayBuffer()),
+      });
+    }
 
     // 1. SMTP Transporter 설정
     // 실제 서비스에서는 환경 변수(process.env)를 사용해야 합니다.
@@ -23,7 +39,8 @@ export async function POST(req) {
       to: "skj1994@naver.com", // 수신자
       // 메일에서 '답장'을 누르면 문의한 고객에게 바로 회신됩니다.
       replyTo: email || undefined,
-      subject: `[(주)두신이엔지] 제작 문의 - ${company} (${name})`,
+      attachments,
+      subject: `[(주)두신이엔지] 제작 문의 - ${company} (${name})${attachments.length ? ` [첨부 ${attachments.length}]` : ""}`,
       html: `
         <div style="font-family: 'Malgun Gothic', sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; max-width: 600px;">
           <h2 style="color: #0055a4; border-bottom: 2px solid #0055a4; padding-bottom: 10px; margin-bottom: 20px;">
@@ -57,6 +74,13 @@ export async function POST(req) {
               ${message}
             </div>
           </div>
+          ${attachments.length ? `
+          <div style="margin-top: 20px;">
+            <h3 style="font-size: 16px; color: #334155; margin-bottom: 10px;">첨부 파일 (${attachments.length}건)</h3>
+            <ul style="color: #475569; line-height: 1.8; padding-left: 18px; margin: 0;">
+              ${attachments.map((a) => `<li>${a.filename}</li>`).join("")}
+            </ul>
+          </div>` : ""}
         </div>
       `,
     };

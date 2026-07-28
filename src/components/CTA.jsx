@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, FileText, Phone, Mail, Building, Printer, MapPin } from "lucide-react";
+import { Send, FileText, Phone, Mail, Building, Printer, MapPin, Paperclip } from "lucide-react";
 import { useTranslation } from "@/context/LanguageContext";
 
 export default function CTA() {
@@ -16,6 +16,21 @@ export default function CTA() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [files, setFiles] = useState([]);
+
+  const MAX_TOTAL = 4 * 1024 * 1024; // 4MB (서버 전송 한도)
+
+  const handleFileChange = (e) => {
+    const picked = Array.from(e.target.files || []);
+    const total = picked.reduce((s, f) => s + f.size, 0);
+    if (total > MAX_TOTAL) {
+      alert(t('cta_file_toobig') || "첨부파일 용량이 너무 큽니다(총 4MB 이하). 큰 도면은 skj1994@naver.com 으로 보내주세요.");
+      e.target.value = "";
+      setFiles([]);
+      return;
+    }
+    setFiles(picked);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,19 +38,20 @@ export default function CTA() {
       alert("개인정보 수집 및 이용에 동의해주세요.");
       return;
     }
-    
+
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-      
+      const body = new FormData();
+      Object.entries(formData).forEach(([k, v]) => body.append(k, v));
+      files.forEach((f) => body.append("files", f));
+
+      const res = await fetch("/api/contact", { method: "POST", body });
+
       const data = await res.json();
       if (data.success) {
         alert(t('contact_success') || "문의가 성공적으로 접수되었습니다. 확인 후 연락드리겠습니다.");
         setSubmitted(true);
+        setFiles([]);
         setFormData({
           company: "",
           name: "",
@@ -242,6 +258,36 @@ export default function CTA() {
                       placeholder={t('cta_form_msg_ph')}
                       className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:shadow-[0_0_10px_rgba(0,85,164,0.1)] transition-all resize-none"
                     />
+                  </div>
+
+                  {/* 도면·사양서 첨부 */}
+                  <div>
+                    <label htmlFor="files" className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-2">
+                      <Paperclip className="w-3.5 h-3.5" />
+                      {t('cta_form_file_label')}
+                    </label>
+                    <input
+                      id="files"
+                      type="file"
+                      multiple
+                      accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.zip,.xlsx,.hwp"
+                      onChange={handleFileChange}
+                      className="w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 file:cursor-pointer cursor-pointer"
+                    />
+                    {files.length > 0 && (
+                      <ul className="mt-2 flex flex-col gap-1">
+                        {files.map((f, i) => (
+                          <li key={i} className="text-xs text-slate-600 flex items-center gap-1.5">
+                            <FileText className="w-3 h-3 text-brand-blue shrink-0" />
+                            <span className="truncate">{f.name}</span>
+                            <span className="text-slate-400 shrink-0">({(f.size / 1024 / 1024).toFixed(1)}MB)</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+                      {t('cta_form_file_note')}
+                    </p>
                   </div>
 
                   {/* 약관 동의 */}
