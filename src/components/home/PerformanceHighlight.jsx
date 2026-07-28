@@ -11,7 +11,7 @@ export default function PerformanceHighlight() {
 
   // 대표 실적 4건 (실적 페이지의 실제 데이터/이미지 사용)
   const projects = [
-    { title: t("perf3_title"),  desc: t("perf3_desc"),  image: "/images/jfe-cooler-1.jpg" },
+    { title: t("perf3_title"),  desc: t("perf3_desc"),  image: "/images/jfe-cooler-6.jpg" },
     { title: t("perf13_title"), desc: t("perf13_desc"), image: "/images/hyundai-roof-1.jpg" },
     { title: t("perf9_title"),  desc: t("perf9_desc"),  image: "/images/dongkuk-cassette-1.jpg" },
     { title: t("perf15_title"), desc: t("perf15_desc"), image: "/images/daewoo-penstock-1.jpg" },

@@ -106,7 +106,7 @@ export default function AboutUs() {
     return (
       <div ref={tabContentRef}>
         {activeTab === "ceo" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center min-h-[480px] bg-slate-50/50 rounded-2xl border border-slate-100 p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center min-h-[480px]">
             {/* 왼쪽: 인사말 */}
             <div className="order-2 lg:order-1 lg:col-span-5">
               <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">{t('about_tab1')}</h3>
@@ -114,7 +114,7 @@ export default function AboutUs() {
                 {t('about_ceo_desc')}
               </p>
             </div>
-            {/* 오른쪽: 공장 전경 (더 크게) */}
+            {/* 오른쪽: 공장 전경 (크게) */}
             <div className="order-1 lg:order-2 lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
               <img
                 src="/images/factory-exterior-new.jpg"
@@ -386,7 +386,7 @@ export default function AboutUs() {
       <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] glow-radial opacity-30 pointer-events-none rounded-full" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] glow-radial opacity-20 pointer-events-none rounded-full" />
       
-      <div className={`mx-auto px-6 md:px-16 relative z-10 transition-all duration-700 ease-in-out ${activeTab === 'facilities' ? 'max-w-[100rem]' : 'max-w-7xl'}`}>
+      <div className={`mx-auto px-6 md:px-16 relative z-10 transition-all duration-700 ease-in-out ${(activeTab === 'facilities' || activeTab === 'ceo') ? 'max-w-[100rem]' : 'max-w-7xl'}`}>
         
         {/* 헤더 타이틀 */}
         <div className="about-title text-center max-w-3xl mx-auto mb-16">

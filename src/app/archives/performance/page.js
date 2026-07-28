@@ -61,8 +61,8 @@ export default function PerformancePage() {
       title: t('perf3_title'),
       date: "2018.02",
       description: t('perf3_desc'),
-      thumbnail: "/images/jfe-cooler-1.jpg",
-      images: ["/images/jfe-cooler-1.jpg", "/images/jfe-cooler-2.jpg", "/images/jfe-cooler-3.jpg", "/images/jfe-cooler-4.jpg", "/images/jfe-cooler-5.jpg", "/images/jfe-cooler-6.jpg"]
+      thumbnail: "/images/jfe-cooler-6.jpg",
+      images: ["/images/jfe-cooler-6.jpg", "/images/jfe-cooler-1.jpg", "/images/jfe-cooler-2.jpg", "/images/jfe-cooler-3.jpg", "/images/jfe-cooler-4.jpg", "/images/jfe-cooler-5.jpg"]
     },
     {
       id: 4,
