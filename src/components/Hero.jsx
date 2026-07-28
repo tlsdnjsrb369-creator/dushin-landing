@@ -24,30 +24,30 @@ export default function Hero() {
 
       tl.fromTo(
         titleRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2 }
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 }
       )
       .fromTo(
         subtitleRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.0 },
-        "-=0.8"
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 },
+        "-=0.5"
       )
       .fromTo(
         buttonsRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=0.6"
+        { y: 16, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 },
+        "-=0.4"
       )
       .fromTo(
         specCardsRef.current.children,
-        { y: 40, opacity: 0, scale: 0.95 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.15 },
-        "-=0.4"
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 },
+        "-=0.35"
       );
 
       // 카운팅 업 애니메이션
-      const countUp = (ref, target, dur = 2) => {
+      const countUp = (ref, target, dur = 1.2) => {
         const obj = { val: 0 };
         gsap.to(obj, {
           val: target,
@@ -59,8 +59,8 @@ export default function Hero() {
         });
       };
 
-      countUp(count1Ref, 80, 2.5);
-      countUp(count3Ref, 24, 2.2);
+      countUp(count1Ref, 80, 1.3);
+      countUp(count3Ref, 24, 1.2);
     }, containerRef);
 
     return () => ctx.revert();

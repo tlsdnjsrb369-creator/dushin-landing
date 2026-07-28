@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollButtons from "@/components/ScrollButtons";
 import Providers from "@/providers/Providers";
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
+          <ScrollButtons />
         </Providers>
       </body>
     </html>
