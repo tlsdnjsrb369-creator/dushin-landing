@@ -21,6 +21,8 @@ export async function POST(req) {
     const mailOptions = {
       from: process.env.EMAIL_USER || "skj1994@naver.com",
       to: "skj1994@naver.com", // 수신자
+      // 메일에서 '답장'을 누르면 문의한 고객에게 바로 회신됩니다.
+      replyTo: email || undefined,
       subject: `[(주)두신이엔지] 제작 문의 - ${company} (${name})`,
       html: `
         <div style="font-family: 'Malgun Gothic', sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; max-width: 600px;">
